@@ -1,30 +1,49 @@
 import { apiKey } from '../private/apiKey';
 
-const root = 'http://api.amp.active.com/search?'
-
-
-
-export const fetchRaces = async () => { 
+export const fetchRaces = async (state) => { 
   try {
     const response 
-      = await fetch('/v2/search/?query=running&category=event&state=CA&api_key=7nrprb2b7e28bsvftb9nr8mr',
+      = await fetch(`/v2/search/?query=running&category=event&state=${state}&api_key=${apiKey}`,
       {
         type: 'GET',
         credentials: 'omit'
       }) 
     const raceInfo = await response.json()
-    console.log('raceInfo:', raceInfo)
+    return raceCleaner(raceInfo.results)
     } catch (error) {
       console.log('error:', error)
     }
 } 
 
-export const fetchUser = async () => {
-  try{
-    const response = await fetch('/users/v1/users')
-    console.log(response)
+const raceCleaner = (races) => {
+  const cleanRaces = races.map(race => {
+    return {
+      venue: race.place.placeName,
+      city: race.place.placeName,
+      website: race.registrationUrlAdr,
+      date: race.activityStartDate,
+      event: race.organization.organizationName
+    }
+  })
+  return cleanRaces
+}
+
+export const fetchUsers = async () => {
+  try {
+    const response = await fetch('http://localhost:3000/api/v1/users/')
     // const user = await response.json()
+    console.log('userresponse:', response)
     // return user
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const fetchOneUser = async (id) => {
+  try {
+    const response = await fetch(`http://localhost:3000/api/v1/users/${id}`)
+    const userInfo = await response.json()
+    console.log(userInfo)
   } catch (error) {
     console.log(error)
   }
