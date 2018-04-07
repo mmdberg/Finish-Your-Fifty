@@ -1,0 +1,265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Search />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2>
+          Search for races by state
+</h2>,
+        <form>
+          <input
+                    maxLength="2"
+                    name="state"
+                    onChange={[Function]}
+                    placeholder="State (ex. CA)"
+                    type="text"
+                    value=""
+          />
+          <button
+                    onClick={[Function]}
+          >
+                    Search
+          </button>
+          <button
+                    onClick={[Function]}
+          >
+                    Clear
+          </button>
+</form>,
+        "",
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Search for races by state",
+        },
+        "ref": null,
+        "rendered": "Search for races by state",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <input
+              maxLength="2"
+              name="state"
+              onChange={[Function]}
+              placeholder="State (ex. CA)"
+              type="text"
+              value=""
+/>,
+            <button
+              onClick={[Function]}
+>
+              Search
+</button>,
+            <button
+              onClick={[Function]}
+>
+              Clear
+</button>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "maxLength": "2",
+              "name": "state",
+              "onChange": [Function],
+              "placeholder": "State (ex. CA)",
+              "type": "text",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Search",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Search",
+            "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Clear",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Clear",
+            "type": "button",
+          },
+        ],
+        "type": "form",
+      },
+      "",
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2>
+            Search for races by state
+</h2>,
+          <form>
+            <input
+                        maxLength="2"
+                        name="state"
+                        onChange={[Function]}
+                        placeholder="State (ex. CA)"
+                        type="text"
+                        value=""
+            />
+            <button
+                        onClick={[Function]}
+            >
+                        Search
+            </button>
+            <button
+                        onClick={[Function]}
+            >
+                        Clear
+            </button>
+</form>,
+          "",
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Search for races by state",
+          },
+          "ref": null,
+          "rendered": "Search for races by state",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <input
+                maxLength="2"
+                name="state"
+                onChange={[Function]}
+                placeholder="State (ex. CA)"
+                type="text"
+                value=""
+/>,
+              <button
+                onClick={[Function]}
+>
+                Search
+</button>,
+              <button
+                onClick={[Function]}
+>
+                Clear
+</button>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "maxLength": "2",
+                "name": "state",
+                "onChange": [Function],
+                "placeholder": "State (ex. CA)",
+                "type": "text",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Search",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Search",
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Clear",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Clear",
+              "type": "button",
+            },
+          ],
+          "type": "form",
+        },
+        "",
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

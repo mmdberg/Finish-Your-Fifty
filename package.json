@@ -18,6 +18,7 @@
     "eject": "react-scripts eject",
     "lint": "./node_modules/eslint/bin/eslint.js ./src/"
   },
+  "proxy": "http://api.amp.active.com",
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1"
