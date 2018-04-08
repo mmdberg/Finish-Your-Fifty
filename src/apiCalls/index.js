@@ -55,3 +55,22 @@ export const fetchOneUser = async (id) => {
     console.log(error);
   }
 };
+
+export const addUser = async (user) => {
+  console.log(user)
+  const response = await fetch('http://localhost:3000/api/v1/users', 
+  {
+    method: 'POST',
+    body: JSON.stringify({
+      userName: user.userName,
+      email: user.email,
+      password: user.password
+    }),
+    headers: {
+      'Content-Type': 'application/json' 
+    }
+  });
+  const userId = await response.json()
+  console.log(userId)
+  }
+

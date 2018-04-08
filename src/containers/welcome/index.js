@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import * as api from '../../apiCalls';
 
 class Welcome extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      name: '',
+      userName: '',
       email: '',
       password: ''
     }
@@ -19,19 +20,22 @@ class Welcome extends Component {
     })
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
-    this.props.captureUser(this.state)
+    const response = api.addUser(this.state)
+
+    // this.props.captureUser(...this.state, response)
   }
 
   render() {
     return(
       <div>
+        <h2>Please log in to view your race log</h2>
         <form onSubmit={this.handleSubmit}>
           <input type="text" 
             placeholder="Enter Name"
-            name="name"
-            value={this.state.name}
+            name="userName"
+            value={this.state.userName}
             onChange={this.handleChange}/>
           <input type="email" 
             placeholder="Enter Email"
