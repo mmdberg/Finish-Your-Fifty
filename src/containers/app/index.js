@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 import * as api from '../../apiCalls';
-import { NavLink, Route, Switch } from 'react-router-dom';
+import { NavLink, Route, Switch, Redirect } from 'react-router-dom';
 import Search from '../../Components/Search';
 import Welcome from '../../containers/welcome';
 import { connect } from 'react-redux';
@@ -26,8 +26,11 @@ class App extends Component {
           <NavLink to='/search'>Search</NavLink>
         </nav>
         <Switch>
-          <Route exact path='/' component={ Welcome } />
+          <Route exact path='/' render={() => 
+            this.props.user ? <Search /> : <Redirect to='/welcome'/>
+          }/>
           <Route exact path='/search' component={ Search }/>
+          <Route exact path='/welcome' component={ Welcome }/>
         </Switch>
       </div>
     );
