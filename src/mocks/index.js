@@ -15,3 +15,9 @@ export const mockApiResult = {
     organizationName: 'Spooky 5k'
   }
 }
+
+export const mockUser = {
+  name: 'Pizza',
+  email: 'pizza@pizza',
+  password: 'p'
+}

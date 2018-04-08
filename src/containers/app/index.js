@@ -3,6 +3,8 @@ import './styles.css';
 import * as api from '../../apiCalls';
 import { NavLink, Route } from 'react-router-dom';
 import Search from '../../Components/Search';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
 class App extends Component {
   async componentDidMount () {
@@ -28,4 +30,12 @@ class App extends Component {
   }
 }
 
-export default App;
+export const mapStateToProps = state => ({
+  user: state.user
+})
+
+export const mapDispatchToProps = dispatch => ({
+  captureUser: user => dispatch(actions.captureUser(user))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

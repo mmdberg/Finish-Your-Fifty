@@ -6,7 +6,10 @@ describe('apiCalls', () => {
 
   describe('fetchRaces', () => {
     it('should call fetch with the right params', () => {
-      window.fetch = jest.fn().mockImplementation(() => Promise.resolve());
+            window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({results: [mockApiResult]})
+      }));
       const expected = [`/v2/search/?query=running&category=event&state=CA&api_key=${apiKey}`, 
       {
         type: 'GET',

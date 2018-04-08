@@ -9,7 +9,6 @@ export const fetchRaces = async (state) => {
           credentials: 'omit'
         });
     const raceInfo = await response.json();
-    console.log(raceInfo)
     return raceCleaner(raceInfo.results);
   } catch (error) {
     console.log('error:', error);
@@ -30,7 +29,6 @@ export const raceCleaner = (races) => {
 };
 
 export const dateCleaner = (date) => {
-  console.log(date)
   const dateOnly = date.split('').splice(0, 10)
   const yearOnly = dateOnly.splice(0, 5).splice(0, 4)
   const cleanDate = [...date.split('').splice(5, 5), '-', ...yearOnly].join('')
