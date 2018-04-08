@@ -57,7 +57,6 @@ export const fetchOneUser = async (id) => {
 };
 
 export const addUser = async (user) => {
-  console.log(user)
   const response = await fetch('http://localhost:3000/api/v1/users', 
   {
     method: 'POST',
@@ -71,6 +70,6 @@ export const addUser = async (user) => {
     }
   });
   const userId = await response.json()
-  console.log(userId)
+  return userId.id
   }
 
