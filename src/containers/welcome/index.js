@@ -4,13 +4,14 @@ import { NavLink, Redirect, withRouter } from 'react-router-dom';
 import * as actions from '../../actions';
 import * as api from '../../apiCalls';
 
-class Welcome extends Component {
+export class Welcome extends Component {
   constructor(props) {
     super(props);
     this.state = {
       userName: '',
       email: '',
-      password: ''
+      password: '',
+      error: ''
     };
   }
 
@@ -21,7 +22,7 @@ class Welcome extends Component {
     });
   }
 
-  handleSubmit = async (event) => {
+  handleSubmit = (event) => {
     event.preventDefault();
     if (this.props.match.path === '/welcome/signup') {
       this.signUp();
@@ -31,16 +32,16 @@ class Welcome extends Component {
   }
 
   signUp = async () => {
-    //pull all users, verify that email does not already exist
     const existingUsers = await api.fetchUsers();
-    console.log(existingUsers)
-    const validation = existingUsers.find(existingUser => existingUser.email === this.state.email);
-    //if email doesnt exist, add the user 
+    const validation = existingUsers.find(existingUser => 
+      existingUser.email === this.state.email);
+
     if (validation) {
-      alert('This email already exists');
       this.setState({
+        userName: '',
         email: '',
-        password: ''
+        password: '',
+        error: 'This email already exists'
       })
     } else {
       const { userName, email, password } = this.state
@@ -54,7 +55,8 @@ class Welcome extends Component {
       this.setState({
         userName: '',
         email: '',
-        password: ''
+        password: '',
+        error: ''
       });
     }
   }

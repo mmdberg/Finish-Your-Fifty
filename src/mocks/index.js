@@ -21,3 +21,9 @@ export const mockUser = {
   email: 'pizza@pizza',
   password: 'p'
 };
+
+export const mockUserArray = [{
+  name: 'Pizza',
+  email: 'pizza@pizza',
+  password: 'p'
+}];
