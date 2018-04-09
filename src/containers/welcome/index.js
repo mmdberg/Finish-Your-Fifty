@@ -42,10 +42,10 @@ export class Welcome extends Component {
         email: '',
         password: '',
         error: 'This email already exists'
-      })
+      });
     } else {
-      const { userName, email, password } = this.state
-      const id = await api.addUser(this.state)
+      const { userName, email, password } = this.state;
+      const id = await api.addUser(this.state);
       this.props.captureUser({
         userName,
         email,
@@ -97,7 +97,7 @@ export class Welcome extends Component {
           <button type="submit">Submit</button>
           {
             (this.props.match.path === '/welcome/login') ? 
-            (<p>Don't have an account? 
+              (<p>Don't have an account? 
                 <NavLink to='/welcome/signup'>Sign Up</NavLink>
               </p>) :
               (<p>Have an account? 
@@ -106,7 +106,7 @@ export class Welcome extends Component {
           }
         </form>
       </div>
-    )
+    );
   }
 }
 
@@ -118,4 +118,4 @@ export const mapDispatchToProps = dispatch => ({
   captureUser: user => dispatch(actions.captureUser(user))
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Welcome))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Welcome));

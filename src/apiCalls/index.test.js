@@ -10,11 +10,12 @@ describe('apiCalls', () => {
         ok: true,
         json: () => Promise.resolve({results: [mockApiResult]})
       }));
-      const expected = [`/v2/search/?query=running&category=event&state=CA&api_key=${apiKey}`, 
-      {
-        type: 'GET',
-        credentials: 'omit'
-      }];
+      const expected = 
+        [`/v2/search/?query=running&category=event&state=CA&api_key=${apiKey}`,
+          {
+            type: 'GET',
+            credentials: 'omit'
+          }];
       api.fetchRaces('CA');
       expect(window.fetch).toHaveBeenCalledWith(...expected);
     });
@@ -30,6 +31,7 @@ describe('apiCalls', () => {
     });
 
     it('should clean race data',  () => {
+
       expect(api.raceCleaner([mockApiResult])).toEqual([mockRace]);
     });
 
