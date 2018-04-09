@@ -6,39 +6,38 @@ import * as api from '../../apiCalls';
 
 class Welcome extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       userName: '',
       email: '',
       password: ''
-    }
+    };
   }
 
   handleChange = (event) => {
     const { name, value } = event.target;
-        console.log(this.props.match.path)
     this.setState({
       [name]: value
-    })
+    });
   }
 
   handleSubmit = async (event) => {
     event.preventDefault();
     if (this.props.match.path === '/welcome/signup') {
-      this.signUp()
+      this.signUp();
     } else {
-      this.logIn()
+      this.logIn();
     }
   }
 
   signUp = async () => {
     //pull all users, verify that email does not already exist
-    const existingUsers = await api.fetchUsers()
+    const existingUsers = await api.fetchUsers();
     console.log(existingUsers)
-    const validation = existingUsers.find(existingUser => existingUser.email === this.state.email)
+    const validation = existingUsers.find(existingUser => existingUser.email === this.state.email);
     //if email doesnt exist, add the user 
     if (validation) {
-      alert('This email already exists')
+      alert('This email already exists');
       this.setState({
         email: '',
         password: ''
@@ -51,12 +50,12 @@ class Welcome extends Component {
         email,
         password,
         id
-      })
+      });
       this.setState({
         userName: '',
         email: '',
         password: ''
-      })
+      });
     }
   }
 
@@ -72,8 +71,8 @@ class Welcome extends Component {
         <form onSubmit={this.handleSubmit}>
           {
             (this.props.match.path === '/welcome/signup') ?
-            <h2>Please sign up to start tracking races</h2> :  
-            <h2>Please log in to view your race log</h2> 
+              <h2>Please sign up to start tracking races</h2> :  
+              <h2>Please log in to view your race log</h2> 
           }
           {
             (this.props.match.path === '/welcome/signup') &&
@@ -97,11 +96,11 @@ class Welcome extends Component {
           {
             (this.props.match.path === '/welcome/login') ? 
             (<p>Don't have an account? 
-              <NavLink to='/welcome/signup'>Sign Up</NavLink>
-            </p>) :
-            (<p>Have an account? 
-              <NavLink to='/welcome/login'>Log In</NavLink>
-            </p>)
+                <NavLink to='/welcome/signup'>Sign Up</NavLink>
+              </p>) :
+              (<p>Have an account? 
+                <NavLink to='/welcome/login'>Log In</NavLink>
+              </p>)
           }
         </form>
       </div>

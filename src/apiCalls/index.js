@@ -29,17 +29,17 @@ export const raceCleaner = (races) => {
 };
 
 export const dateCleaner = (date) => {
-  const dateOnly = date.split('').splice(0, 10)
-  const yearOnly = dateOnly.splice(0, 5).splice(0, 4)
-  const cleanDate = [...date.split('').splice(5, 5), '-', ...yearOnly].join('')
-  return cleanDate
-}
+  const dateOnly = date.split('').splice(0, 10);
+  const yearOnly = dateOnly.splice(0, 5).splice(0, 4);
+  const cleanDate = [...date.split('').splice(5, 5), '-', ...yearOnly].join('');
+  return cleanDate;
+};
 
 export const fetchUsers = async () => {
   try {
     const response = await fetch('http://localhost:3000/api/v1/users/');
-    const users = await response.json()
-    return users
+    const users = await response.json();
+    return users;
   } catch (error) {
     console.log(error);
   }
@@ -57,18 +57,18 @@ export const fetchOneUser = async (id) => {
 
 export const addUser = async (user) => {
   const response = await fetch('http://localhost:3000/api/v1/users', 
-  {
-    method: 'POST',
-    body: JSON.stringify({
-      userName: user.userName,
-      email: user.email,
-      password: user.password
-    }),
-    headers: {
-      'Content-Type': 'application/json' 
-    }
-  });
-  const userId = await response.json()
-  return userId.id
-  }
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        userName: user.userName,
+        email: user.email,
+        password: user.password
+      }),
+      headers: {
+        'Content-Type': 'application/json' 
+      }
+    });
+  const userId = await response.json();
+  return userId.id;
+};
 

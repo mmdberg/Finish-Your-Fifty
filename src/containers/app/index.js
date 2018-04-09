@@ -40,10 +40,10 @@ class App extends Component {
 
 export const mapStateToProps = state => ({
   user: state.user
-})
+});
 
 export const mapDispatchToProps = dispatch => ({
   captureUser: user => dispatch(actions.captureUser(user))
-})
+});
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

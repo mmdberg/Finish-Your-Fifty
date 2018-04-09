@@ -6,7 +6,7 @@ describe('apiCalls', () => {
 
   describe('fetchRaces', () => {
     it('should call fetch with the right params', () => {
-            window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
         ok: true,
         json: () => Promise.resolve({results: [mockApiResult]})
       }));
@@ -14,9 +14,9 @@ describe('apiCalls', () => {
       {
         type: 'GET',
         credentials: 'omit'
-      }]
-      api.fetchRaces('CA')
-      expect(window.fetch).toHaveBeenCalledWith(...expected)
+      }];
+      api.fetchRaces('CA');
+      expect(window.fetch).toHaveBeenCalledWith(...expected);
     });
 
     it.skip('should call raceCleaner with the right params', async () => {
@@ -25,18 +25,17 @@ describe('apiCalls', () => {
         ok: true,
         json: () => Promise.resolve({results: [mockApiResult]})
       }));
-      await api.fetchRaces('CA')
-      expect(api.raceCleaner).toHaveBeenCalledWith([mockApiResult])
+      await api.fetchRaces('CA');
+      expect(api.raceCleaner).toHaveBeenCalledWith([mockApiResult]);
     });
 
     it('should clean race data',  () => {
-      expect(api.raceCleaner([mockApiResult])).toEqual([mockRace])
-
-    })
+      expect(api.raceCleaner([mockApiResult])).toEqual([mockRace]);
+    });
 
     it('should clean year data', () => {
-      expect(api.dateCleaner('2018-04-05T08:00:00')).toEqual('04-05-2018')
-    } )
+      expect(api.dateCleaner('2018-04-05T08:00:00')).toEqual('04-05-2018');
+    });
 
   });
 
