@@ -15,25 +15,31 @@ export const fetchRaces = async (state) => {
   }
 };
 
-const raceCleaner = (races) => {
+export const raceCleaner = (races) => {
   const cleanRaces = races.map(race => {
     return {
       venue: race.place.placeName,
-      city: race.place.placeName,
+      city: race.place.cityName,
       website: race.registrationUrlAdr,
-      date: race.activityStartDate,
+      date: dateCleaner(race.activityStartDate),
       event: race.organization.organizationName
     };
   });
   return cleanRaces;
 };
 
+export const dateCleaner = (date) => {
+  const dateOnly = date.split('').splice(0, 10);
+  const yearOnly = dateOnly.splice(0, 5).splice(0, 4);
+  const cleanDate = [...date.split('').splice(5, 5), '-', ...yearOnly].join('');
+  return cleanDate;
+};
+
 export const fetchUsers = async () => {
   try {
     const response = await fetch('http://localhost:3000/api/v1/users/');
-    // const user = await response.json()
-    console.log('userresponse:', response);
-    // return user
+    const users = await response.json();
+    return users;
   } catch (error) {
     console.log(error);
   }
@@ -48,3 +54,21 @@ export const fetchOneUser = async (id) => {
     console.log(error);
   }
 };
+
+export const addUser = async (user) => {
+  const response = await fetch('http://localhost:3000/api/v1/users', 
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        userName: user.userName,
+        email: user.email,
+        password: user.password
+      }),
+      headers: {
+        'Content-Type': 'application/json' 
+      }
+    });
+  const userId = await response.json();
+  return userId.id;
+};
+

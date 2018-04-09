@@ -65,14 +65,14 @@ describe('Search', () => {
   });
 
   it.skip('should set state of results with jsx on submit after fetch', () => {
-    const expected = [
-      <tr>
+    const expected = 
+      [<tr>
         <td>Spooky 5k</td>
         <td>San Diego</td>
         <td>04-05-2018</td>
         <td>Atlas Park</td>
-      </tr>
-    ];
+      </tr>]
+    ;
     wrapper.instance().displayResults([mockRace]);
     expect(wrapper.state('results')).toEqual(expected);
   });
