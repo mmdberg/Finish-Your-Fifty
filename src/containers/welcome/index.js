@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { NavLink, withRouter } from 'react-router-dom';
+import { NavLink, Redirect, withRouter } from 'react-router-dom';
 import * as actions from '../../actions';
 import * as api from '../../apiCalls';
 
@@ -24,14 +24,50 @@ class Welcome extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-
-
-    const id = await api.addUser(this.state)
-    this.props.captureUser(this.state, id)
+    if (this.props.match.path === '/welcome/signup') {
+      this.signUp()
+    } else {
+      this.logIn()
+    }
   }
 
+  signUp = async () => {
+    //pull all users, verify that email does not already exist
+    const existingUsers = await api.fetchUsers()
+    console.log(existingUsers)
+    const validation = existingUsers.find(existingUser => existingUser.email === this.state.email)
+    //if email doesnt exist, add the user 
+    if (validation) {
+      alert('This email already exists')
+      this.setState({
+        email: '',
+        password: ''
+      })
+    } else {
+      const { userName, email, password } = this.state
+      const id = await api.addUser(this.state)
+      this.props.captureUser({
+        userName,
+        email,
+        password,
+        id
+      })
+      this.setState({
+        userName: '',
+        email: '',
+        password: ''
+      })
+    }
+  }
+
+  logIn = () => {
+    //pull user info//capture in store
+    //if unable to pull, alert that email does not exist, send to signup page
+  }
+
+
   render() {
-    return(
+    return this.props.user ? <Redirect to='/' /> : (
       <div>
         <form onSubmit={this.handleSubmit}>
           {
@@ -73,11 +109,12 @@ class Welcome extends Component {
   }
 }
 
+export const mapStateToProps = state => ({
+  user: state.user
+});
+
 export const mapDispatchToProps = dispatch => ({
   captureUser: user => dispatch(actions.captureUser(user))
-})
+});
 
-export default withRouter(connect(null, mapDispatchToProps)(Welcome))
-
-
-
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Welcome))

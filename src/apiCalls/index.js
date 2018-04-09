@@ -38,9 +38,8 @@ export const dateCleaner = (date) => {
 export const fetchUsers = async () => {
   try {
     const response = await fetch('http://localhost:3000/api/v1/users/');
-    // const user = await response.json()
-    console.log('userresponse:', response);
-    // return user
+    const users = await response.json()
+    return users
   } catch (error) {
     console.log(error);
   }
