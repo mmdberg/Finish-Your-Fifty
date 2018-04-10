@@ -3,7 +3,8 @@ import './styles.css';
 import * as api from '../../apiCalls';
 import { NavLink, Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import Search from '../../Components/Search';
-import Welcome from '../../containers/welcome';
+import Welcome from '..//welcome';
+import { AddRace } from '../add-race';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
@@ -29,6 +30,7 @@ class App extends Component {
           <Route exact path='/' render={() => 
             this.props.user ? <Search /> : <Redirect to='/welcome/login'/>
           }/>
+          <Route exact path='/add-race' component={ AddRace } />
           <Route exact path='/search' component={ Search }/>
           <Route exact path='/welcome/login' component={ Welcome }/>
           <Route exact path='/welcome/signup' component={ Welcome }/>

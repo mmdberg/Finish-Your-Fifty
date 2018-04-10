@@ -27,3 +27,10 @@ export const mockUserArray = [{
   email: 'pizza@pizza',
   password: 'p'
 }];
+
+export const mockCompletedRace = {
+  raceName: 'Hocus Marathon',
+  distance: 'Marathon',
+  time: '4:00:01',
+  state: 'TN'
+}
