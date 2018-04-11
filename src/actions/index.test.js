@@ -19,4 +19,10 @@ describe('actions', () => {
     }
     expect(actions.addRace(race)).toEqual(expected)
   });
+
+  it('should return action type of LOG_OUT', () => {
+    const expected = {
+      type: 'LOG_OUT'
+    }
+  });
 });

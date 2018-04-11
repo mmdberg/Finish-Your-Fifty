@@ -27,7 +27,7 @@ export class Welcome extends Component {
     if (this.props.match.path === '/welcome/signup') {
       this.signUp();
     } else {
-      this.logIn();
+      this.logIn({email: this.state.email, password: this.state.password});
     }
   }
 
@@ -61,8 +61,24 @@ export class Welcome extends Component {
     }
   }
 
-  logIn = () => {
-    //pull user info//capture in store
+  logIn = async (credentials) => {
+    try {
+      const userInfo = await api.fetchOneUser(credentials)
+      console.log(userInfo);
+      this.props.captureUser({
+        userName: userInfo.userName,
+        email: userInfo.email,
+        password: userInfo.password,
+        id: userInfo.id
+      })
+    } catch (error) {
+      console.log('in app', error)
+      this.setState({
+        email: '',
+        password: '',
+        error: 'Email and password do not match. Please try again!'
+      })
+    }
     //if unable to pull, alert that email does not exist, send to signup page
   }
 
@@ -94,7 +110,7 @@ export class Welcome extends Component {
             name="password"
             value={this.state.password}
             onChange={this.handleChange}/>
-          <button type="submit">Submit</button>
+          <button type="submit">Start Tracking</button>
           {
             (this.props.match.path === '/welcome/login') ? 
               (<p>Don't have an account? 
@@ -104,6 +120,7 @@ export class Welcome extends Component {
                 <NavLink to='/welcome/login'>Log In</NavLink>
               </p>)
           }
+          <p>{this.state.error}</p>
         </form>
       </div>
     );

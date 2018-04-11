@@ -26,18 +26,26 @@ export const fetchUsers = async () => {
   }
 };
 
-export const fetchOneUser = async (id) => {
+export const fetchOneUser = async (credentials) => {
+  console.log(credentials)
   try {
-    const response = await fetch(`http://localhost:3000/api/v1/users/${id}`);
+    const response = await fetch(`http://localhost:3000/api/v1/users/`,
+      {
+        method: 'POST',
+        body: JSON.stringify(credentials),
+        headers: {
+          'Content-Type': 'application/json' 
+        }
+      });
     const userInfo = await response.json();
-    console.log(userInfo);
+    return userInfo.userCheck;
   } catch (error) {
-    console.log(error);
+    console.log('error at call', error);
   }
 };
 
 export const addUser = async (user) => {
-  const response = await fetch('http://localhost:3000/api/v1/users', 
+  const response = await fetch('http://localhost:3000/api/v1/users/new', 
     {
       method: 'POST',
       body: JSON.stringify({

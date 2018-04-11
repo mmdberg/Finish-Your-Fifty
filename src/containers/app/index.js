@@ -14,11 +14,19 @@ class App extends Component {
     // console.log(races)
   }
 
+  logOut = () => {
+    //take user out of store
+  }
+
   render() {
     return (
       <div className='App'>
         <header className='App-header'>
           <h1 className='App-title'>Finish Your Fifty</h1>
+          {
+            this.props.user && <NavLink to='/' onClick={this.logOut}>Log Out</NavLink>
+          }
+
         </header>
         <nav>
           <NavLink className='nav-section nav1' to='/'>Home</NavLink>

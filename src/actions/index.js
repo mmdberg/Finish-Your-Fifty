@@ -7,3 +7,7 @@ export const addRace = (race) => ({
   type: 'ADD_RACE',
   race
 });
+
+export const logOut = () => ({
+  type: 'LOG_OUT'
+});
