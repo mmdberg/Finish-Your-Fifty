@@ -1,5 +1,5 @@
 import * as actions from './index';
-import { mockUser } from '../mocks';
+import { mockUser, mockCompletedRace } from '../mocks';
 
 describe('actions', () => {
   it('should return action type of CAPTURE_USER', () => {
@@ -9,5 +9,20 @@ describe('actions', () => {
       user
     };
     expect(actions.captureUser(user)).toEqual(expected);
+  });
+
+  it('should return action type of ADD_RACE', () => {
+    const race = mockCompletedRace;
+    const expected = {
+      type: 'ADD_RACE',
+      race
+    }
+    expect(actions.addRace(race)).toEqual(expected)
+  });
+
+  it('should return action type of LOG_OUT', () => {
+    const expected = {
+      type: 'LOG_OUT'
+    }
   });
 });

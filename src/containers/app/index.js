@@ -3,7 +3,8 @@ import './styles.css';
 import * as api from '../../apiCalls';
 import { NavLink, Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import Search from '../../Components/Search';
-import Welcome from '../../containers/welcome';
+import Welcome from '..//welcome';
+import AddRace from '../add-race';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
@@ -13,26 +14,39 @@ class App extends Component {
     // console.log(races)
   }
 
+  logOut = () => {
+    console.log('working');
+    this.props.logOut()
+    //take user out of store
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Finish Your Fifty</h1>
+      <div className='App'>
+        <header className='App-header'>
+          <h1 className='App-title'>Finish Your Fifty</h1>
+          {
+            this.props.user && <NavLink to='/' onClick={this.logOut}>Log Out</NavLink>
+          }
+
         </header>
         <nav>
-          <NavLink to='/'>Home</NavLink>
-          <NavLink to='/add-race'>Add Race</NavLink>
-          <NavLink to='/race-log'>Race Log</NavLink>
-          <NavLink to='/search'>Search</NavLink>
+          <NavLink className='nav-section nav1' to='/'>Home</NavLink>
+          <NavLink className='nav-section nav2' to='/add-race'>Add Race</NavLink>
+          <NavLink className='nav-section nav3' to='/race-log'>Race Log</NavLink>
+          <NavLink className='nav-section nav4' to='/search'>Search</NavLink>
         </nav>
-        <Switch>
-          <Route exact path='/' render={() => 
-            this.props.user ? <Search /> : <Redirect to='/welcome/login'/>
-          }/>
-          <Route exact path='/search' component={ Search }/>
-          <Route exact path='/welcome/login' component={ Welcome }/>
-          <Route exact path='/welcome/signup' component={ Welcome }/>
-        </Switch>
+        <div className='app-body'>
+          <Switch>
+            <Route exact path='/' render={() => 
+              this.props.user ? <Search /> : <Redirect to='/welcome/login'/>
+            }/>
+            <Route exact path='/add-race' component={ AddRace } />
+            <Route exact path='/search' component={ Search }/>
+            <Route exact path='/welcome/login' component={ Welcome }/>
+            <Route exact path='/welcome/signup' component={ Welcome }/>
+          </Switch>
+        </div>
       </div>
     );
   }
@@ -43,7 +57,8 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  captureUser: user => dispatch(actions.captureUser(user))
+  captureUser: user => dispatch(actions.captureUser(user)),
+  logOut: () => dispatch(actions.logOut())
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

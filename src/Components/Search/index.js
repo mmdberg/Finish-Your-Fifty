@@ -77,7 +77,6 @@ class Search extends Component {
                 <th>City</th>
                 <th>Date</th>
                 <th>Venue</th>
-                <th>Website</th>
               </tr>
               {this.state.results}
             </table>
