@@ -1,16 +1,15 @@
 import { apiKey } from '../private/apiKey';
 import { raceCleaner } from './cleaner'
 
-export const fetchRaces = async (state) => { 
+export const fetchRaces = async (year) => { 
   try {
     const response 
-      = await fetch(`https://www.strava.com/api/v3/running_races?year=2018&access_token=${apiKey}`,
+      = await fetch(`https://www.strava.com/api/v3/running_races?year=${year}&access_token=${apiKey}`,
         {
           type: 'GET',
           credentials: 'omit'
         });
     const raceInfo = await response.json();
-    console.log('api-response', raceInfo);
     return raceCleaner(raceInfo);
   } catch (error) {
     console.log('error:', error);
