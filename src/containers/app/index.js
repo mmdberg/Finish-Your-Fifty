@@ -10,14 +10,11 @@ import * as actions from '../../actions';
 
 class App extends Component {
   async componentDidMount () {
-    // const races = await api.fetchOneUser(3)
-    // console.log(races)
+
   }
 
   logOut = () => {
-    console.log('working');
-    this.props.logOut()
-    //take user out of store
+    this.props.logOut();
   }
 
   render() {
@@ -28,7 +25,6 @@ class App extends Component {
           {
             this.props.user && <NavLink to='/' onClick={this.logOut}>Log Out</NavLink>
           }
-
         </header>
         <nav>
           <NavLink className='nav-section nav1' to='/'>Home</NavLink>

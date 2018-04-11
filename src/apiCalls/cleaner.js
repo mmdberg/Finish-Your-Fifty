@@ -1,11 +1,11 @@
 export const raceCleaner = (races) => {
   const cleanRaces = races.map(race => {
     return {
-      venue: race.place.placeName,
-      city: race.place.cityName,
-      website: race.registrationUrlAdr,
-      date: dateCleaner(race.activityStartDate),
-      event: race.organization.organizationName
+      city: race.city,
+      state: race.state,
+      date: dateCleaner(race.start_date_local),
+      event: race.name,
+      id: race.id
     };
   });
   return cleanRaces;

@@ -13,7 +13,7 @@ describe('User Reducer', () => {
   });
 
   it('should remove user from store', () => {
-    expect(userReducer([mockUser], actions.logOut())).toEqual(null)
-  })
+    expect(userReducer([mockUser], actions.logOut())).toEqual(null);
+  });
 
 });

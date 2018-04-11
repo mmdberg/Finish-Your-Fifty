@@ -16,13 +16,14 @@ describe('actions', () => {
     const expected = {
       type: 'ADD_RACE',
       race
-    }
-    expect(actions.addRace(race)).toEqual(expected)
+    };
+    expect(actions.addRace(race)).toEqual(expected);
   });
 
   it('should return action type of LOG_OUT', () => {
     const expected = {
       type: 'LOG_OUT'
     }
+    expect(actions.logOut()).toEqual(expected)
   });
 });

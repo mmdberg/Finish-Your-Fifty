@@ -1,9 +1,6 @@
 import * as cleaner from './cleaner';
 import { mockApiResult, mockRace } from '../mocks';
 
-
-
-
 describe('Race Cleaners', () => {
   it('should clean race data',  () => {
     expect(cleaner.raceCleaner([mockApiResult])).toEqual([mockRace]);

@@ -1,19 +1,23 @@
 export const mockRace = {
-  venue: 'Atlas Park',
+  state: 'CA',
   city: 'San Diego',
   event: 'Spooky 5k',
-  date: '04-05-2018'
+  date: '04-05-2018',
+  id: 1577
 };
 
 export const mockApiResult = {
-  place: {
-    placeName: 'Atlas Park',
-    cityName: 'San Diego'
-  },
-  activityStartDate: '2018-04-05T08:00:00',
-  organization: {
-    organizationName: 'Spooky 5k'
-  }
+  "id": 1577,
+  "name": "Spooky 5k",
+  "start_date_local": "2018-04-05T05:30:00Z",
+  "distance": 10000,
+  "city": "San Diego",
+  "state": "CA",
+  "country": "United States",
+  "measurement_preference": "meters",
+  "running_race_type": 0,
+  "url": "2018-walt-disney-world-marathon-10k",
+  "resource_state": 2
 };
 
 export const mockUser = {
@@ -33,4 +37,4 @@ export const mockCompletedRace = {
   distance: 'Marathon',
   time: '4:00:01',
   state: 'TN'
-}
+};

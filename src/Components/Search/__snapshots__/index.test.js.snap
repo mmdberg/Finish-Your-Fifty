@@ -30,6 +30,14 @@ ShallowWrapper {
                     type="text"
                     value=""
           />
+          <input
+                    maxLength="4"
+                    name="year"
+                    onChange={[Function]}
+                    placeholder="Year"
+                    type="text"
+                    value=""
+          />
           <button
                     onClick={[Function]}
           >
@@ -71,6 +79,14 @@ ShallowWrapper {
               type="text"
               value=""
 />,
+            <input
+              maxLength="4"
+              name="year"
+              onChange={[Function]}
+              placeholder="Year"
+              type="text"
+              value=""
+/>,
             <button
               onClick={[Function]}
 >
@@ -94,6 +110,22 @@ ShallowWrapper {
               "name": "state",
               "onChange": [Function],
               "placeholder": "State (ex. CA)",
+              "type": "text",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "maxLength": "4",
+              "name": "year",
+              "onChange": [Function],
+              "placeholder": "Year",
               "type": "text",
               "value": "",
             },
@@ -151,6 +183,14 @@ ShallowWrapper {
                         type="text"
                         value=""
             />
+            <input
+                        maxLength="4"
+                        name="year"
+                        onChange={[Function]}
+                        placeholder="Year"
+                        type="text"
+                        value=""
+            />
             <button
                         onClick={[Function]}
             >
@@ -192,6 +232,14 @@ ShallowWrapper {
                 type="text"
                 value=""
 />,
+              <input
+                maxLength="4"
+                name="year"
+                onChange={[Function]}
+                placeholder="Year"
+                type="text"
+                value=""
+/>,
               <button
                 onClick={[Function]}
 >
@@ -215,6 +263,22 @@ ShallowWrapper {
                 "name": "state",
                 "onChange": [Function],
                 "placeholder": "State (ex. CA)",
+                "type": "text",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "maxLength": "4",
+                "name": "year",
+                "onChange": [Function],
+                "placeholder": "Year",
                 "type": "text",
                 "value": "",
               },

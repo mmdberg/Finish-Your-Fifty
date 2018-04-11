@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import * as api from '../../apiCalls';
 import './styles.css';
-
+import ReactTable from 'react-table';
+import 'react-table/react-table.css';
 
 class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
       state: '',
+      year: '',
       results: [],
       error: ''
     };
@@ -22,33 +24,28 @@ class Search extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    const results = await api.fetchRaces(this.state.state);
-    if (!results.length) {
+    const results = await api.fetchRaces(this.state.year);
+    const racesByState = results.filter(race => 
+      race.state === this.state.state
+    );
+    if (!racesByState.length) {
       this.setState({
+        state: '',
+        year: '',
+        results: [],
         error: 'No races match your search criteria. Try again.'
       });
     } else {
-      this.displayResults(results);
+      this.setState({
+        results: racesByState
+      });
     }
-  }
-
-  displayResults = (raceArray) => {
-    const raceList = raceArray.map((race, index) => 
-      <tr key={index}>
-        <td>{race.event}</td>
-        <td>{race.city}</td>
-        <td>{race.date}</td>
-        <td>{race.venue}</td>
-      </tr>
-    );
-    this.setState({
-      results: raceList
-    }); 
   }
 
   clearSearch = () => {
     this.setState({
       state: '',
+      year: '',
       results: [],
       error: ''
     }); 
@@ -66,20 +63,38 @@ class Search extends Component {
             onChange={this.handleChange}
             maxLength='2'
           />
+          <input type='text'
+            name='year'
+            placeholder='Year'
+            value={this.state.year}
+            onChange={this.handleChange}
+            maxLength='4'/>
           <button onClick={this.handleSubmit}>Search</button>
           <button onClick={this.clearSearch}>Clear</button>
         </form>
         {
           this.state.results.length ?
-            <table>
-              <tr>
-                <th>Event</th>
-                <th>City</th>
-                <th>Date</th>
-                <th>Venue</th>
-              </tr>
-              {this.state.results}
-            </table>
+            <ReactTable
+              data={this.state.results}
+              columns={[
+                {
+                  Header: 'Event',
+                  accessor: 'event'
+                },
+                {
+                  Header: 'City',
+                  accessor: 'city'
+                },
+                {
+                  Header: 'Date',
+                  accessor: 'date'
+                },
+                {
+                  Header: 'State',
+                  accessor: 'state'
+                }
+              ]}
+            />
             : this.state.error
         }
 

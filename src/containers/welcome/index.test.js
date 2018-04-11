@@ -8,10 +8,12 @@ jest.mock('../../apiCalls');
 
 describe('Welcome', () => {
   let wrapper;
-  const mockMatch= {path: '/welcome/signup'};
-  const mockCaptureUser = jest.fn();
+  let mockMatch;
+  let mockCaptureUser;
 
   beforeEach(() => {
+    mockMatch = {path: '/welcome/signup'};
+    mockCaptureUser = jest.fn();
     wrapper = shallow(<Welcome 
       match={mockMatch}
       captureUser={mockCaptureUser}/>);
@@ -82,14 +84,37 @@ describe('Welcome', () => {
       expect(wrapper.state()).toEqual(expected);
     });
 
-    it('should call addUser if new user', async () => {
+    it('should call addUser with right params if new user', async () => {
+      const expected = {
+        userName: 'taco',
+        email: 'taco@taco',
+        password: 't',
+        error: ''
+      };
+      wrapper.setState({
+        userName: 'taco',
+        email: 'taco@taco',
+        password: 't'
+      });
+
       await wrapper.instance().signUp();
-      expect(api.addUser).toHaveBeenCalled();
+      expect(api.addUser).toHaveBeenCalledWith(expected);
     });
 
-    it('should call captureUser with the right params if new user', async () => {
+    it('should call captureUser if new', async () => {
+      const expected = {
+        userName: 'taco',
+        email: 'taco@taco',
+        password: 't',
+        id: 1
+      };
+      wrapper.setState({
+        userName: 'taco',
+        email: 'taco@taco',
+        password: 't'
+      });
       await wrapper.instance().signUp();
-      expect(mockCaptureUser).toHaveBeenCalled();
+      expect(mockCaptureUser).toHaveBeenCalledWith(expected);
       //add right params
     });
 
@@ -111,9 +136,45 @@ describe('Welcome', () => {
   });
 
   describe('LogIn', () => {
+    it('should set error state if invalid password', async () => {
+      const expected = {
+        userName: '',
+        email: '',
+        password: '',
+        error: 'Email and password do not match. Please try again!'
+      };
+      await wrapper.instance().logIn({
+        email: 'p@p',
+        password: 'p'
+      });
+      expect(wrapper.state()).toEqual(expected);
 
+    });
 
+    it('should fetch user info with the right params', async () => {
+      const mockCredentials = {
+        email: 'pizza@pizza',
+        password: 'p'
+      };
+      await wrapper.instance().logIn(mockCredentials);
+      expect(api.fetchOneUser).toHaveBeenCalledWith(mockCredentials);
+    });
 
+    it('should call capture user', async () => {
+      const mockCredentials = {
+        email: 'pizza@pizza',
+        password: 'p'
+      };
+
+      await wrapper.instance().logIn(mockCredentials);
+
+      expect(mockCaptureUser).toHaveBeenCalledWith({    
+        id: 7,
+        userName: 'Pizza',
+        email: 'pizza@pizza',
+        password: 'p'
+      });
+    });
   });
 
 });
