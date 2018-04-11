@@ -15,6 +15,8 @@ class App extends Component {
   }
 
   logOut = () => {
+    console.log('working');
+    this.props.logOut()
     //take user out of store
   }
 
@@ -55,7 +57,8 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  captureUser: user => dispatch(actions.captureUser(user))
+  captureUser: user => dispatch(actions.captureUser(user)),
+  logOut: () => dispatch(actions.logOut())
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

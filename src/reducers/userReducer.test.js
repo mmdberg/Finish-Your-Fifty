@@ -7,9 +7,13 @@ describe('User Reducer', () => {
     expect(userReducer(undefined, {})).toEqual(null);
   });
 
-  it('should update user', () => {
+  it('should add user to store', () => {
     expect(userReducer(undefined, actions.captureUser(mockUser)))
       .toEqual(mockUser);
   });
+
+  it('should remove user from store', () => {
+    expect(userReducer([mockUser], actions.logOut())).toEqual(null)
+  })
 
 });
