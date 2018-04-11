@@ -4,13 +4,14 @@ import { raceCleaner } from './cleaner'
 export const fetchRaces = async (state) => { 
   try {
     const response 
-      = await fetch(`/v2/search/?query=running&category=event&state=${state}&api_key=${apiKey}`,
+      = await fetch(`https://www.strava.com/api/v3/running_races?year=2018&access_token=${apiKey}`,
         {
           type: 'GET',
           credentials: 'omit'
         });
     const raceInfo = await response.json();
-    return raceCleaner(raceInfo.results);
+    console.log('api-response', raceInfo);
+    return raceCleaner(raceInfo);
   } catch (error) {
     console.log('error:', error);
   }

@@ -22,7 +22,8 @@ class Search extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    const results = await api.fetchRaces(this.state.state);
+    const results = await api.fetchRaces();
+    console.log(results);
     if (!results.length) {
       this.setState({
         error: 'No races match your search criteria. Try again.'
@@ -38,7 +39,7 @@ class Search extends Component {
         <td>{race.event}</td>
         <td>{race.city}</td>
         <td>{race.date}</td>
-        <td>{race.venue}</td>
+        <td>{race.state}</td>
       </tr>
     );
     this.setState({
@@ -76,7 +77,7 @@ class Search extends Component {
                 <th>Event</th>
                 <th>City</th>
                 <th>Date</th>
-                <th>Venue</th>
+                <th>State</th>
               </tr>
               {this.state.results}
             </table>
