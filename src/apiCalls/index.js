@@ -1,5 +1,5 @@
 import { apiKey } from '../private/apiKey';
-import { raceCleaner } from './cleaner'
+import { raceCleaner } from './cleaner';
 
 export const fetchRaces = async (year) => { 
   try {
@@ -27,7 +27,6 @@ export const fetchUsers = async () => {
 };
 
 export const fetchOneUser = async (credentials) => {
-  console.log(credentials)
   try {
     const response = await fetch(`http://localhost:3000/api/v1/users/`,
       {

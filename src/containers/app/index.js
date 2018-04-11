@@ -10,11 +10,10 @@ import * as actions from '../../actions';
 
 class App extends Component {
   async componentDidMount () {
-    api.fetchRaces()
+
   }
 
   logOut = () => {
-    console.log('working');
     this.props.logOut();
   }
 

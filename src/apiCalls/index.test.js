@@ -11,15 +11,15 @@ describe('apiCalls', () => {
     it('should call fetch with the right params', () => {
       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({results: [mockApiResult]})
+        json: () => Promise.resolve([mockApiResult])
       }));
       const expected = 
-        [`/v2/search/?query=running&category=event&state=CA&api_key=${apiKey}`,
+        [`https://www.strava.com/api/v3/running_races?year=2018&access_token=${apiKey}`,
           {
             type: 'GET',
             credentials: 'omit'
           }];
-      api.fetchRaces('CA');
+      api.fetchRaces('2018');
       expect(window.fetch).toHaveBeenCalledWith(...expected);
     });
 
@@ -27,7 +27,7 @@ describe('apiCalls', () => {
       api.raceCleaner = jest.fn();
       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({results: [mockApiResult]})
+        json: () => Promise.resolve([mockApiResult])
       }));
       await api.fetchRaces('CA');
       expect(raceCleaner).toHaveBeenCalledWith([mockApiResult]);

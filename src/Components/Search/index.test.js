@@ -18,6 +18,7 @@ describe('Search', () => {
   it('should start with an empty state', () => {
     const expected = {
       state: '',
+      year: '',
       results: [],
       error: ''
     };
@@ -28,6 +29,7 @@ describe('Search', () => {
     const mockEvent = {target:{name: 'state', value: 'C'}};
     const expected = {
       state: 'C',
+      year: '',
       results: [],
       error: ''
     };
@@ -39,11 +41,11 @@ describe('Search', () => {
   it('should call fetchRaces with the right params on submit', () => {
     const mockEvent = { preventDefault: jest.fn()};
     api.fetchRaces = jest.fn().mockImplementation(() => Promise.resolve(
-      mockRace
+      [mockRace]
     ));
-    wrapper.setState({state: 'CA'});
+    wrapper.setState({year: '2018'});
     wrapper.instance().handleSubmit(mockEvent);
-    expect(api.fetchRaces).toHaveBeenCalledWith('CA');
+    expect(api.fetchRaces).toHaveBeenCalledWith('2018');
   });
 
   it('should set error message if there are no results', async () => {
@@ -54,31 +56,34 @@ describe('Search', () => {
     expect(wrapper.state('error')).toEqual(expected);
   });
 
-  it('should call displayResults with right params if results', async () => {
+  it('should set error message if results do not match state search', async () => {
+    wrapper.setState({
+      state: 'FL'
+    })
     const mockEvent = { preventDefault: jest.fn() };
-    wrapper.instance().displayResults = jest.fn();
+    const expected = 'No races match your search criteria. Try again.';
+    api.fetchRaces = jest.fn().mockImplementation(() => Promise.resolve(
+      [mockRace]));
+    await wrapper.instance().handleSubmit(mockEvent);
+    expect(wrapper.state('error')).toEqual(expected);
+  });
+
+  it('should set state if results match state search', async () => {
+    const mockEvent = { preventDefault: jest.fn() };
+    wrapper.setState({
+      state: 'CA'
+    })
     api.fetchRaces = jest.fn().mockImplementation(() => Promise.resolve(
       [mockRace]
     ));
     await wrapper.instance().handleSubmit(mockEvent);
-    expect(wrapper.instance().displayResults).toHaveBeenCalledWith([mockRace]);
+    expect(wrapper.state('results')).toEqual([mockRace]);
   });
 
-  it('should set state of results with jsx on submit after fetch', () => {
-    const expected = 
-      [<tr key='0'>
-        <td>Spooky 5k</td>
-        <td>San Diego</td>
-        <td>04-05-2018</td>
-        <td>Atlas Park</td>
-      </tr>];
-    wrapper.instance().displayResults([mockRace]);
-    expect(wrapper.state('results')).toEqual(expected);
-  });
-
-  it('should reset the state', () => {
+  it('should reset the state on clearSearch', () => {
     const expected = {
       state: '',
+      year: '',
       results: [],
       error: ''
     };

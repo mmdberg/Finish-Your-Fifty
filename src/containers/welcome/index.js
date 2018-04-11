@@ -71,7 +71,6 @@ export class Welcome extends Component {
         id: userInfo.id
       });
     } catch (error) {
-      console.log('in app', error);
       this.setState({
         email: '',
         password: '',

@@ -4,17 +4,6 @@ import './styles.css';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 
-
-            // <table>
-            //   <tr>
-            //     <th>Event</th>
-            //     <th>City</th>
-            //     <th>Date</th>
-            //     <th>State</th>
-            //   </tr>
-            //   {this.state.results}
-            // </table>
-
 class Search extends Component {
   constructor(props) {
     super(props);
@@ -38,9 +27,12 @@ class Search extends Component {
     const results = await api.fetchRaces(this.state.year);
     const racesByState = results.filter(race => 
       race.state === this.state.state
-    )
+    );
     if (!racesByState.length) {
       this.setState({
+        state: '',
+        year: '',
+        results: [],
         error: 'No races match your search criteria. Try again.'
       });
     } else {
@@ -72,11 +64,11 @@ class Search extends Component {
             maxLength='2'
           />
           <input type='text'
-          name='year'
-          placeholder='Year'
-          value={this.state.year}
-          onChange={this.handleChange}
-          maxLength='4'/>
+            name='year'
+            placeholder='Year'
+            value={this.state.year}
+            onChange={this.handleChange}
+            maxLength='4'/>
           <button onClick={this.handleSubmit}>Search</button>
           <button onClick={this.clearSearch}>Clear</button>
         </form>
@@ -101,7 +93,8 @@ class Search extends Component {
                   Header: 'State',
                   accessor: 'state'
                 }
-              ]} />
+              ]}
+            />
             : this.state.error
         }
 

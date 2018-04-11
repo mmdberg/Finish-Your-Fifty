@@ -1,1 +1,1 @@
-export const raceCleaner = jest.fn()
+export const raceCleaner = jest.fn();

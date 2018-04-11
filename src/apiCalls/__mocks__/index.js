@@ -15,4 +15,4 @@ export const fetchOneUser = jest.fn()
     userName: 'Pizza',
     email: 'pizza@pizza',
     password: 'p'
-}));
+  }));

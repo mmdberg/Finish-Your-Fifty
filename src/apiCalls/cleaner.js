@@ -2,7 +2,6 @@ export const raceCleaner = (races) => {
   const cleanRaces = races.map(race => {
     return {
       city: race.city,
-      distance: `${race.distance} ${race.measurement_preference}`,
       state: race.state,
       date: dateCleaner(race.start_date_local),
       event: race.name,

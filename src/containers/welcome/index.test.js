@@ -90,7 +90,7 @@ describe('Welcome', () => {
         email: 'taco@taco',
         password: 't',
         error: ''
-      }
+      };
       wrapper.setState({
         userName: 'taco',
         email: 'taco@taco',
@@ -107,7 +107,7 @@ describe('Welcome', () => {
         email: 'taco@taco',
         password: 't',
         id: 1
-      }
+      };
       wrapper.setState({
         userName: 'taco',
         email: 'taco@taco',
@@ -136,18 +136,18 @@ describe('Welcome', () => {
   });
 
   describe('LogIn', () => {
-    it('should set error state if email and password do not match', async () => {
+    it('should set error state if invalid password', async () => {
       const expected = {
         userName: '',
         email: '',
         password: '',
         error: 'Email and password do not match. Please try again!'
-      }
+      };
       await wrapper.instance().logIn({
         email: 'p@p',
         password: 'p'
-      })
-      expect(wrapper.state()).toEqual(expected)
+      });
+      expect(wrapper.state()).toEqual(expected);
 
     });
 
@@ -155,16 +155,16 @@ describe('Welcome', () => {
       const mockCredentials = {
         email: 'pizza@pizza',
         password: 'p'
-      }
+      };
       await wrapper.instance().logIn(mockCredentials);
-      expect(api.fetchOneUser).toHaveBeenCalledWith(mockCredentials)
+      expect(api.fetchOneUser).toHaveBeenCalledWith(mockCredentials);
     });
 
     it('should call capture user', async () => {
       const mockCredentials = {
         email: 'pizza@pizza',
         password: 'p'
-      }
+      };
 
       await wrapper.instance().logIn(mockCredentials);
 
@@ -173,7 +173,7 @@ describe('Welcome', () => {
         userName: 'Pizza',
         email: 'pizza@pizza',
         password: 'p'
-      })
+      });
     });
   });
 
