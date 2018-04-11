@@ -22,11 +22,13 @@ export class AddRace extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    this.props.addRace(this.state)
   }
 
   render() {
     return(
       <form onSubmit={this.handleSubmit}>
+        <h2>Add a race to your log:</h2>
         <input type="text" 
           placeholder='Event Name'
           name='raceName'
@@ -53,8 +55,12 @@ export class AddRace extends Component {
   }
 }
 
-export const mapDispatchToProps = dispatch => {
-  addRace: race => dispatch(actions.addRace(race))
-}
+export const mapStateToProps = state => ({
+  races: state.races
+})
 
-export default connect(null, mapDispatchToProps)(AddRace)
+export const mapDispatchToProps = dispatch => ({
+  addRace: race => dispatch(actions.addRace(race))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddRace);

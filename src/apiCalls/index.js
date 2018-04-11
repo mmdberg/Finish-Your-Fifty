@@ -16,8 +16,6 @@ export const fetchRaces = async (state) => {
   }
 };
 
-
-
 export const fetchUsers = async () => {
   try {
     const response = await fetch('http://localhost:3000/api/v1/users/');

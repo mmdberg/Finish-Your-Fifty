@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.App {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+header {
+  color: white;
+  background-color: black;
+  height: 5vh;
+  grid-column: 1 / 3;
+  text-align: right;
+  
+}
+
+h1 {
+  font-size: 15px;
+  margin-right: 2px;
+  font-family: 'Mina', sans-serif;
+}
+
+
+nav {
+  height: 95vh;
+  grid-column: 1;
+  position: relative;
+}
+
+.nav-section {
+  display: block;
+  height: 25vh;
+  width: 100%;
+  border: .5px black solid;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 25vh;
+
+}
+
+.nav1 {
+  background: linear-gradient(rgba(234, 145, 145, 0.4),     
+    rgba(158, 85, 85, 0.4)),
+    url('../../images/hero-map-image.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.nav2 {
+  background: linear-gradient(rgba(90, 142, 89, 0.4),     
+    rgba(21, 70, 25, 0.24)),
+    url('../../images/forest.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.nav3 {
+  background: linear-gradient(rgba(88, 120, 169, 0.4),     
+    rgba(56, 96, 138, 0.4)),
+    url('../../images/empty-track.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.nav4 {
+  background: linear-gradient(rgba(138, 135, 61, 0.4),     
+    rgba(148, 142, 96, 0.14)),
+    url('../../images/search.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.app-body {
+  padding: 20px;
+}
+
+input {
+  display: block;
+  line-height: 34px;
+  width: 400px;
+  margin: 10px;
+}
+
+button {
+  width: 406px;
+  height: 34px;
+  margin: 10px;
+}
+
