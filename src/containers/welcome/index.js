@@ -63,25 +63,22 @@ export class Welcome extends Component {
 
   logIn = async (credentials) => {
     try {
-      const userInfo = await api.fetchOneUser(credentials)
-      console.log(userInfo);
+      const userInfo = await api.fetchOneUser(credentials);
       this.props.captureUser({
         userName: userInfo.userName,
         email: userInfo.email,
         password: userInfo.password,
         id: userInfo.id
-      })
+      });
     } catch (error) {
-      console.log('in app', error)
+      console.log('in app', error);
       this.setState({
         email: '',
         password: '',
         error: 'Email and password do not match. Please try again!'
-      })
+      });
     }
-    //if unable to pull, alert that email does not exist, send to signup page
   }
-
 
   render() {
     return this.props.user ? <Redirect to='/' /> : (

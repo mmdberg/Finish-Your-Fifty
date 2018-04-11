@@ -33,4 +33,4 @@ export const mockCompletedRace = {
   distance: 'Marathon',
   time: '4:00:01',
   state: 'TN'
-}
+};
