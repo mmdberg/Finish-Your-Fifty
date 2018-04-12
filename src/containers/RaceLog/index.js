@@ -10,6 +10,8 @@ export const RaceLog = ({races, removeRace}) => {
   })
   return (
     <div>
+      {
+        (raceList.length > 0) ?
       <ReactTable 
         data={raceList}
         columns={[
@@ -34,12 +36,15 @@ export const RaceLog = ({races, removeRace}) => {
             accessor: 'state'
           },
           {
-            Header: 'Remove Race',
+            Header: 'Remove',
             accessor: 'remove',
           }
 
         ]}
-      />
+        pageSize={raceList.length}
+      /> :
+      (<p>You have no races saved. Go to the Add Race page to add races.</p>)
+    }
     </div>
   )
 }
