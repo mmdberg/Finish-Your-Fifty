@@ -12,7 +12,7 @@ export const fetchRaces = async (year) => {
     const raceInfo = await response.json();
     return raceCleaner(raceInfo);
   } catch (error) {
-    console.log('error:', error);
+    throw new Error('Unable to get races')
   }
 };
 
@@ -22,7 +22,7 @@ export const fetchUsers = async () => {
     const users = await response.json();
     return users;
   } catch (error) {
-    console.log(error);
+    throw new Error('Unable to get users')
   }
 };
 
@@ -39,12 +39,13 @@ export const fetchOneUser = async (credentials) => {
     const userInfo = await response.json();
     return userInfo.userCheck;
   } catch (error) {
-    console.log('error at call', error);
+    throw new Error('Unable to get user')
   }
 };
 
 export const addUser = async (user) => {
-  const response = await fetch('http://localhost:3000/api/v1/users/new', 
+  try {
+    const response = await fetch('http://localhost:3000/api/v1/users/new', 
     {
       method: 'POST',
       body: JSON.stringify({
@@ -56,7 +57,10 @@ export const addUser = async (user) => {
         'Content-Type': 'application/json' 
       }
     });
-  const userId = await response.json();
-  return userId.id;
+    const userId = await response.json();
+    return userId.id;
+  } catch (error) {
+    throw new Error('Unable to add user')
+  }
 };
 

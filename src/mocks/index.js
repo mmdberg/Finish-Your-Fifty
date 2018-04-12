@@ -21,7 +21,7 @@ export const mockApiResult = {
 };
 
 export const mockUser = {
-  name: 'Pizza',
+  userName: 'Pizza',
   email: 'pizza@pizza',
   password: 'p'
 };
