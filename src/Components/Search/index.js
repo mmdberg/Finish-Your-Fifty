@@ -94,6 +94,7 @@ class Search extends Component {
                   accessor: 'state'
                 }
               ]}
+              pageSize={this.state.results.length}
             />
             : this.state.error
         }

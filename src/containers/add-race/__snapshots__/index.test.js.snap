@@ -1,0 +1,337 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddRace should match snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AddRace
+    addRace={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2>
+          Add a race to your log:
+</h2>,
+        <input
+          name="event"
+          onChange={[Function]}
+          placeholder="Event Name"
+          type="text"
+          value={undefined}
+/>,
+        <input
+          name="distance"
+          onChange={[Function]}
+          placeholder="Distance"
+          type="text"
+          value=""
+/>,
+        <input
+          name="time"
+          onChange={[Function]}
+          placeholder="Time"
+          type="text"
+          value=""
+/>,
+        <input
+          name="city"
+          onChange={[Function]}
+          placeholder="City"
+          type="text"
+          value=""
+/>,
+        <input
+          name="state"
+          onChange={[Function]}
+          placeholder="State"
+          type="text"
+          value=""
+/>,
+        <button
+          type="submit"
+>
+          Submit
+</button>,
+      ],
+      "onSubmit": [Function],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Add a race to your log:",
+        },
+        "ref": null,
+        "rendered": "Add a race to your log:",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "name": "event",
+          "onChange": [Function],
+          "placeholder": "Event Name",
+          "type": "text",
+          "value": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "name": "distance",
+          "onChange": [Function],
+          "placeholder": "Distance",
+          "type": "text",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "name": "time",
+          "onChange": [Function],
+          "placeholder": "Time",
+          "type": "text",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "name": "city",
+          "onChange": [Function],
+          "placeholder": "City",
+          "type": "text",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "name": "state",
+          "onChange": [Function],
+          "placeholder": "State",
+          "type": "text",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Submit",
+          "type": "submit",
+        },
+        "ref": null,
+        "rendered": "Submit",
+        "type": "button",
+      },
+    ],
+    "type": "form",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2>
+            Add a race to your log:
+</h2>,
+          <input
+            name="event"
+            onChange={[Function]}
+            placeholder="Event Name"
+            type="text"
+            value={undefined}
+/>,
+          <input
+            name="distance"
+            onChange={[Function]}
+            placeholder="Distance"
+            type="text"
+            value=""
+/>,
+          <input
+            name="time"
+            onChange={[Function]}
+            placeholder="Time"
+            type="text"
+            value=""
+/>,
+          <input
+            name="city"
+            onChange={[Function]}
+            placeholder="City"
+            type="text"
+            value=""
+/>,
+          <input
+            name="state"
+            onChange={[Function]}
+            placeholder="State"
+            type="text"
+            value=""
+/>,
+          <button
+            type="submit"
+>
+            Submit
+</button>,
+        ],
+        "onSubmit": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Add a race to your log:",
+          },
+          "ref": null,
+          "rendered": "Add a race to your log:",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "name": "event",
+            "onChange": [Function],
+            "placeholder": "Event Name",
+            "type": "text",
+            "value": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "name": "distance",
+            "onChange": [Function],
+            "placeholder": "Distance",
+            "type": "text",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "name": "time",
+            "onChange": [Function],
+            "placeholder": "Time",
+            "type": "text",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "name": "city",
+            "onChange": [Function],
+            "placeholder": "City",
+            "type": "text",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "name": "state",
+            "onChange": [Function],
+            "placeholder": "State",
+            "type": "text",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Submit",
+            "type": "submit",
+          },
+          "ref": null,
+          "rendered": "Submit",
+          "type": "button",
+        },
+      ],
+      "type": "form",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

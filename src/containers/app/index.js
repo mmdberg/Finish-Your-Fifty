@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import './styles.css';
-import * as api from '../../apiCalls';
+// import * as api from '../../apiCalls';
 import { NavLink, Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import Search from '../../Components/Search';
 import Welcome from '..//welcome';
 import AddRace from '../add-race';
+import RaceLog from '../RaceLog';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
-class App extends Component {
+export class App extends Component {
   async componentDidMount () {
 
   }
@@ -38,6 +39,7 @@ class App extends Component {
               this.props.user ? <Search /> : <Redirect to='/welcome/login'/>
             }/>
             <Route exact path='/add-race' component={ AddRace } />
+            <Route exact path='/race-log' component={ RaceLog } />
             <Route exact path='/search' component={ Search }/>
             <Route exact path='/welcome/login' component={ Welcome }/>
             <Route exact path='/welcome/signup' component={ Welcome }/>

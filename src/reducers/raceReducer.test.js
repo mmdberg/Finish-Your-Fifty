@@ -10,6 +10,9 @@ describe('Race Reducer', () => {
   it('should add race', () => {
     expect(raceReducer(undefined, actions.addRace(mockCompletedRace)))
       .toEqual([mockCompletedRace]);
+  });
 
+  it('should remove race', () => {
+    expect(raceReducer([mockCompletedRace], actions.removeRace(mockCompletedRace))).toEqual([])
   });
 });

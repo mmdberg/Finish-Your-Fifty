@@ -33,8 +33,9 @@ export const mockUserArray = [{
 }];
 
 export const mockCompletedRace = {
-  raceName: 'Hocus Marathon',
+  event: 'Hocus Marathon',
   distance: 'Marathon',
   time: '4:00:01',
+  city: 'Nashville',
   state: 'TN'
 };

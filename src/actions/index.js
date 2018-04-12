@@ -11,3 +11,8 @@ export const addRace = (race) => ({
 export const logOut = () => ({
   type: 'LOG_OUT'
 });
+
+export const removeRace = (race) => ({
+  type: 'REMOVE_RACE',
+  race
+});

@@ -6,9 +6,10 @@ export class AddRace extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      raceName: '',
+      event: '',
       distance: '',
       time: '',
+      city: '',
       state: ''
     };
   }
@@ -31,7 +32,7 @@ export class AddRace extends Component {
         <h2>Add a race to your log:</h2>
         <input type="text" 
           placeholder='Event Name'
-          name='raceName'
+          name='event'
           value={this.state.raceName}
           onChange={this.handleChange}/>
         <input type="text" 
@@ -43,6 +44,11 @@ export class AddRace extends Component {
           placeholder='Time'
           name='time'
           value={this.state.time}
+          onChange={this.handleChange}/>
+        <input type="text" 
+          placeholder='City'
+          name='city'
+          value={this.state.city}
           onChange={this.handleChange}/>
         <input type="text" 
           placeholder='State'
