@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { App, mapStateToProps, mapDispatchToProps } from './index';
-import mockUser from '../../mocks';
+import { mockUser } from '../../mocks';
 import * as actions from '../../actions';
 
 describe('App', () => {
@@ -49,6 +49,12 @@ describe('App', () => {
     it('should call dispatch with correct params on log out', () => {
       const expected = actions.logOut()
       mapped.logOut();
+      expect(mockDispatch).toHaveBeenCalledWith(expected)
+    });
+
+    it('should call dispatch with the correct params on captureUser', () => {
+      const expected = actions.captureUser(mockUser)
+      mapped.captureUser(mockUser);
       expect(mockDispatch).toHaveBeenCalledWith(expected)
     });
 
