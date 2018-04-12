@@ -178,7 +178,9 @@ describe('Welcome', () => {
 
   describe('mapStateToProps', () => {
     it('should map the user state to props', () => {
-      
+      const mockState = {
+        
+      }
     })
   });
 });

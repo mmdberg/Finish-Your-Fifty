@@ -44,7 +44,8 @@ export const fetchOneUser = async (credentials) => {
 };
 
 export const addUser = async (user) => {
-  const response = await fetch('http://localhost:3000/api/v1/users/new', 
+  try {
+    const response = await fetch('http://localhost:3000/api/v1/users/new', 
     {
       method: 'POST',
       body: JSON.stringify({
@@ -56,7 +57,10 @@ export const addUser = async (user) => {
         'Content-Type': 'application/json' 
       }
     });
-  const userId = await response.json();
-  return userId.id;
+    const userId = await response.json();
+    return userId.id;
+  } catch (error) {
+    throw new Error('Unable to add user')
+  }
 };
 

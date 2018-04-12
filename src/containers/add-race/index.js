@@ -24,6 +24,13 @@ export class AddRace extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.addRace(this.state);
+    this.setState({
+      event: '',
+      distance: '',
+      time: '',
+      city: '',
+      state: ''
+    })
   }
 
   render() {

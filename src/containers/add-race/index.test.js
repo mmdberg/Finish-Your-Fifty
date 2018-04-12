@@ -16,6 +16,17 @@ describe('AddRace', () => {
     expect(wrapper).toMatchSnapshot()
   });
 
+  it('should start with empty state', () => {
+    const expected = {
+      event: '',
+      distance: '',
+      time: '',
+      city: '',
+      state: ''
+    }
+    expect(wrapper.state()).toEqual(expected)
+  });
+
   it('should update state with user input', () => {
     const mockEvent =  {target: {name: 'time', value: '45'}}
     const expected = {
@@ -35,6 +46,20 @@ describe('AddRace', () => {
     wrapper.instance().handleSubmit(mockEvent)
     expect(mockAddRace).toHaveBeenCalledWith(mockCompletedRace)
   })
+
+  it('should reset state after submit', () => {
+    const mockEvent = { preventDefault: jest.fn()}
+    wrapper.setState(mockCompletedRace)
+    const expected = {
+      event: '',
+      distance: '',
+      time: '',
+      city: '',
+      state: ''
+    }
+    wrapper.instance().handleSubmit(mockEvent)
+    expect(wrapper.state()).toEqual(expected)
+  });
 
   describe('mapStateToProps', () => {
     it.skip('should correctly map races to props', () => {
