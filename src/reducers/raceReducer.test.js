@@ -10,6 +10,5 @@ describe('Race Reducer', () => {
   it('should add race', () => {
     expect(raceReducer(undefined, actions.addRace(mockCompletedRace)))
       .toEqual([mockCompletedRace]);
-
   });
 });

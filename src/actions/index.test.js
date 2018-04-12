@@ -26,4 +26,13 @@ describe('actions', () => {
     }
     expect(actions.logOut()).toEqual(expected)
   });
+
+  it('should return action type of REMOVE_RACE', () => {
+    const race = mockCompletedRace
+    const expected = {
+      type: 'REMOVE_RACE',
+      race
+    }
+    expect(actions.removeRace(race)).toEqual(expected)
+  })
 });

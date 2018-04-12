@@ -38,8 +38,8 @@ describe('App', () => {
   });
 
   describe('mapDispatchToProps', () => {
-    let mapped; 
     let mockDispatch;
+    let mapped; 
 
     beforeEach(() => {
       mockDispatch = jest.fn();

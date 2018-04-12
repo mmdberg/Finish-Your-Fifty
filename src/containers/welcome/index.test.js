@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme';
-import { Welcome } from './index';
+import { Welcome, mapStateToProps, mapDispatchToProps } from './index';
 import React from 'react';
 import * as api from '../../apiCalls';
 // import { mockUser } from '../../mocks';
@@ -115,7 +115,6 @@ describe('Welcome', () => {
       });
       await wrapper.instance().signUp();
       expect(mockCaptureUser).toHaveBeenCalledWith(expected);
-      //add right params
     });
 
     it('should reset state if new user', async () => {
@@ -177,4 +176,9 @@ describe('Welcome', () => {
     });
   });
 
+  describe('mapStateToProps', () => {
+    it('should map the user state to props', () => {
+      
+    })
+  });
 });
