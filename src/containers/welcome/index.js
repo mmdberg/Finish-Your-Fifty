@@ -96,6 +96,15 @@ export class Welcome extends Component {
               <h2>Please log in to view your race log</h2> 
           }
           {
+            (this.props.match.path === '/welcome/login') ? 
+              (<p>Don't have an account? 
+                <NavLink to='/welcome/signup'>Sign Up</NavLink>
+              </p>) :
+              (<p>Have an account? 
+                <NavLink to='/welcome/login'>Log In</NavLink>
+              </p>)
+          }
+          {
             (this.props.match.path === '/welcome/signup') &&
             <input type="text" 
               placeholder="Enter Name"
@@ -114,15 +123,7 @@ export class Welcome extends Component {
             value={this.state.password}
             onChange={this.handleChange}/>
           <button type="submit">Start Tracking</button>
-          {
-            (this.props.match.path === '/welcome/login') ? 
-              (<p>Don't have an account? 
-                <NavLink to='/welcome/signup'>Sign Up</NavLink>
-              </p>) :
-              (<p>Have an account? 
-                <NavLink to='/welcome/login'>Log In</NavLink>
-              </p>)
-          }
+
           <p>{this.state.error}</p>
         </form>
       </div>
