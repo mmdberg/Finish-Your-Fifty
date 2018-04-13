@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import React, { Component } from 'react';
 import { NavLink, Redirect, withRouter } from 'react-router-dom';
 import * as actions from '../../actions';
 import * as api from '../../apiCalls';
@@ -46,12 +46,14 @@ export class Welcome extends Component {
     } else {
       const { userName, email, password } = this.state;
       const id = await api.addUser(this.state);
-      this.props.captureUser({
+      const userObject = {
         userName,
         email,
         password,
         id
-      });
+      }
+      localStorage.setItem('Last User', JSON.stringify(userObject))
+      this.props.captureUser(userObject);
       this.setState({
         userName: '',
         email: '',
@@ -64,12 +66,14 @@ export class Welcome extends Component {
   logIn = async (credentials) => {
     try {
       const userInfo = await api.fetchOneUser(credentials);
-      this.props.captureUser({
+      const userObject = {
         userName: userInfo.userName,
         email: userInfo.email,
         password: userInfo.password,
         id: userInfo.id
-      });
+      }
+      localStorage.setItem('Last User', JSON.stringify(userObject))
+      this.props.captureUser(userObject);
     } catch (error) {
       this.setState({
         email: '',

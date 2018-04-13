@@ -12,11 +12,13 @@ import * as actions from '../../actions';
 
 export class App extends Component {
   async componentDidMount () {
-
+    const lastUser = JSON.parse(localStorage.getItem('Last User'))
+    this.props.captureUser(lastUser)
   }
 
   logOut = () => {
     this.props.logOut();
+    localStorage.clear()
   }
 
   render() {
