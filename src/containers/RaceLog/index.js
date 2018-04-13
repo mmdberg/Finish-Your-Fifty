@@ -13,33 +13,34 @@ export class RaceLog extends Component {
     }
   }
 
-  async componentDidMount() {
-    const raceList = await api.getUserRaces(24)
-    console.log(raceList);
-    this.setState({
-      raceList
-    })
-    // this.makeRaceList()
+  componentDidMount() {
+    // console.log(this.props)
+    // const raceList = this.makeRaceList(this.props.races)
+    // console.log('raceList in racelog:', raceList)
+    // this.setState({
+    //   raceList
+    // })
   }
 
-  makeRaceList = () => {
-    const raceList = this.props.races.map(race => {
-      return {...race, remove: <p onClick={()=>this.props.removeRace(race)}> X </p>}
+  makeRaceList = (raceArray) => {
+    const raceList = raceArray.map(race => {
+      return {...race, remove: <p onClick={() => this.props.removeRace(race)}> X </p>}
     })
-
+    console.log('racelist in method:', raceList)
+    return raceList
   }
 
   render() {
     return (
       <div>
         {
-          (this.state.raceList.length > 0) ?
+          (this.props.races.length > 0) ?
         <ReactTable 
-          data={this.state.raceList}
+          data={this.makeRaceList(this.props.races)}
           columns={[
             {
-              Header: 'Event',
-              accessor: 'event'
+              Header: 'Race',
+              accessor: 'raceName'
             },
             {
               Header: 'Distance',
@@ -63,7 +64,7 @@ export class RaceLog extends Component {
             }
   
           ]}
-          pageSize={this.state.raceList.length}
+          pageSize={this.props.races.length}
         /> :
         (<p>You have no races saved. Go to the Add Race page to add races.</p>)
       }
@@ -74,7 +75,8 @@ export class RaceLog extends Component {
 
 
 export const mapStateToProps = state => ({
-  races: state.races
+  races: state.races,
+  user: state.user
 })
 
 export const mapDispatchToProps = dispatch => ({

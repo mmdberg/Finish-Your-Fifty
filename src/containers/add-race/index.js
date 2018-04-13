@@ -27,7 +27,7 @@ export class AddRace extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.addRace(this.state);
-    api.addRace(this.state, 23)
+    api.addRace(this.state, this.props.user.id)
     this.setState({
       raceName: '',
       distance: '',
@@ -67,21 +67,20 @@ export class AddRace extends Component {
           name='state'
           value={this.state.state}
           onChange={this.handleChange}/>
-        <p> Completed? </p>
         <input type='radio'
           id='choiceTrue'
           name='completed'
           value='true'
           onChange={this.handleChange}
           checked={this.state.completed === 'true'}/>
-        <label htmlFor='choiceTrue'>True</label>
+        <label htmlFor='choiceTrue'>Completed</label>
         <input type='radio'
           id='choiceFalse'
           name='completed'
           value='false'
           onChange={this.handleChange}
           checked={this.state.completed === 'false'}/>
-        <label htmlFor='choiceFalse'>False</label>
+        <label htmlFor='choiceFalse'>Interested</label>
         <button type='submit'>Submit</button>
       </form>
     );

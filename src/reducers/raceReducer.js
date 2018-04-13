@@ -3,7 +3,9 @@ export const raceReducer = (state = [], actions) => {
   case 'ADD_RACE':
     return [...state, actions.race];
   case 'REMOVE_RACE':
-    return state.filter(race => race.event !== actions.race.event)
+    return state.filter(race => race.raceName !== actions.race.raceName);
+  case 'CLEAR_RACES':
+    return [];
   default:
     return state;
   }

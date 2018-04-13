@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import React, { Component } from 'react';
 import { NavLink, Redirect, withRouter } from 'react-router-dom';
 import * as actions from '../../actions';
 import * as api from '../../apiCalls';
@@ -46,12 +46,14 @@ export class Welcome extends Component {
     } else {
       const { userName, email, password } = this.state;
       const id = await api.addUser(this.state);
-      this.props.captureUser({
+      const userObject = {
         userName,
         email,
         password,
         id
-      });
+      }
+      localStorage.setItem('Last User', JSON.stringify(userObject))
+      this.props.captureUser(userObject);
       this.setState({
         userName: '',
         email: '',
@@ -64,12 +66,17 @@ export class Welcome extends Component {
   logIn = async (credentials) => {
     try {
       const userInfo = await api.fetchOneUser(credentials);
-      this.props.captureUser({
+      const userObject = {
         userName: userInfo.userName,
         email: userInfo.email,
         password: userInfo.password,
         id: userInfo.id
-      });
+      }
+      localStorage.setItem('Last User', JSON.stringify(userObject))
+      this.props.captureUser(userObject);
+      const userRaces = await api.getUserRaces(this.props.user.id)
+      console.log('races at login', userRaces)
+      userRaces.forEach(race => this.props.addRace(race))
     } catch (error) {
       this.setState({
         email: '',
@@ -87,6 +94,15 @@ export class Welcome extends Component {
             (this.props.match.path === '/welcome/signup') ?
               <h2>Please sign up to start tracking races</h2> :  
               <h2>Please log in to view your race log</h2> 
+          }
+          {
+            (this.props.match.path === '/welcome/login') ? 
+              (<p>Don't have an account? 
+                <NavLink to='/welcome/signup'>Sign Up</NavLink>
+              </p>) :
+              (<p>Have an account? 
+                <NavLink to='/welcome/login'>Log In</NavLink>
+              </p>)
           }
           {
             (this.props.match.path === '/welcome/signup') &&
@@ -107,15 +123,7 @@ export class Welcome extends Component {
             value={this.state.password}
             onChange={this.handleChange}/>
           <button type="submit">Start Tracking</button>
-          {
-            (this.props.match.path === '/welcome/login') ? 
-              (<p>Don't have an account? 
-                <NavLink to='/welcome/signup'>Sign Up</NavLink>
-              </p>) :
-              (<p>Have an account? 
-                <NavLink to='/welcome/login'>Log In</NavLink>
-              </p>)
-          }
+
           <p>{this.state.error}</p>
         </form>
       </div>
@@ -128,7 +136,8 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  captureUser: user => dispatch(actions.captureUser(user))
+  captureUser: user => dispatch(actions.captureUser(user)),
+  addRace: race => dispatch(actions.addRace(race))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Welcome));
