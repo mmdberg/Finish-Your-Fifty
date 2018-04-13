@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import './styles.css';
+import * as api from '../../apiCalls';
 
 export class AddRace extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      event: '',
+      raceName: '',
       distance: '',
       time: '',
       city: '',
-      state: ''
+      state: '',
+      completed: 'true'
     };
   }
 
@@ -24,12 +27,14 @@ export class AddRace extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.addRace(this.state);
+    api.addRace(this.state, 23)
     this.setState({
-      event: '',
+      raceName: '',
       distance: '',
       time: '',
       city: '',
-      state: ''
+      state: '',
+      completed: 'true'
     })
   }
 
@@ -38,8 +43,8 @@ export class AddRace extends Component {
       <form onSubmit={this.handleSubmit}>
         <h2>Add a race to your log:</h2>
         <input type="text" 
-          placeholder='Event Name'
-          name='event'
+          placeholder='Race Name'
+          name='raceName'
           value={this.state.raceName}
           onChange={this.handleChange}/>
         <input type="text" 
@@ -62,6 +67,21 @@ export class AddRace extends Component {
           name='state'
           value={this.state.state}
           onChange={this.handleChange}/>
+        <p> Completed? </p>
+        <input type='radio'
+          id='choiceTrue'
+          name='completed'
+          value='true'
+          onChange={this.handleChange}
+          checked={this.state.completed === 'true'}/>
+        <label htmlFor='choiceTrue'>True</label>
+        <input type='radio'
+          id='choiceFalse'
+          name='completed'
+          value='false'
+          onChange={this.handleChange}
+          checked={this.state.completed === 'false'}/>
+        <label htmlFor='choiceFalse'>False</label>
         <button type='submit'>Submit</button>
       </form>
     );
@@ -69,7 +89,8 @@ export class AddRace extends Component {
 }
 
 export const mapStateToProps = state => ({
-  races: state.races
+  races: state.races,
+  user: state.user
 });
 
 export const mapDispatchToProps = dispatch => ({

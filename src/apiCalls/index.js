@@ -64,3 +64,37 @@ export const addUser = async (user) => {
   }
 };
 
+export const addRace = async (raceInfo, user_id) => {
+  try {
+    const response = await fetch('http://localhost:3000/api/v1/races', {
+      method: 'POST',
+      body: JSON.stringify({
+        raceName: raceInfo.raceName,
+        city: raceInfo.city,
+        state: raceInfo.state,
+        time: raceInfo.time,
+        distance: raceInfo.distance,
+        completed: raceInfo.completed,
+        user_id
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    const raceId = await response.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const getUserRaces = async (user_id) => {
+  console.log(user_id)
+  try {
+    const response = await fetch(`http://localhost:3000/api/v1/races/${user_id}`)
+    const userRaces = await response.json()
+    return userRaces
+  } catch (error) {
+    console.log('getraceserror:' )
+  }
+}
+
