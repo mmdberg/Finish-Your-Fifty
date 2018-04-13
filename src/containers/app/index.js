@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './styles.css';
-// import * as api from '../../apiCalls';
+import * as api from '../../apiCalls';
 import { NavLink, Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import Search from '../../Components/Search';
 import Welcome from '..//welcome';
@@ -13,12 +13,19 @@ import * as actions from '../../actions';
 export class App extends Component {
   async componentDidMount () {
     const lastUser = JSON.parse(localStorage.getItem('Last User'))
-    this.props.captureUser(lastUser)
+    if(lastUser) {
+      this.props.captureUser(lastUser)
+      const userRaces = await api.getUserRaces(lastUser.id)
+      userRaces.forEach(race => {
+        this.props.addRace(race)
+      })
+    }
   }
 
   logOut = () => {
     this.props.logOut();
-    localStorage.clear()
+    this.props.clearRaces();
+    localStorage.clear();
   }
 
   render() {
@@ -39,7 +46,7 @@ export class App extends Component {
         <div className='app-body'>
           <Switch>
             <Route exact path='/' render={() => 
-              this.props.user ? <Search /> : <Redirect to='/welcome/login'/>
+              this.props.user ? <StateMap /> : <Redirect to='/welcome/login'/>
             }/>
             <Route exact path='/map' component={ StateMap } />
             <Route exact path='/add-race' component={ AddRace } />
@@ -60,7 +67,9 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   captureUser: user => dispatch(actions.captureUser(user)),
-  logOut: () => dispatch(actions.logOut())
+  addRace: race => dispatch(actions.addRace(race)),
+  logOut: () => dispatch(actions.logOut()),
+  clearRaces: () => dispatch(actions.clearRaces())
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

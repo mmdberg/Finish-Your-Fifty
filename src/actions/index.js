@@ -16,3 +16,7 @@ export const removeRace = (race) => ({
   type: 'REMOVE_RACE',
   race
 });
+
+export const clearRaces = () => ({
+  type: 'CLEAR_RACES'
+})

@@ -74,6 +74,9 @@ export class Welcome extends Component {
       }
       localStorage.setItem('Last User', JSON.stringify(userObject))
       this.props.captureUser(userObject);
+      const userRaces = await api.getUserRaces(this.props.user.id)
+      console.log('races at login', userRaces)
+      userRaces.forEach(race => this.props.addRace(race))
     } catch (error) {
       this.setState({
         email: '',
@@ -132,7 +135,8 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  captureUser: user => dispatch(actions.captureUser(user))
+  captureUser: user => dispatch(actions.captureUser(user)),
+  addRace: race => dispatch(actions.addRace(race))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Welcome));
