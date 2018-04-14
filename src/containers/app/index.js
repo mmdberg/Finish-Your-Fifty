@@ -36,7 +36,10 @@ export class App extends Component {
           <h1 className='App-title'>Finish Your Fifty</h1>
           {
             this.props.user && 
-            <NavLink to='/' onClick={this.logOut}>Log Out</NavLink>
+            <div className='introduction'>
+              <p>Hi {this.props.user.userName}!</p>
+              <NavLink to='/' onClick={this.logOut}> Log Out</NavLink>
+            </div>
           }
         </header>
         <nav>

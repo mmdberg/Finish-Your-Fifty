@@ -24,6 +24,10 @@ h1 {
   font-family: 'Mina', sans-serif;
 }
 
+.introduction {
+  color: black;
+}
+
 
 nav {
   height: 95vh;
