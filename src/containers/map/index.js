@@ -10,7 +10,8 @@ export class StateMap extends Component {
       raceInfo: '',
       textStyle: { left: 0,
       top: 0
-      }
+      },
+      state: ''
     }
   }
 
@@ -24,17 +25,29 @@ export class StateMap extends Component {
   }
 
   handleStateClick = (event) => {
-    this.setState({
-      textStyle: { left: event.clientX,
-      top: event.clientY
-    }})
-    this.setState({raceInfo: `You still need a race in ${event.target.dataset.name}.`})
-
-    this.props.races.forEach(race => { 
-      if (race.state === event.target.dataset.name) {
-        this.setState({raceInfo: `${race.raceName} in ${race.city}, ${race.state}. Distance: ${race.distance} Time: ${race.time}`})
-      }
-    }) 
+    if(event.target.dataset.name === this.state.state) {
+      this.setState({
+        raceInfo: '',
+        textStyle: { left: 0,
+        top: 0
+        },
+        state: ''
+      })
+    } else {
+      this.setState({
+        textStyle: { 
+          left: event.clientX,
+          top: event.clientY
+        },
+        state: event.target.dataset.name
+      })
+      this.setState({raceInfo: `You still need a race in ${event.target.dataset.name}.`})
+      this.props.races.forEach(race => { 
+        if (race.state === event.target.dataset.name) {
+          this.setState({raceInfo: `${race.raceName} in ${race.city}, ${race.state}. Distance: ${race.distance} Time: ${race.time}`})
+        }
+      })
+    } 
   }
 
   
