@@ -14,7 +14,8 @@ export class AddRace extends Component {
       time: '',
       city: '',
       state: '',
-      completed: 'true'
+      completed: 'true',
+      error: ''
     };
   }
 
@@ -25,18 +26,26 @@ export class AddRace extends Component {
     });
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
-    this.props.addRace(this.state);
-    api.addRace(this.state, this.props.user.id);
-    this.setState({
-      raceName: '',
-      distance: '',
-      time: '',
-      city: '',
-      state: '',
-      completed: 'true'
-    });
+    const raceId = await api.addRace(this.state, this.props.user.id)
+    if (raceId.id) {  
+      this.props.addRace(this.state);
+      this.setState({
+          raceName: '',
+          distance: '',
+          time: '',
+          city: '',
+          state: '',
+          completed: 'true',
+          error: 'Race Added!'
+        });    
+    } else {
+      this.setState({
+        error: `Unable to add race. ${raceId.error}`
+      })
+    }
+    
   }
 
   render() {
@@ -83,6 +92,7 @@ export class AddRace extends Component {
           checked={this.state.completed === 'false'}/>
         <label htmlFor='choiceFalse'>Interested</label>
         <button type='submit'>Submit</button>
+        <p>{this.state.error}</p>
       </form>
     );
   }
