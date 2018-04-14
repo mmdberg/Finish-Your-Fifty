@@ -6,6 +6,21 @@ export const mockRace = {
   id: 1577
 };
 
+export const mockRaceFromDB = {
+city:"San Antonio",
+completed:"true",
+created_at:"2018-04-14T02:18:45.401Z",
+distance:"26.2",
+id: 16,
+raceName:"SA Marathon",
+reflections:null,
+shoes:null,
+state:"TX",
+time:"4:37",
+updated_at:"2018-04-14T02:18:45.401Z",
+user_id:25
+}
+
 export const mockApiResult = {
   "id": 1577,
   "name": "Spooky 5k",
@@ -23,19 +38,15 @@ export const mockApiResult = {
 export const mockUser = {
   userName: 'Pizza',
   email: 'pizza@pizza',
-  password: 'p'
+  password: 'p',
+  id: 23
 };
 
-export const mockUserArray = [{
-  name: 'Pizza',
-  email: 'pizza@pizza',
-  password: 'p'
-}];
-
 export const mockCompletedRace = {
-  event: 'Hocus Marathon',
+  raceName: 'Hocus Marathon',
   distance: 'Marathon',
   time: '4:00:01',
   city: 'Nashville',
-  state: 'TN'
+  state: 'TN',
+  completed: 'true'
 };

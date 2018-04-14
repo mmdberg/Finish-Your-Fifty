@@ -4,6 +4,9 @@ import React from 'react';
 import * as api from '../../apiCalls';
 import { mockUser } from '../../mocks';
 import * as actions from '../../actions';
+import { LocalStorage } from '../../__test-helper__/storageMock.js';
+
+window.localStorage = new LocalStorage();
 
 jest.mock('../../apiCalls');
 

@@ -1,6 +1,6 @@
 import * as api from './index';
 import { apiKey } from '../private/apiKey';
-import { mockApiResult, mockRace, mockUser } from '../mocks';
+import { mockApiResult, mockCompletedRace, mockUser } from '../mocks';
 import { raceCleaner } from './cleaner';
 
 jest.mock('./cleaner');
@@ -114,6 +114,27 @@ describe('apiCalls', () => {
       window.fetch = jest.fn().mockImplementation(() => Promise.rejects());
       const expected = new Error('Unable to add user');
       expect(api.addUser(mockUser)).rejects.toEqual(expected);
+    });
+  });
+
+  describe('Add Race', () => {
+    it('should call fetch with the right params', () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({})
+      }))
+      const expected = ['http://localhost:3000/api/v1/races', 
+        {
+          method: 'POST',
+          body: JSON.stringify({...mockCompletedRace, 
+            user_id: 14
+          }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }]
+      api.addRace(mockCompletedRace, 14)
+      expect(window.fetch).toHaveBeenCalledWith(...expected)
     });
   });
 });

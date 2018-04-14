@@ -1,25 +1,78 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { App, mapStateToProps, mapDispatchToProps } from './index';
-import { mockUser } from '../../mocks';
+import { mockUser, mockApiResult, mockRace, mockRaceFromDB } from '../../mocks';
 import * as actions from '../../actions';
+import { LocalStorage } from '../../__test-helper__/storageMock';
+
+window.localStorage = new LocalStorage();
 
 describe('App', () => {
   let wrapper;
   let mockLogOut;
+  let mockCaptureUser;
+  let mockAddRace;
+  let mockClearRaces;
 
   beforeEach(() => {
     mockLogOut = jest.fn();
-    wrapper = shallow(<App logOut={mockLogOut}/>);
+    mockCaptureUser = jest.fn();
+    mockAddRace = jest.fn();
+    mockClearRaces = jest.fn();
+    wrapper = shallow(<App 
+      logOut={mockLogOut} 
+      captureUser={mockCaptureUser} 
+      addRace={mockAddRace}
+      clearRaces={mockClearRaces} />,
+      { disableLifecycleMethods: true });
+
   });
 
   it.skip('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  describe('local storage', () => {
+    beforeEach(() => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        ok: true,
+        json: () => ([mockRaceFromDB])
+      }));
+      localStorage.setItem('Last User', JSON.stringify(mockUser));
+    });
+    
+    it('should call capture user if user is in local storage', () => {
+      wrapper.instance().componentDidMount()
+      expect(mockCaptureUser).toHaveBeenCalledWith(mockUser)
+    });
+
+    it('should make fetch with the right params', () => {
+      wrapper.instance().componentDidMount();
+      expect(window.fetch).toHaveBeenCalledWith('http://localhost:3000/api/v1/races/23');
+    });
+
+    it.skip('should call addRace for user\'s races', () => {
+      wrapper.instance().componentDidMount();
+      expect(mockAddRace).toHaveBeenCalledWith(mockRaceFromDB)
+    });
+  });
+
   it('should call logOut on logOut', () => {
     wrapper.instance().logOut();
     expect(mockLogOut).toHaveBeenCalled();
+  });
+
+  it('should clear races on logOut', () => {
+    wrapper.instance().logOut();
+    expect(mockClearRaces).toHaveBeenCalled();
+  });
+
+  it('should clear local storage on logOut', () => {
+    localStorage.setItem('Last User', JSON.stringify(mockUser));
+    wrapper.instance().logOut();
+    const lastUser = localStorage.getItem('Last User');
+    expect(lastUser).not.toBeDefined();    
+
   });
 
   describe('mapStateToProps', () => {

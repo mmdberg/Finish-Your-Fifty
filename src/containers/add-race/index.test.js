@@ -1,15 +1,17 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import { AddRace, mapStateToProps, mapDispatchToProps } from './index';
-import { mockCompletedRace } from '../../mocks';
+import { mockCompletedRace, mockUser } from '../../mocks';
 import * as actions from '../../actions';
 
 describe('AddRace', () => {
   let wrapper;
-  let mockAddRace = jest.fn();
+  let mockAddRace;
+  let mockUser
 
   beforeEach(() => {
-    wrapper = shallow(<AddRace addRace={mockAddRace}/>);
+    mockAddRace = jest.fn();
+    wrapper = shallow(<AddRace addRace={mockAddRace} user={mockUser}/>);
   });
 
   it.skip('should match snapshot', () => {
@@ -18,11 +20,12 @@ describe('AddRace', () => {
 
   it('should start with empty state', () => {
     const expected = {
-      event: '',
+      raceName: '',
       distance: '',
       time: '',
       city: '',
-      state: ''
+      state: '',
+      completed: 'true'
     };
     expect(wrapper.state()).toEqual(expected);
   });
@@ -30,11 +33,12 @@ describe('AddRace', () => {
   it('should update state with user input', () => {
     const mockEvent =  {target: {name: 'time', value: '45'}};
     const expected = {
-      event: '',
+      raceName: '',
       distance: '',
       time: '45',
       city: '',
-      state: ''
+      state: '',
+      completed: 'true'
     };
     wrapper.instance().handleChange(mockEvent);
     expect(wrapper.state()).toEqual(expected);
@@ -44,14 +48,14 @@ describe('AddRace', () => {
     const mockEvent = { preventDefault: jest.fn()};
     wrapper.setState(mockCompletedRace);
     wrapper.instance().handleSubmit(mockEvent);
-    expect(mockAddRace).toHaveBeenCalledWith(mockCompletedRace);
+    expect(mockAddRace).toHaveBeenCalledWith({...mockCompletedRace, user_id: 23});
   });
 
   it('should reset state after submit', () => {
     const mockEvent = { preventDefault: jest.fn()};
     wrapper.setState(mockCompletedRace);
     const expected = {
-      event: '',
+      raceName: '',
       distance: '',
       time: '',
       city: '',

@@ -30,6 +30,16 @@ ShallowWrapper {
         <h2>
                 Please sign up to start tracking races
         </h2>
+        <p>
+                Have an account?
+                <NavLink
+                        activeClassName="active"
+                        ariaCurrent="true"
+                        to="/welcome/login"
+                >
+                        Log In
+                </NavLink>
+        </p>
         <input
                 name="userName"
                 onChange={[Function]}
@@ -56,16 +66,6 @@ ShallowWrapper {
         >
                 Start Tracking
         </button>
-        <p>
-                Have an account?
-                <NavLink
-                        activeClassName="active"
-                        ariaCurrent="true"
-                        to="/welcome/login"
-                >
-                        Log In
-                </NavLink>
-        </p>
         <p />
 </form>,
     },
@@ -79,6 +79,16 @@ ShallowWrapper {
           <h2>
             Please sign up to start tracking races
 </h2>,
+          <p>
+            Have an account?
+            <NavLink
+                        activeClassName="active"
+                        ariaCurrent="true"
+                        to="/welcome/login"
+            >
+                        Log In
+            </NavLink>
+</p>,
           <input
             name="userName"
             onChange={[Function]}
@@ -105,16 +115,6 @@ ShallowWrapper {
 >
             Start Tracking
 </button>,
-          <p>
-            Have an account?
-            <NavLink
-                        activeClassName="active"
-                        ariaCurrent="true"
-                        to="/welcome/login"
-            >
-                        Log In
-            </NavLink>
-</p>,
           <p />,
         ],
         "onSubmit": [Function],
@@ -131,6 +131,42 @@ ShallowWrapper {
           "ref": null,
           "rendered": "Please sign up to start tracking races",
           "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Have an account?",
+              <NavLink
+                activeClassName="active"
+                ariaCurrent="true"
+                to="/welcome/login"
+>
+                Log In
+</NavLink>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Have an account?",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "ariaCurrent": "true",
+                "children": "Log In",
+                "to": "/welcome/login",
+              },
+              "ref": null,
+              "rendered": "Log In",
+              "type": [Function],
+            },
+          ],
+          "type": "p",
         },
         Object {
           "instance": null,
@@ -194,42 +230,6 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": Array [
-              "Have an account?",
-              <NavLink
-                activeClassName="active"
-                ariaCurrent="true"
-                to="/welcome/login"
->
-                Log In
-</NavLink>,
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            "Have an account?",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "activeClassName": "active",
-                "ariaCurrent": "true",
-                "children": "Log In",
-                "to": "/welcome/login",
-              },
-              "ref": null,
-              "rendered": "Log In",
-              "type": [Function],
-            },
-          ],
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
             "children": "",
           },
           "ref": null,
@@ -253,6 +253,16 @@ ShallowWrapper {
           <h2>
                     Please sign up to start tracking races
           </h2>
+          <p>
+                    Have an account?
+                    <NavLink
+                              activeClassName="active"
+                              ariaCurrent="true"
+                              to="/welcome/login"
+                    >
+                              Log In
+                    </NavLink>
+          </p>
           <input
                     name="userName"
                     onChange={[Function]}
@@ -279,16 +289,6 @@ ShallowWrapper {
           >
                     Start Tracking
           </button>
-          <p>
-                    Have an account?
-                    <NavLink
-                              activeClassName="active"
-                              ariaCurrent="true"
-                              to="/welcome/login"
-                    >
-                              Log In
-                    </NavLink>
-          </p>
           <p />
 </form>,
       },
@@ -302,6 +302,16 @@ ShallowWrapper {
             <h2>
               Please sign up to start tracking races
 </h2>,
+            <p>
+              Have an account?
+              <NavLink
+                            activeClassName="active"
+                            ariaCurrent="true"
+                            to="/welcome/login"
+              >
+                            Log In
+              </NavLink>
+</p>,
             <input
               name="userName"
               onChange={[Function]}
@@ -328,16 +338,6 @@ ShallowWrapper {
 >
               Start Tracking
 </button>,
-            <p>
-              Have an account?
-              <NavLink
-                            activeClassName="active"
-                            ariaCurrent="true"
-                            to="/welcome/login"
-              >
-                            Log In
-              </NavLink>
-</p>,
             <p />,
           ],
           "onSubmit": [Function],
@@ -354,6 +354,42 @@ ShallowWrapper {
             "ref": null,
             "rendered": "Please sign up to start tracking races",
             "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Have an account?",
+                <NavLink
+                  activeClassName="active"
+                  ariaCurrent="true"
+                  to="/welcome/login"
+>
+                  Log In
+</NavLink>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Have an account?",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "ariaCurrent": "true",
+                  "children": "Log In",
+                  "to": "/welcome/login",
+                },
+                "ref": null,
+                "rendered": "Log In",
+                "type": [Function],
+              },
+            ],
+            "type": "p",
           },
           Object {
             "instance": null,
@@ -411,42 +447,6 @@ ShallowWrapper {
             "ref": null,
             "rendered": "Start Tracking",
             "type": "button",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                "Have an account?",
-                <NavLink
-                  activeClassName="active"
-                  ariaCurrent="true"
-                  to="/welcome/login"
->
-                  Log In
-</NavLink>,
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              "Have an account?",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "activeClassName": "active",
-                  "ariaCurrent": "true",
-                  "children": "Log In",
-                  "to": "/welcome/login",
-                },
-                "ref": null,
-                "rendered": "Log In",
-                "type": [Function],
-              },
-            ],
-            "type": "p",
           },
           Object {
             "instance": null,
