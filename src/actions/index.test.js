@@ -23,16 +23,16 @@ describe('actions', () => {
   it('should return action type of LOG_OUT', () => {
     const expected = {
       type: 'LOG_OUT'
-    }
-    expect(actions.logOut()).toEqual(expected)
+    };
+    expect(actions.logOut()).toEqual(expected);
   });
 
   it('should return action type of REMOVE_RACE', () => {
-    const race = mockCompletedRace
+    const race = mockCompletedRace;
     const expected = {
       type: 'REMOVE_RACE',
       race
-    }
-    expect(actions.removeRace(race)).toEqual(expected)
-  })
+    };
+    expect(actions.removeRace(race)).toEqual(expected);
+  });
 });

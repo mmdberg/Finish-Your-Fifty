@@ -1,9 +1,7 @@
-// import { accessToken } from '../../private/apiKey';
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-// import { statesData } from '../../map-data';
+// import { connect } from 'react-redux';
 import USAMap from 'react-usa-map';
-import './styles.css'
+import './styles.css';
 
 export class StateMap extends Component {
   fillStates = () => {
@@ -11,18 +9,19 @@ export class StateMap extends Component {
       'CO': {
         fill: 'magenta'
       }
-    }
+    };
   }
 
   handleStateClick = (event) => {
-    console.log(event.target.dataset.name)
+    console.log(event.target.dataset.name);
   }
+  
   render() {
     return (
       <div className='map'>
         <USAMap customize={this.fillStates()} onClick={this.handleStateClick}/>
       </div>
-    )
+    );
   }
 
 }

@@ -181,19 +181,19 @@ describe('Welcome', () => {
     it('should map the user state to props', () => {
       const mockState = {
         user: mockUser
-      }
-      const mapped = mapStateToProps(mockState)
-      expect(mapped.user).toEqual(mockUser)
-    })
+      };
+      const mapped = mapStateToProps(mockState);
+      expect(mapped.user).toEqual(mockUser);
+    });
   });
 
   describe('mapDispatchToProps', () => {
     it('should call dispatch with the right props on captureUser', () => {
-      const mockDispatch = jest.fn()
-      const expected = actions.captureUser(mockUser)
-      const mapped = mapDispatchToProps(mockDispatch)
-      mapped.captureUser(mockUser)
-      expect(mockDispatch).toHaveBeenCalledWith(expected)
+      const mockDispatch = jest.fn();
+      const expected = actions.captureUser(mockUser);
+      const mapped = mapDispatchToProps(mockDispatch);
+      mapped.captureUser(mockUser);
+      expect(mockDispatch).toHaveBeenCalledWith(expected);
     });
   });
 });

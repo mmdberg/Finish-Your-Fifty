@@ -9,7 +9,7 @@ describe('App', () => {
   let mockLogOut;
 
   beforeEach(() => {
-    mockLogOut = jest.fn()
+    mockLogOut = jest.fn();
     wrapper = shallow(<App logOut={mockLogOut}/>);
   });
 
@@ -18,22 +18,22 @@ describe('App', () => {
   });
 
   it('should call logOut on logOut', () => {
-    wrapper.instance().logOut()
-    expect(mockLogOut).toHaveBeenCalled()
+    wrapper.instance().logOut();
+    expect(mockLogOut).toHaveBeenCalled();
   });
 
   describe('mapStateToProps', () => {
     let mapped; 
     const mockState = {
       user: mockUser
-    }
+    };
 
     beforeEach(() => {
-      mapped = mapStateToProps(mockState)
+      mapped = mapStateToProps(mockState);
     });
 
     it('correctly maps the user to props', () => {
-      expect(mapped.user).toEqual(mockUser)
+      expect(mapped.user).toEqual(mockUser);
     });
   });
 
@@ -43,19 +43,19 @@ describe('App', () => {
 
     beforeEach(() => {
       mockDispatch = jest.fn();
-      mapped = mapDispatchToProps(mockDispatch)
+      mapped = mapDispatchToProps(mockDispatch);
     });
 
     it('should call dispatch with correct params on log out', () => {
-      const expected = actions.logOut()
+      const expected = actions.logOut();
       mapped.logOut();
-      expect(mockDispatch).toHaveBeenCalledWith(expected)
+      expect(mockDispatch).toHaveBeenCalledWith(expected);
     });
 
     it('should call dispatch with the correct params on captureUser', () => {
-      const expected = actions.captureUser(mockUser)
+      const expected = actions.captureUser(mockUser);
       mapped.captureUser(mockUser);
-      expect(mockDispatch).toHaveBeenCalledWith(expected)
+      expect(mockDispatch).toHaveBeenCalledWith(expected);
     });
 
   });
