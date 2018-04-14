@@ -81,8 +81,8 @@ export const addRace = async (raceInfo, user_id) => {
         'Content-Type': 'application/json'
       }
     });
-    const raceId = await response.json();
-    return raceId;
+    // const raceId = await response.json();
+    // return raceId;
   } catch (error) {
     throw new Error('Unable to addRace')
   }
@@ -95,7 +95,7 @@ export const getUserRaces = async (user_id) => {
     const userRaces = await response.json();
     return userRaces;
   } catch (error) {
-    console.log('getraceserror:', error);
+    throw new Error('Unable to get user\'s races')
   }
 };
 

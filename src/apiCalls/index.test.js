@@ -1,6 +1,6 @@
 import * as api from './index';
 import { apiKey } from '../private/apiKey';
-import { mockApiResult, mockCompletedRace, mockUser } from '../mocks';
+import { mockApiResult, mockCompletedRace, mockUser, mockRaceFromDB } from '../mocks';
 import { raceCleaner } from './cleaner';
 
 jest.mock('./cleaner');
@@ -141,6 +141,24 @@ describe('apiCalls', () => {
       window.fetch = jest.fn().mockImplementation(() => Promise.reject())
       const expected = new Error('Unable to addRace')
       expect(api.addRace(mockCompletedRace, 14)).rejects.toEqual(expected)
+    });
+  });
+
+  describe('getUserRaces', () => {
+    it('should call fetch with the right params', () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve([mockRaceFromDB])
+      }));
+      const expected = 'http://localhost:3000/api/v1/races/23';
+      api.getUserRaces(23)
+      expect(window.fetch).toHaveBeenCalledWith(expected);
+    });
+
+    it('should throw error on error', () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.reject())
+      const expected = new Error('Unable to get user\'s races')
+      expect(api.getUserRaces(23)).rejects.toEqual(expected)
     });
   });
 });
