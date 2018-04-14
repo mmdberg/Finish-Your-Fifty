@@ -6,7 +6,7 @@ import Search from '../../Components/Search';
 import Welcome from '..//welcome';
 import AddRace from '../add-race';
 import RaceLog from '../RaceLog';
-import { StateMap } from '../map';
+import StateMap from '../map';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import PropTypes from 'prop-types';
