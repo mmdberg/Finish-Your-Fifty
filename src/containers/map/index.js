@@ -4,27 +4,14 @@ import './styles.css';
 import { connect } from 'react-redux';
 
 export class StateMap extends Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     stateObject: {}
-  //   }
-  // }
-
-  // componentDidUpdate() {
-  //   this.captureStates()
-  // }
-
-  // captureStates = () => {
-  //   const stateArray = this.props.races.map(race => race.state)
-  //   const stateObject = stateArray.reduce((stateObj, state) => {
-  //     stateObj[state] = {fill:'magenta'}
-  //     return stateObj
-  //   }, {})
-  // }
+  constructor(props) {
+    super(props)
+    this.state = {
+      raceInfo: ''
+    }
+  }
 
   fillStates = () => {
-    console.log('hi')
     const stateArray = this.props.races.map(race => race.state)
     const stateObject = stateArray.reduce((stateObj, state) => {
       stateObj[state] = {fill:'magenta'}
@@ -34,13 +21,23 @@ export class StateMap extends Component {
   }
 
   handleStateClick = (event) => {
-    console.log(event.target.dataset.name);
+    this.setState({raceInfo: `You still need a race in ${event.target.dataset.name}.`})
+    this.props.races.forEach(race => { 
+      if (race.state === event.target.dataset.name) {
+        this.setState({raceInfo: `${race.raceName} in ${race.city}, ${race.state}`})
+      }
+    }) 
+
+
   }
+
   
   render() {
-    console.log(this.props)
     return (
       <div className='map'>
+        <div className="raceInfo">
+          <p>{this.state.raceInfo}</p>
+        </div>
         <USAMap customize={this.props.races.length > 0 ? this.fillStates() : {}} onClick={this.handleStateClick}/>
       </div>
     );
