@@ -13,6 +13,7 @@ describe('Race Reducer', () => {
   });
 
   it('should remove race', () => {
-    expect(raceReducer([mockCompletedRace], actions.removeRace(mockCompletedRace))).toEqual([])
+    expect(raceReducer([mockCompletedRace], actions
+      .removeRace(mockCompletedRace))).toEqual([]);
   });
 });

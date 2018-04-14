@@ -56,10 +56,10 @@ describe('Search', () => {
     expect(wrapper.state('error')).toEqual(expected);
   });
 
-  it('should set error message if results do not match state search', async () => {
+  it('should set error message if no results match input', async () => {
     wrapper.setState({
       state: 'FL'
-    })
+    });
     const mockEvent = { preventDefault: jest.fn() };
     const expected = 'No races match your search criteria. Try again.';
     api.fetchRaces = jest.fn().mockImplementation(() => Promise.resolve(
@@ -72,7 +72,7 @@ describe('Search', () => {
     const mockEvent = { preventDefault: jest.fn() };
     wrapper.setState({
       state: 'CA'
-    })
+    });
     api.fetchRaces = jest.fn().mockImplementation(() => Promise.resolve(
       [mockRace]
     ));

@@ -12,7 +12,7 @@ export const fetchRaces = async (year) => {
     const raceInfo = await response.json();
     return raceCleaner(raceInfo);
   } catch (error) {
-    throw new Error('Unable to get races')
+    throw new Error('Unable to get races');
   }
 };
 
@@ -22,7 +22,7 @@ export const fetchUsers = async () => {
     const users = await response.json();
     return users;
   } catch (error) {
-    throw new Error('Unable to get users')
+    throw new Error('Unable to get users');
   }
 };
 
@@ -39,28 +39,28 @@ export const fetchOneUser = async (credentials) => {
     const userInfo = await response.json();
     return userInfo.userCheck;
   } catch (error) {
-    throw new Error('Unable to get user')
+    throw new Error('Unable to get user');
   }
 };
 
 export const addUser = async (user) => {
   try {
     const response = await fetch('http://localhost:3000/api/v1/users/new', 
-    {
-      method: 'POST',
-      body: JSON.stringify({
-        userName: user.userName,
-        email: user.email,
-        password: user.password
-      }),
-      headers: {
-        'Content-Type': 'application/json' 
-      }
-    });
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          userName: user.userName,
+          email: user.email,
+          password: user.password
+        }),
+        headers: {
+          'Content-Type': 'application/json' 
+        }
+      });
     const userId = await response.json();
     return userId.id;
   } catch (error) {
-    throw new Error('Unable to add user')
+    throw new Error('Unable to add user');
   }
 };
 
@@ -80,21 +80,22 @@ export const addRace = async (raceInfo, user_id) => {
       headers: {
         'Content-Type': 'application/json'
       }
-    })
-    const raceId = await response.json()
+    });
+    const raceId = await response.json();
+    return raceId;
   } catch (error) {
-    console.log(error)
+    throw new Error('Unable to addRace')
   }
-}
+};
 
 export const getUserRaces = async (user_id) => {
-  console.log(user_id)
   try {
-    const response = await fetch(`http://localhost:3000/api/v1/races/${user_id}`)
-    const userRaces = await response.json()
-    return userRaces
+    const response = 
+      await fetch(`http://localhost:3000/api/v1/races/${user_id}`);
+    const userRaces = await response.json();
+    return userRaces;
   } catch (error) {
-    console.log('getraceserror:' )
+    throw new Error('Unable to get user\'s races')
   }
-}
+};
 

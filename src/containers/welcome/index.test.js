@@ -2,8 +2,11 @@ import { shallow } from 'enzyme';
 import { Welcome, mapStateToProps, mapDispatchToProps } from './index';
 import React from 'react';
 import * as api from '../../apiCalls';
-import { mockUser } from '../../mocks';
+import { mockUser, mockRace } from '../../mocks';
 import * as actions from '../../actions';
+import { LocalStorage } from '../../__test-helper__/storageMock.js';
+
+window.localStorage = new LocalStorage();
 
 jest.mock('../../apiCalls');
 
@@ -181,19 +184,27 @@ describe('Welcome', () => {
     it('should map the user state to props', () => {
       const mockState = {
         user: mockUser
-      }
-      const mapped = mapStateToProps(mockState)
-      expect(mapped.user).toEqual(mockUser)
-    })
+      };
+      const mapped = mapStateToProps(mockState);
+      expect(mapped.user).toEqual(mockUser);
+    });
   });
 
   describe('mapDispatchToProps', () => {
-    it('should call dispatch with the right props on captureUser', () => {
-      const mockDispatch = jest.fn()
-      const expected = actions.captureUser(mockUser)
-      const mapped = mapDispatchToProps(mockDispatch)
-      mapped.captureUser(mockUser)
-      expect(mockDispatch).toHaveBeenCalledWith(expected)
+    it('should call dispatch with the right params on captureUser', () => {
+      const mockDispatch = jest.fn();
+      const expected = actions.captureUser(mockUser);
+      const mapped = mapDispatchToProps(mockDispatch);
+      mapped.captureUser(mockUser);
+      expect(mockDispatch).toHaveBeenCalledWith(expected);
+    });
+
+    it('should call dispatch with the right params on addRace', () => {
+      const mockDispatch = jest.fn();
+      const expected = actions.addRace(mockRace);
+      const mapped = mapDispatchToProps(mockDispatch);
+      mapped.addRace(mockRace);
+      expect(mockDispatch).toHaveBeenCalledWith(expected);
     });
   });
 });

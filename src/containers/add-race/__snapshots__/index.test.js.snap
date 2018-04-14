@@ -6,6 +6,14 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <AddRace
     addRace={[Function]}
+    user={
+        Object {
+            "email": "pizza@pizza",
+            "id": 23,
+            "password": "p",
+            "userName": "Pizza",
+          }
+    }
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -24,11 +32,11 @@ ShallowWrapper {
           Add a race to your log:
 </h2>,
         <input
-          name="event"
+          name="raceName"
           onChange={[Function]}
-          placeholder="Event Name"
+          placeholder="Race Name"
           type="text"
-          value={undefined}
+          value=""
 />,
         <input
           name="distance"
@@ -58,6 +66,32 @@ ShallowWrapper {
           type="text"
           value=""
 />,
+        <input
+          checked={true}
+          id="choiceTrue"
+          name="completed"
+          onChange={[Function]}
+          type="radio"
+          value="true"
+/>,
+        <label
+          htmlFor="choiceTrue"
+>
+          Completed
+</label>,
+        <input
+          checked={false}
+          id="choiceFalse"
+          name="completed"
+          onChange={[Function]}
+          type="radio"
+          value="false"
+/>,
+        <label
+          htmlFor="choiceFalse"
+>
+          Interested
+</label>,
         <button
           type="submit"
 >
@@ -84,11 +118,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "name": "event",
+          "name": "raceName",
           "onChange": [Function],
-          "placeholder": "Event Name",
+          "placeholder": "Race Name",
           "type": "text",
-          "value": undefined,
+          "value": "",
         },
         "ref": null,
         "rendered": null,
@@ -159,6 +193,62 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "checked": true,
+          "id": "choiceTrue",
+          "name": "completed",
+          "onChange": [Function],
+          "type": "radio",
+          "value": "true",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Completed",
+          "htmlFor": "choiceTrue",
+        },
+        "ref": null,
+        "rendered": "Completed",
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "checked": false,
+          "id": "choiceFalse",
+          "name": "completed",
+          "onChange": [Function],
+          "type": "radio",
+          "value": "false",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Interested",
+          "htmlFor": "choiceFalse",
+        },
+        "ref": null,
+        "rendered": "Interested",
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
           "children": "Submit",
           "type": "submit",
         },
@@ -180,11 +270,11 @@ ShallowWrapper {
             Add a race to your log:
 </h2>,
           <input
-            name="event"
+            name="raceName"
             onChange={[Function]}
-            placeholder="Event Name"
+            placeholder="Race Name"
             type="text"
-            value={undefined}
+            value=""
 />,
           <input
             name="distance"
@@ -214,6 +304,32 @@ ShallowWrapper {
             type="text"
             value=""
 />,
+          <input
+            checked={true}
+            id="choiceTrue"
+            name="completed"
+            onChange={[Function]}
+            type="radio"
+            value="true"
+/>,
+          <label
+            htmlFor="choiceTrue"
+>
+            Completed
+</label>,
+          <input
+            checked={false}
+            id="choiceFalse"
+            name="completed"
+            onChange={[Function]}
+            type="radio"
+            value="false"
+/>,
+          <label
+            htmlFor="choiceFalse"
+>
+            Interested
+</label>,
           <button
             type="submit"
 >
@@ -240,11 +356,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "name": "event",
+            "name": "raceName",
             "onChange": [Function],
-            "placeholder": "Event Name",
+            "placeholder": "Race Name",
             "type": "text",
-            "value": undefined,
+            "value": "",
           },
           "ref": null,
           "rendered": null,
@@ -309,6 +425,62 @@ ShallowWrapper {
           "ref": null,
           "rendered": null,
           "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "checked": true,
+            "id": "choiceTrue",
+            "name": "completed",
+            "onChange": [Function],
+            "type": "radio",
+            "value": "true",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Completed",
+            "htmlFor": "choiceTrue",
+          },
+          "ref": null,
+          "rendered": "Completed",
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "checked": false,
+            "id": "choiceFalse",
+            "name": "completed",
+            "onChange": [Function],
+            "type": "radio",
+            "value": "false",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Interested",
+            "htmlFor": "choiceFalse",
+          },
+          "ref": null,
+          "rendered": "Interested",
+          "type": "label",
         },
         Object {
           "instance": null,

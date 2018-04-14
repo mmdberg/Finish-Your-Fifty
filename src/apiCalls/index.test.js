@@ -1,9 +1,9 @@
 import * as api from './index';
 import { apiKey } from '../private/apiKey';
-import { mockApiResult, mockRace, mockUser } from '../mocks';
+import { mockApiResult, mockCompletedRace, mockUser, mockRaceFromDB } from '../mocks';
 import { raceCleaner } from './cleaner';
 
-jest.mock('./cleaner')
+jest.mock('./cleaner');
 
 describe('apiCalls', () => {
 
@@ -34,9 +34,9 @@ describe('apiCalls', () => {
     });
 
     it('should throw error message on error', () => {
-      window.fetch = jest.fn().mockImplementation(() => Promise.reject())
-      const expected = new Error('Unable to get races')
-      expect(api.fetchRaces('2018')).rejects.toEqual(expected)
+      window.fetch = jest.fn().mockImplementation(() => Promise.reject());
+      const expected = new Error('Unable to get races');
+      expect(api.fetchRaces('2018')).rejects.toEqual(expected);
     });
   });
 
@@ -46,9 +46,9 @@ describe('apiCalls', () => {
         ok: true,
         json: () => Promise.resolve({})
       }));
-      const expected = 'http://localhost:3000/api/v1/users/'
+      const expected = 'http://localhost:3000/api/v1/users/';
       await api.fetchUsers();
-      expect(window.fetch).toHaveBeenCalledWith(expected)
+      expect(window.fetch).toHaveBeenCalledWith(expected);
     });
 
     it('should throw error message on error', () => {
@@ -65,7 +65,7 @@ describe('apiCalls', () => {
       const mockCredentials = {
         email: 'taco@taco',
         password: 't'
-      }
+      };
       const expected = ['http://localhost:3000/api/v1/users/', {
         method: 'POST',
         body: JSON.stringify(mockCredentials),
@@ -73,17 +73,17 @@ describe('apiCalls', () => {
           'Content-Type': 'application/json' 
         }
       }];
-      api.fetchOneUser(mockCredentials)
-      expect(window.fetch).toHaveBeenCalledWith(...expected)
+      api.fetchOneUser(mockCredentials);
+      expect(window.fetch).toHaveBeenCalledWith(...expected);
     });
 
     it('should throw error on error', () => {
-      window.fetch = jest.fn().mockImplementation(() => Promise.reject({}))
-      const expected = new Error('Unable to get user')
+      window.fetch = jest.fn().mockImplementation(() => Promise.reject({}));
+      const expected = new Error('Unable to get user');
       const mockCredentials = {
         email: 'taco@taco',
         password: 't'
-      }
+      };
       expect(api.fetchOneUser(mockCredentials)).rejects.toEqual(expected);
     });
   });
@@ -93,7 +93,7 @@ describe('apiCalls', () => {
       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
         ok: true,
         json: () => Promise.resolve({id: 7})
-      }))
+      }));
       const expected = ['http://localhost:3000/api/v1/users/new', 
         {
           method: 'POST',
@@ -105,15 +105,60 @@ describe('apiCalls', () => {
           headers: {
             'Content-Type': 'application/json' 
           }
-        }]
-      api.addUser(mockUser)
-      expect(window.fetch).toHaveBeenCalledWith(...expected)
+        }];
+      api.addUser(mockUser);
+      expect(window.fetch).toHaveBeenCalledWith(...expected);
     });
 
     it('should throw error on error', () => {
       window.fetch = jest.fn().mockImplementation(() => Promise.rejects());
-      const expected = new Error('Unable to add user')
-      expect(api.addUser(mockUser)).rejects.toEqual(expected)
+      const expected = new Error('Unable to add user');
+      expect(api.addUser(mockUser)).rejects.toEqual(expected);
+    });
+  });
+
+  describe('Add Race', () => {
+    it('should call fetch with the right params', () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({id: 23})
+      }))
+      const expected = ['http://localhost:3000/api/v1/races', 
+        {
+          method: 'POST',
+          body: JSON.stringify({...mockCompletedRace, 
+            user_id: 14
+          }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }]
+      api.addRace(mockCompletedRace, 14)
+      expect(window.fetch).toHaveBeenCalledWith(...expected)
+    });
+
+    it('should throw error on error', () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.reject())
+      const expected = new Error('Unable to addRace')
+      expect(api.addRace(mockCompletedRace, 14)).rejects.toEqual(expected)
+    });
+  });
+
+  describe('getUserRaces', () => {
+    it('should call fetch with the right params', () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve([mockRaceFromDB])
+      }));
+      const expected = 'http://localhost:3000/api/v1/races/23';
+      api.getUserRaces(23)
+      expect(window.fetch).toHaveBeenCalledWith(expected);
+    });
+
+    it('should throw error on error', () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.reject())
+      const expected = new Error('Unable to get user\'s races')
+      expect(api.getUserRaces(23)).rejects.toEqual(expected)
     });
   });
 });

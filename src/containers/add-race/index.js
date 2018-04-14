@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import './styles.css';
 import * as api from '../../apiCalls';
+import PropTypes from 'prop-types';
 
 export class AddRace extends Component {
   constructor(props) {
@@ -27,7 +28,7 @@ export class AddRace extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.addRace(this.state);
-    api.addRace(this.state, this.props.user.id)
+    api.addRace(this.state, this.props.user.id);
     this.setState({
       raceName: '',
       distance: '',
@@ -35,7 +36,7 @@ export class AddRace extends Component {
       city: '',
       state: '',
       completed: 'true'
-    })
+    });
   }
 
   render() {
@@ -86,6 +87,12 @@ export class AddRace extends Component {
     );
   }
 }
+
+AddRace.propTypes = {
+  races: PropTypes.array,
+  user: PropTypes.object,
+  addRace: PropTypes.func
+};
 
 export const mapStateToProps = state => ({
   races: state.races,

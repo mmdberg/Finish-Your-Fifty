@@ -6,19 +6,20 @@ import Search from '../../Components/Search';
 import Welcome from '..//welcome';
 import AddRace from '../add-race';
 import RaceLog from '../RaceLog';
-import { StateMap } from '../map'
+import StateMap from '../map';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import PropTypes from 'prop-types';
 
 export class App extends Component {
   async componentDidMount () {
-    const lastUser = JSON.parse(localStorage.getItem('Last User'))
-    if(lastUser) {
-      this.props.captureUser(lastUser)
-      const userRaces = await api.getUserRaces(lastUser.id)
+    const lastUser = JSON.parse(localStorage.getItem('Last User'));
+    if (lastUser) {
+      this.props.captureUser(lastUser);
+      const userRaces = await api.getUserRaces(lastUser.id);
       userRaces.forEach(race => {
-        this.props.addRace(race)
-      })
+        this.props.addRace(race);
+      });
     }
   }
 
@@ -34,7 +35,11 @@ export class App extends Component {
         <header className='App-header'>
           <h1 className='App-title'>Finish Your Fifty</h1>
           {
-            this.props.user && <NavLink to='/' onClick={this.logOut}>Log Out</NavLink>
+            this.props.user && 
+            <div className='introduction'>
+              <p>Hi {this.props.user.userName}!</p>
+              <NavLink to='/' onClick={this.logOut}> Log Out</NavLink>
+            </div>
           }
         </header>
         <nav>
@@ -48,9 +53,12 @@ export class App extends Component {
             <Route exact path='/' render={() => 
               this.props.user ? <StateMap /> : <Redirect to='/welcome/login'/>
             }/>
-            <Route exact path='/add-race' render={() => this.props.user ? <AddRace /> : <Redirect to='/welcome/login' /> } />
-            <Route exact path='/race-log' render={() => this.props.user ? <RaceLog /> : <Redirect to='/welcome/login' /> } />
-            <Route exact path='/search' render={() => this.props.user ? <Search /> : <Redirect to='/welcome/login' /> } />
+            <Route exact path='/add-race' render={() => this.props.user ? 
+              <AddRace /> : <Redirect to='/welcome/login' /> } />
+            <Route exact path='/race-log' render={() => this.props.user ? 
+              <RaceLog /> : <Redirect to='/welcome/login' /> } />
+            <Route exact path='/search' render={() => this.props.user ? 
+              <Search /> : <Redirect to='/welcome/login' /> } />
             <Route exact path='/welcome/login' component={ Welcome }/>
             <Route exact path='/welcome/signup' component={ Welcome }/>
           </Switch>
@@ -58,6 +66,14 @@ export class App extends Component {
       </div>
     );
   }
+}
+
+App.propTypes = {
+  user: PropTypes.object,
+  captureUser: PropTypes.func,
+  addRace: PropTypes.func,
+  logOut: PropTypes.func,
+  clearRaces: PropTypes.func
 }
 
 export const mapStateToProps = state => ({

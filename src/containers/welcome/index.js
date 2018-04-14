@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { NavLink, Redirect, withRouter } from 'react-router-dom';
 import * as actions from '../../actions';
 import * as api from '../../apiCalls';
+import PropTypes from 'prop-types';
 
 export class Welcome extends Component {
   constructor(props) {
@@ -51,8 +52,8 @@ export class Welcome extends Component {
         email,
         password,
         id
-      }
-      localStorage.setItem('Last User', JSON.stringify(userObject))
+      };
+      localStorage.setItem('Last User', JSON.stringify(userObject));
       this.props.captureUser(userObject);
       this.setState({
         userName: '',
@@ -71,12 +72,11 @@ export class Welcome extends Component {
         email: userInfo.email,
         password: userInfo.password,
         id: userInfo.id
-      }
-      localStorage.setItem('Last User', JSON.stringify(userObject))
+      };
+      localStorage.setItem('Last User', JSON.stringify(userObject));
       this.props.captureUser(userObject);
-      const userRaces = await api.getUserRaces(this.props.user.id)
-      console.log('races at login', userRaces)
-      userRaces.forEach(race => this.props.addRace(race))
+      const userRaces = await api.getUserRaces(this.props.user.id);
+      userRaces.forEach(race => this.props.addRace(race));
     } catch (error) {
       this.setState({
         email: '',
@@ -131,6 +131,13 @@ export class Welcome extends Component {
   }
 }
 
+Welcome.propTypes = {
+  user: PropTypes.object,
+  captureUser: PropTypes.func,
+  addRace: PropTypes.func,
+  match: PropTypes.object
+};
+
 export const mapStateToProps = state => ({
   user: state.user
 });
@@ -140,4 +147,5 @@ export const mapDispatchToProps = dispatch => ({
   addRace: race => dispatch(actions.addRace(race))
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Welcome));
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(Welcome));
