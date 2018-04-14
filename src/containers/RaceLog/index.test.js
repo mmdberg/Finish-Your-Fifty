@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import { RaceLog, mapStateToProps, mapDispatchToProps } from './index';
-import { mockRace } from '../../mocks';
+import { mockRace, mockUser } from '../../mocks';
 import React from 'react';
 import * as actions from '../../actions';
 
@@ -17,6 +17,14 @@ describe('RaceLog', () => {
       };
       const mapped = mapStateToProps(mockState);
       expect(mapped.races).toEqual([mockRace]);
+    });
+
+    it('should correctly map user to props', () => {
+      const mockState = {
+        user: mockUser
+      };
+      const mapped = mapStateToProps(mockState);
+      expect(mapped.user).toEqual(mockUser);
     });
   });
 

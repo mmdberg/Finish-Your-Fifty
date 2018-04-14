@@ -70,12 +70,20 @@ describe('AddRace', () => {
   });
 
   describe('mapStateToProps', () => {
-    it.skip('should correctly map races to props', () => {
+    it('should correctly map races to props', () => {
       let mockState = {
         races: [mockCompletedRace]
       };
       let mapped = mapStateToProps(mockState);
       expect(mapped.races).toEqual([mockCompletedRace]);
+    });
+
+    it('should correctly map user to props', () => {
+      let mockState = {
+        user: mockUser
+      }
+      let mapped = mapStateToProps(mockState);
+      expect(mapped.user).toEqual(mockUser);
     });
   });
 

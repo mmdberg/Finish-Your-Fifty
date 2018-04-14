@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { App, mapStateToProps, mapDispatchToProps } from './index';
-import { mockUser, mockApiResult, mockRace, mockRaceFromDB } from '../../mocks';
+import { mockUser, mockApiResult, mockRace, mockRaceFromDB, mockCompletedRace } from '../../mocks';
 import * as actions from '../../actions';
 import { LocalStorage } from '../../__test-helper__/storageMock';
 
@@ -108,6 +108,18 @@ describe('App', () => {
     it('should call dispatch with the correct params on captureUser', () => {
       const expected = actions.captureUser(mockUser);
       mapped.captureUser(mockUser);
+      expect(mockDispatch).toHaveBeenCalledWith(expected);
+    });
+
+    it('should call dispatch with the correct params on addRace', () => {
+      const expected = actions.addRace(mockCompletedRace);
+      mapped.addRace(mockCompletedRace);
+      expect(mockDispatch).toHaveBeenCalledWith(expected);
+    });
+
+    it('should call dispatch with the correct params on clearRaces', () => {
+      const expected = actions.clearRaces();
+      mapped.clearRaces();
       expect(mockDispatch).toHaveBeenCalledWith(expected);
     });
 

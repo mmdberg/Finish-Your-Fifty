@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import { Welcome, mapStateToProps, mapDispatchToProps } from './index';
 import React from 'react';
 import * as api from '../../apiCalls';
-import { mockUser } from '../../mocks';
+import { mockUser, mockRace } from '../../mocks';
 import * as actions from '../../actions';
 import { LocalStorage } from '../../__test-helper__/storageMock.js';
 
@@ -191,11 +191,19 @@ describe('Welcome', () => {
   });
 
   describe('mapDispatchToProps', () => {
-    it('should call dispatch with the right props on captureUser', () => {
+    it('should call dispatch with the right params on captureUser', () => {
       const mockDispatch = jest.fn();
       const expected = actions.captureUser(mockUser);
       const mapped = mapDispatchToProps(mockDispatch);
       mapped.captureUser(mockUser);
+      expect(mockDispatch).toHaveBeenCalledWith(expected);
+    });
+
+    it('should call dispatch with the right params on addRace', () => {
+      const mockDispatch = jest.fn();
+      const expected = actions.addRace(mockRace);
+      const mapped = mapDispatchToProps(mockDispatch);
+      mapped.addRace(mockRace);
       expect(mockDispatch).toHaveBeenCalledWith(expected);
     });
   });
