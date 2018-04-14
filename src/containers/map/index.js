@@ -7,7 +7,10 @@ export class StateMap extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      raceInfo: ''
+      raceInfo: '',
+      textStyle: { left: 0,
+      top: 0
+      }
     }
   }
 
@@ -21,22 +24,25 @@ export class StateMap extends Component {
   }
 
   handleStateClick = (event) => {
+    this.setState({
+      textStyle: { left: event.clientX,
+      top: event.clientY
+    }})
     this.setState({raceInfo: `You still need a race in ${event.target.dataset.name}.`})
+
     this.props.races.forEach(race => { 
       if (race.state === event.target.dataset.name) {
-        this.setState({raceInfo: `${race.raceName} in ${race.city}, ${race.state}`})
+        this.setState({raceInfo: `${race.raceName} in ${race.city}, ${race.state}. Distance: ${race.distance} Time: ${race.time}`})
       }
     }) 
-
-
   }
 
   
   render() {
     return (
       <div className='map'>
-        <div className="raceInfo">
-          <p>{this.state.raceInfo}</p>
+        <div className='raceInfo'>
+          <p style={this.state.textStyle} className='raceText' >{this.state.raceInfo}</p>
         </div>
         <USAMap customize={this.props.races.length > 0 ? this.fillStates() : {}} onClick={this.handleStateClick}/>
       </div>

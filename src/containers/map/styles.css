@@ -2,3 +2,11 @@
   height: 400px; 
   width: 500px;
 }
+
+.raceText {
+  position: absolute;
+  width: 100px;
+  font-size: 10px;
+  border: 1px black solid;
+  padding: 5px;
+}
