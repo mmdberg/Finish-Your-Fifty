@@ -5,6 +5,9 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <App
+    addRace={[Function]}
+    captureUser={[Function]}
+    clearRaces={[Function]}
     logOut={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -73,14 +76,19 @@ ShallowWrapper {
                               render={[Function]}
                     />
                     <Route
-                              component={[Function]}
                               exact={true}
                               path="/add-race"
+                              render={[Function]}
                     />
                     <Route
-                              component={[Function]}
+                              exact={true}
+                              path="/race-log"
+                              render={[Function]}
+                    />
+                    <Route
                               exact={true}
                               path="/search"
+                              render={[Function]}
                     />
                     <Route
                               component={[Function]}
@@ -249,14 +257,19 @@ ShallowWrapper {
                         render={[Function]}
             />
             <Route
-                        component={[Function]}
                         exact={true}
                         path="/add-race"
+                        render={[Function]}
             />
             <Route
-                        component={[Function]}
+                        exact={true}
+                        path="/race-log"
+                        render={[Function]}
+            />
+            <Route
                         exact={true}
                         path="/search"
+                        render={[Function]}
             />
             <Route
                         component={[Function]}
@@ -284,14 +297,19 @@ ShallowWrapper {
                 render={[Function]}
 />,
               <Route
-                component={[Function]}
                 exact={true}
                 path="/add-race"
+                render={[Function]}
 />,
               <Route
-                component={[Function]}
+                exact={true}
+                path="/race-log"
+                render={[Function]}
+/>,
+              <Route
                 exact={true}
                 path="/search"
+                render={[Function]}
 />,
               <Route
                 component={[Function]}
@@ -325,9 +343,9 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "component": [Function],
                 "exact": true,
                 "path": "/add-race",
+                "render": [Function],
               },
               "ref": null,
               "rendered": null,
@@ -338,9 +356,22 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "component": [Function],
+                "exact": true,
+                "path": "/race-log",
+                "render": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
                 "exact": true,
                 "path": "/search",
+                "render": [Function],
               },
               "ref": null,
               "rendered": null,
@@ -440,14 +471,19 @@ ShallowWrapper {
                                     render={[Function]}
                         />
                         <Route
-                                    component={[Function]}
                                     exact={true}
                                     path="/add-race"
+                                    render={[Function]}
                         />
                         <Route
-                                    component={[Function]}
+                                    exact={true}
+                                    path="/race-log"
+                                    render={[Function]}
+                        />
+                        <Route
                                     exact={true}
                                     path="/search"
+                                    render={[Function]}
                         />
                         <Route
                                     component={[Function]}
@@ -616,14 +652,19 @@ ShallowWrapper {
                             render={[Function]}
               />
               <Route
-                            component={[Function]}
                             exact={true}
                             path="/add-race"
+                            render={[Function]}
               />
               <Route
-                            component={[Function]}
+                            exact={true}
+                            path="/race-log"
+                            render={[Function]}
+              />
+              <Route
                             exact={true}
                             path="/search"
+                            render={[Function]}
               />
               <Route
                             component={[Function]}
@@ -651,14 +692,19 @@ ShallowWrapper {
                   render={[Function]}
 />,
                 <Route
-                  component={[Function]}
                   exact={true}
                   path="/add-race"
+                  render={[Function]}
 />,
                 <Route
-                  component={[Function]}
+                  exact={true}
+                  path="/race-log"
+                  render={[Function]}
+/>,
+                <Route
                   exact={true}
                   path="/search"
+                  render={[Function]}
 />,
                 <Route
                   component={[Function]}
@@ -692,9 +738,9 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "component": [Function],
                   "exact": true,
                   "path": "/add-race",
+                  "render": [Function],
                 },
                 "ref": null,
                 "rendered": null,
@@ -705,9 +751,22 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "component": [Function],
+                  "exact": true,
+                  "path": "/race-log",
+                  "render": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
                   "exact": true,
                   "path": "/search",
+                  "render": [Function],
                 },
                 "ref": null,
                 "rendered": null,
@@ -754,6 +813,7 @@ ShallowWrapper {
         "enableComponentDidUpdateOnSetState": true,
       },
     },
+    "disableLifecycleMethods": true,
   },
 }
 `;

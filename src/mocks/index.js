@@ -44,9 +44,9 @@ export const mockUser = {
 
 export const mockCompletedRace = {
   raceName: 'Hocus Marathon',
-  distance: 'Marathon',
-  time: '4:00:01',
   city: 'Nashville',
   state: 'TN',
+  time: '4:00:01',
+  distance: 'Marathon',
   completed: 'true'
 };

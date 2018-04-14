@@ -121,7 +121,7 @@ describe('apiCalls', () => {
     it('should call fetch with the right params', () => {
       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({})
+        json: () => Promise.resolve({id: 23})
       }))
       const expected = ['http://localhost:3000/api/v1/races', 
         {
@@ -135,6 +135,12 @@ describe('apiCalls', () => {
         }]
       api.addRace(mockCompletedRace, 14)
       expect(window.fetch).toHaveBeenCalledWith(...expected)
+    });
+
+    it('should throw error on error', () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.reject())
+      const expected = new Error('Unable to addRace')
+      expect(api.addRace(mockCompletedRace, 14)).rejects.toEqual(expected)
     });
   });
 });

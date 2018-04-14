@@ -7,14 +7,17 @@ import * as actions from '../../actions';
 describe('AddRace', () => {
   let wrapper;
   let mockAddRace;
-  let mockUser
 
   beforeEach(() => {
     mockAddRace = jest.fn();
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve({id: 23})
+    }));
     wrapper = shallow(<AddRace addRace={mockAddRace} user={mockUser}/>);
   });
 
-  it.skip('should match snapshot', () => {
+  it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -44,22 +47,23 @@ describe('AddRace', () => {
     expect(wrapper.state()).toEqual(expected);
   });
 
-  it('should call addRace with right params on submit', () => {
-    const mockEvent = { preventDefault: jest.fn()};
+  it('should call addRace with right params on submit', async () => {
+    const mockEvent = { preventDefault: jest.fn() };
     wrapper.setState(mockCompletedRace);
-    wrapper.instance().handleSubmit(mockEvent);
-    expect(mockAddRace).toHaveBeenCalledWith({...mockCompletedRace, user_id: 23});
+    await wrapper.instance().handleSubmit(mockEvent);
+    expect(mockAddRace).toHaveBeenCalledWith(mockCompletedRace);
   });
 
   it('should reset state after submit', () => {
-    const mockEvent = { preventDefault: jest.fn()};
+    const mockEvent = { preventDefault: jest.fn() };
     wrapper.setState(mockCompletedRace);
     const expected = {
       raceName: '',
       distance: '',
       time: '',
       city: '',
-      state: ''
+      state: '',
+      completed: 'true'
     };
     wrapper.instance().handleSubmit(mockEvent);
     expect(wrapper.state()).toEqual(expected);
