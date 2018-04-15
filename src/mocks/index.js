@@ -1,7 +1,7 @@
 export const mockRace = {
   state: 'CA',
   city: 'San Diego',
-  event: 'Spooky 5k',
+  raceName: 'Spooky 5k',
   date: '04-05-2018',
   id: 1577
 };
@@ -46,6 +46,7 @@ export const mockCompletedRace = {
   raceName: 'Hocus Marathon',
   city: 'Nashville',
   state: 'TN',
+  error: '',
   time: '4:00:01',
   distance: 'Marathon',
   completed: 'true'

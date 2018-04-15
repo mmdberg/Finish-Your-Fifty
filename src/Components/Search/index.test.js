@@ -1,4 +1,4 @@
-import Search from './index.js';
+import { Search } from './index.js';
 import { shallow } from 'enzyme';
 import React from 'react';
 import * as api from '../../apiCalls';
@@ -8,7 +8,7 @@ describe('Search', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Search />);
+    wrapper = shallow(<Search searchRace={mockRace}/>);
   });
 
   it('should match the snapshot', () => {
