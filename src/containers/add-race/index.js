@@ -55,7 +55,7 @@ export class AddRace extends Component {
         <input type="text" 
           placeholder='Race Name'
           name='raceName'
-          value={this.state.raceName}
+          value={this.props.searchRace ? this.props.searchRace.raceName : this.state.raceName}
           onChange={this.handleChange}/>
         <input type="text" 
           placeholder='Distance'
@@ -70,12 +70,12 @@ export class AddRace extends Component {
         <input type="text" 
           placeholder='City'
           name='city'
-          value={this.state.city}
+          value={this.props.searchRace ? this.props.searchRace.city : this.state.city}
           onChange={this.handleChange}/>
         <input type="text" 
           placeholder='State'
           name='state'
-          value={this.state.state}
+          value={this.props.searchRace ? this.props.searchRace.state : this.state.state}
           onChange={this.handleChange}/>
         <input type='radio'
           id='choiceTrue'
@@ -106,7 +106,8 @@ AddRace.propTypes = {
 
 export const mapStateToProps = state => ({
   races: state.races,
-  user: state.user
+  user: state.user,
+  searchRace: state.searchRace
 });
 
 export const mapDispatchToProps = dispatch => ({

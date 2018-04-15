@@ -20,3 +20,12 @@ export const removeRace = (race) => ({
 export const clearRaces = () => ({
   type: 'CLEAR_RACES'
 });
+
+export const addSearchRace = (race) => ({
+  type: 'ADD_SEARCH_RACE',
+  race
+});
+
+export const clearSearchRace = () => ({
+  type: 'CLEAR_SEARCH_RACE'
+});
