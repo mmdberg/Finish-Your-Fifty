@@ -4,7 +4,8 @@ import * as actions from '../../actions';
 import './styles.css';
 import * as api from '../../apiCalls';
 import PropTypes from 'prop-types';
-import List from 
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css'
 
 export class AddRace extends Component {
   constructor(props) {
@@ -21,6 +22,7 @@ export class AddRace extends Component {
   }
 
   handleChange = (event) => {
+    console.log(event)
     const { name, value } = event.target;
     this.setState({
       [name]: value
@@ -46,7 +48,12 @@ export class AddRace extends Component {
         error: `Unable to add race. ${raceId.error}`
       })
     }
-    
+  }
+
+  handleDropdownChange = (event) => {
+    this.setState({
+      distance: event.value
+    })
   }
 
   render() {
@@ -58,11 +65,12 @@ export class AddRace extends Component {
           name='raceName'
           value={this.props.searchRace ? this.props.searchRace.raceName : this.state.raceName}
           onChange={this.handleChange}/>
-        <input type="text" 
-          placeholder='Distance'
+        <Dropdown options={['Marathon', 'Half Marathon', '10 Miler', '10K', '5K', 'Other']}
+          placeholder='Select a race distance'
           name='distance'
           value={this.state.distance}
-          onChange={this.handleChange}/>
+          onChange={this.handleDropdownChange}
+        />
         <input type="text" 
           placeholder='Time'
           name='time'
@@ -98,6 +106,12 @@ export class AddRace extends Component {
     );
   }
 }
+
+        // <input type="text" 
+        //   placeholder='Distance'
+        //   name='distance'
+        //   value={this.state.distance}
+        //   onChange={this.handleChange}/>
 
 AddRace.propTypes = {
   races: PropTypes.array,
