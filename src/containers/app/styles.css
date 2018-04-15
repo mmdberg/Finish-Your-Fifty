@@ -20,12 +20,23 @@ header {
 
 h1 {
   font-size: 15px;
-  margin-right: 2px;
+  margin-right: 20px;
   font-family: 'Mina', sans-serif;
 }
 
 .introduction {
   color: black;
+  position: absolute;
+  top: 18px;
+  right: 3px;
+}
+
+.hi-user {
+  display: inline;
+}
+
+.logout {
+  display: inline;
 }
 
 

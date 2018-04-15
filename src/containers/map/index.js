@@ -9,7 +9,8 @@ export class StateMap extends Component {
     this.state = {
       raceInfo: '',
       textStyle: { left: 0,
-      top: 0
+      top: 0,
+      display: 'none'
       },
       state: ''
     }
@@ -29,7 +30,8 @@ export class StateMap extends Component {
       this.setState({
         raceInfo: '',
         textStyle: { left: 0,
-        top: 0
+        top: 0,
+        display: 'none'
         },
         state: ''
       })
@@ -37,7 +39,8 @@ export class StateMap extends Component {
       this.setState({
         textStyle: { 
           left: event.clientX,
-          top: event.clientY
+          top: event.clientY,
+          display: 'inline'
         },
         state: event.target.dataset.name
       })

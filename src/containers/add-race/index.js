@@ -16,6 +16,7 @@ export class AddRace extends Component {
       time: '',
       city: '',
       state: '',
+      date: '',
       completed: 'true',
       error: ''
     };
@@ -60,6 +61,7 @@ export class AddRace extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>Add a race to your log:</h2>
+        <p>(All fields required.)</p>
         <input type="text" 
           placeholder='Race Name'
           name='raceName'
@@ -85,6 +87,11 @@ export class AddRace extends Component {
           placeholder='State'
           name='state'
           value={this.props.searchRace ? this.props.searchRace.state : this.state.state}
+          onChange={this.handleChange}/>
+        <input type="text" 
+          placeholder='Date (DD-MM-YYYY)'
+          name='date'
+          value={this.props.searchRace ? this.props.searchRace.date : this.state.date}
           onChange={this.handleChange}/>
         <input type='radio'
           id='choiceTrue'

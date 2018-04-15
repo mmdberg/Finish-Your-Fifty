@@ -10,5 +10,6 @@
   border: 1px black solid;
   padding: 5px;
   background: linear-gradient(rgba(144, 120, 169, 0.4),     
-    rgba(144, 96, 138, 0.4))
+    rgba(144, 96, 138, 0.4));
+  transition: all 200ms ease;
 }
