@@ -11,12 +11,12 @@ export class AddRace extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      raceName: this.props.searchRace ? this.props.searchRace.raceName : '',
+      raceName: this.props.searchRace.raceName ? this.props.searchRace.raceName : '',
       distance: '',
       time: '',
-      city: this.props.searchRace ? this.props.searchRace.city : '',
-      state: this.props.searchRace ? this.props.searchRace.state : '',
-      date: this.props.searchRace ? this.props.searchRace.date : '',
+      city: this.props.searchRace.city ? this.props.searchRace.city : '',
+      state: this.props.searchRace.state ? this.props.searchRace.state : '',
+      date: this.props.searchRace.date ? this.props.searchRace.date : '',
       completed: 'true',
       error: ''
     };
@@ -32,7 +32,6 @@ export class AddRace extends Component {
   handleSubmit = async (event) => {
     event.preventDefault();
     this.props.clearSearchRace();
-    console.log(this.props.searchRace)
     const raceId = await api.addRace(this.state, this.props.user.id)
     if (raceId.id) {  
       this.props.addRace(this.state);
@@ -67,7 +66,7 @@ export class AddRace extends Component {
         <input type="text" 
           placeholder='Race Name'
           name='raceName'
-          value={this.props.searchRace ? this.props.searchRace.raceName : this.state.raceName}
+          value={this.props.searchRace.raceName ? this.props.searchRace.raceName : this.state.raceName}
           onChange={this.handleChange}/>
         <Dropdown options={['Marathon', 'Half Marathon', '10 Miler', '10K', '5K', 'Other']}
           placeholder='Select a race distance'
@@ -82,17 +81,17 @@ export class AddRace extends Component {
         <input type="text" 
           placeholder='City'
           name='city'
-          value={this.props.searchRace ? this.props.searchRace.city : this.state.city}
+          value={this.props.searchRace.city ? this.props.searchRace.city : this.state.city}
           onChange={this.handleChange}/>
         <input type="text" 
           placeholder='State'
           name='state'
-          value={this.props.searchRace ? this.props.searchRace.state : this.state.state}
+          value={this.props.searchRace.state ? this.props.searchRace.state : this.state.state}
           onChange={this.handleChange}/>
         <input type="text" 
           placeholder='Date (DD-MM-YYYY)'
           name='date'
-          value={this.props.searchRace ? this.props.searchRace.date : this.state.date}
+          value={this.props.searchRace.date ? this.props.searchRace.date : this.state.date}
           onChange={this.handleChange}/>
         <input type='radio'
           id='choiceTrue'
