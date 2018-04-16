@@ -11,19 +11,18 @@ export class AddRace extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      raceName: '',
+      raceName: this.props.searchRace ? this.props.searchRace.raceName : '',
       distance: '',
       time: '',
-      city: '',
-      state: '',
-      date: '',
+      city: this.props.searchRace ? this.props.searchRace.city : '',
+      state: this.props.searchRace ? this.props.searchRace.state : '',
+      date: this.props.searchRace ? this.props.searchRace.date : '',
       completed: 'true',
       error: ''
     };
   }
 
   handleChange = (event) => {
-    console.log(event)
     const { name, value } = event.target;
     this.setState({
       [name]: value
@@ -32,6 +31,8 @@ export class AddRace extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
+    this.props.clearSearchRace();
+    console.log(this.props.searchRace)
     const raceId = await api.addRace(this.state, this.props.user.id)
     if (raceId.id) {  
       this.props.addRace(this.state);
@@ -44,7 +45,7 @@ export class AddRace extends Component {
           date: '',
           completed: 'true',
           error: 'Race Added!'
-        });    
+        });  
     } else {
       this.setState({
         error: `Unable to add race. ${raceId.error}`
@@ -72,8 +73,7 @@ export class AddRace extends Component {
           placeholder='Select a race distance'
           name='distance'
           value={this.state.distance}
-          onChange={this.handleDropdownChange}
-        />
+          onChange={this.handleDropdownChange}/>
         <input type="text" 
           placeholder='Time'
           name='time'
@@ -129,7 +129,8 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  addRace: race => dispatch(actions.addRace(race))
+  addRace: race => dispatch(actions.addRace(race)),
+  clearSearchRace: () => dispatch(actions.clearSearchRace())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddRace);
