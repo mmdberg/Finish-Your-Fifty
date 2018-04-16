@@ -1,6 +1,656 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddRace should match snapshot 1`] = `
+exports[`AddRace should match snapshot with searchRace 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AddRace
+    addRace={[Function]}
+    clearSearchRace={[Function]}
+    searchRace={
+        Object {
+            "city": "San Diego",
+            "date": "04-05-2018",
+            "id": 1577,
+            "raceName": "Spooky 5k",
+            "state": "CA",
+          }
+    }
+    user={
+        Object {
+            "email": "pizza@pizza",
+            "id": 23,
+            "password": "p",
+            "userName": "Pizza",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2>
+          Add a race to your log:
+</h2>,
+        <p>
+          (All fields required.)
+</p>,
+        <input
+          name="raceName"
+          onChange={[Function]}
+          placeholder="Race Name"
+          type="text"
+          value="Spooky 5k"
+/>,
+        <Dropdown
+          baseClassName="Dropdown"
+          name="distance"
+          onChange={[Function]}
+          options={
+                    Array [
+                              "Marathon",
+                              "Half Marathon",
+                              "10 Miler",
+                              "10K",
+                              "5K",
+                              "Other",
+                            ]
+          }
+          placeholder="Select a race distance"
+          value=""
+/>,
+        <input
+          name="time"
+          onChange={[Function]}
+          placeholder="Time"
+          type="text"
+          value=""
+/>,
+        <input
+          name="city"
+          onChange={[Function]}
+          placeholder="City"
+          type="text"
+          value="San Diego"
+/>,
+        <input
+          name="state"
+          onChange={[Function]}
+          placeholder="State"
+          type="text"
+          value="CA"
+/>,
+        <input
+          name="date"
+          onChange={[Function]}
+          placeholder="Date (DD-MM-YYYY)"
+          type="text"
+          value="04-05-2018"
+/>,
+        <input
+          checked={true}
+          id="choiceTrue"
+          name="completed"
+          onChange={[Function]}
+          type="radio"
+          value="true"
+/>,
+        <label
+          htmlFor="choiceTrue"
+>
+          Completed
+</label>,
+        <input
+          checked={false}
+          id="choiceFalse"
+          name="completed"
+          onChange={[Function]}
+          type="radio"
+          value="false"
+/>,
+        <label
+          htmlFor="choiceFalse"
+>
+          Interested
+</label>,
+        <button
+          type="submit"
+>
+          Submit
+</button>,
+        <p />,
+      ],
+      "onSubmit": [Function],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Add a race to your log:",
+        },
+        "ref": null,
+        "rendered": "Add a race to your log:",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "(All fields required.)",
+        },
+        "ref": null,
+        "rendered": "(All fields required.)",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "name": "raceName",
+          "onChange": [Function],
+          "placeholder": "Race Name",
+          "type": "text",
+          "value": "Spooky 5k",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "baseClassName": "Dropdown",
+          "name": "distance",
+          "onChange": [Function],
+          "options": Array [
+            "Marathon",
+            "Half Marathon",
+            "10 Miler",
+            "10K",
+            "5K",
+            "Other",
+          ],
+          "placeholder": "Select a race distance",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "name": "time",
+          "onChange": [Function],
+          "placeholder": "Time",
+          "type": "text",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "name": "city",
+          "onChange": [Function],
+          "placeholder": "City",
+          "type": "text",
+          "value": "San Diego",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "name": "state",
+          "onChange": [Function],
+          "placeholder": "State",
+          "type": "text",
+          "value": "CA",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "name": "date",
+          "onChange": [Function],
+          "placeholder": "Date (DD-MM-YYYY)",
+          "type": "text",
+          "value": "04-05-2018",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "checked": true,
+          "id": "choiceTrue",
+          "name": "completed",
+          "onChange": [Function],
+          "type": "radio",
+          "value": "true",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Completed",
+          "htmlFor": "choiceTrue",
+        },
+        "ref": null,
+        "rendered": "Completed",
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "checked": false,
+          "id": "choiceFalse",
+          "name": "completed",
+          "onChange": [Function],
+          "type": "radio",
+          "value": "false",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Interested",
+          "htmlFor": "choiceFalse",
+        },
+        "ref": null,
+        "rendered": "Interested",
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Submit",
+          "type": "submit",
+        },
+        "ref": null,
+        "rendered": "Submit",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "",
+        },
+        "ref": null,
+        "rendered": "",
+        "type": "p",
+      },
+    ],
+    "type": "form",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2>
+            Add a race to your log:
+</h2>,
+          <p>
+            (All fields required.)
+</p>,
+          <input
+            name="raceName"
+            onChange={[Function]}
+            placeholder="Race Name"
+            type="text"
+            value="Spooky 5k"
+/>,
+          <Dropdown
+            baseClassName="Dropdown"
+            name="distance"
+            onChange={[Function]}
+            options={
+                        Array [
+                                    "Marathon",
+                                    "Half Marathon",
+                                    "10 Miler",
+                                    "10K",
+                                    "5K",
+                                    "Other",
+                                  ]
+            }
+            placeholder="Select a race distance"
+            value=""
+/>,
+          <input
+            name="time"
+            onChange={[Function]}
+            placeholder="Time"
+            type="text"
+            value=""
+/>,
+          <input
+            name="city"
+            onChange={[Function]}
+            placeholder="City"
+            type="text"
+            value="San Diego"
+/>,
+          <input
+            name="state"
+            onChange={[Function]}
+            placeholder="State"
+            type="text"
+            value="CA"
+/>,
+          <input
+            name="date"
+            onChange={[Function]}
+            placeholder="Date (DD-MM-YYYY)"
+            type="text"
+            value="04-05-2018"
+/>,
+          <input
+            checked={true}
+            id="choiceTrue"
+            name="completed"
+            onChange={[Function]}
+            type="radio"
+            value="true"
+/>,
+          <label
+            htmlFor="choiceTrue"
+>
+            Completed
+</label>,
+          <input
+            checked={false}
+            id="choiceFalse"
+            name="completed"
+            onChange={[Function]}
+            type="radio"
+            value="false"
+/>,
+          <label
+            htmlFor="choiceFalse"
+>
+            Interested
+</label>,
+          <button
+            type="submit"
+>
+            Submit
+</button>,
+          <p />,
+        ],
+        "onSubmit": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Add a race to your log:",
+          },
+          "ref": null,
+          "rendered": "Add a race to your log:",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "(All fields required.)",
+          },
+          "ref": null,
+          "rendered": "(All fields required.)",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "name": "raceName",
+            "onChange": [Function],
+            "placeholder": "Race Name",
+            "type": "text",
+            "value": "Spooky 5k",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "baseClassName": "Dropdown",
+            "name": "distance",
+            "onChange": [Function],
+            "options": Array [
+              "Marathon",
+              "Half Marathon",
+              "10 Miler",
+              "10K",
+              "5K",
+              "Other",
+            ],
+            "placeholder": "Select a race distance",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "name": "time",
+            "onChange": [Function],
+            "placeholder": "Time",
+            "type": "text",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "name": "city",
+            "onChange": [Function],
+            "placeholder": "City",
+            "type": "text",
+            "value": "San Diego",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "name": "state",
+            "onChange": [Function],
+            "placeholder": "State",
+            "type": "text",
+            "value": "CA",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "name": "date",
+            "onChange": [Function],
+            "placeholder": "Date (DD-MM-YYYY)",
+            "type": "text",
+            "value": "04-05-2018",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "checked": true,
+            "id": "choiceTrue",
+            "name": "completed",
+            "onChange": [Function],
+            "type": "radio",
+            "value": "true",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Completed",
+            "htmlFor": "choiceTrue",
+          },
+          "ref": null,
+          "rendered": "Completed",
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "checked": false,
+            "id": "choiceFalse",
+            "name": "completed",
+            "onChange": [Function],
+            "type": "radio",
+            "value": "false",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Interested",
+            "htmlFor": "choiceFalse",
+          },
+          "ref": null,
+          "rendered": "Interested",
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Submit",
+            "type": "submit",
+          },
+          "ref": null,
+          "rendered": "Submit",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "",
+          },
+          "ref": null,
+          "rendered": "",
+          "type": "p",
+        },
+      ],
+      "type": "form",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`AddRace should match snapshot without searchRace 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],

@@ -31,20 +31,20 @@ export class AddRace extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    const raceId = await api.addRace(this.state, this.props.user.id)
-    if (raceId.id) {  
+    let raceId = await api.addRace(this.state, this.props.user.id)
+    if(!raceId.error) {
       this.props.addRace(this.state);
       this.props.clearSearchRace();
       this.setState({
-          raceName: '',
-          distance: '',
-          time: '',
-          city: '',
-          state: '',
-          date: '',
-          completed: 'true',
-          error: 'Race Added!'
-        });  
+        raceName: '',
+        distance: '',
+        time: '',
+        city: '',
+        state: '',
+        date: '',
+        completed: 'true',
+        error: 'Race Added!'
+      })  
     } else {
       this.setState({
         error: `Unable to add race. ${raceId.error}`

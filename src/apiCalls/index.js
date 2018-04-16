@@ -85,7 +85,7 @@ export const addRace = async (raceInfo, user_id) => {
     const raceId = await response.json();
     return raceId;
   } catch (error) {
-    throw new Error('Unable to addRace')
+    return error
   }
 };
 

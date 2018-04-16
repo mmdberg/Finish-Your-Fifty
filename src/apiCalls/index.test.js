@@ -123,10 +123,19 @@ describe('apiCalls', () => {
         ok: true,
         json: () => Promise.resolve({id: 23})
       }))
+      const mockRaceToAdd = {
+        raceName: 'Hocus Marathon',
+        city: 'Nashville',
+        state: 'TN',
+        time: '4:00:01',
+        distance: 'Marathon',
+        completed: 'true',
+        date: '04-05-2018'
+      }
       const expected = ['http://localhost:3000/api/v1/races', 
         {
           method: 'POST',
-          body: JSON.stringify({...mockCompletedRace, 
+          body: JSON.stringify({...mockRaceToAdd, 
             user_id: 14
           }),
           headers: {
@@ -137,10 +146,22 @@ describe('apiCalls', () => {
       expect(window.fetch).toHaveBeenCalledWith(...expected)
     });
 
-    it('should throw error on error', () => {
-      window.fetch = jest.fn().mockImplementation(() => Promise.reject())
-      const expected = new Error('Unable to addRace')
-      expect(api.addRace(mockCompletedRace, 14)).rejects.toEqual(expected)
+    it('should return error on error', async () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.reject({
+        error: 'You\'re missing a(n) raceName.'
+      }))
+      const mockRaceToAdd = {
+        raceName: '',
+        city: 'Nashville',
+        state: 'TN',
+        time: '4:00:01',
+        distance: 'Marathon',
+        completed: 'true',
+        date: '04-05-2018'
+      }
+      const expected = {error: 'You\'re missing a(n) raceName.'}
+      const result = await api.addRace(mockRaceToAdd, 14)
+      expect(result).toEqual(expected)
     });
   });
 
