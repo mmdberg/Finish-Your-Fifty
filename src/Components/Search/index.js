@@ -72,7 +72,7 @@ export class Search extends Component {
     return this.props.searchRace.raceName ? 
       <Redirect to='/add-race' /> :
       (
-      <div>
+      <div className='search'>
         <h2>Search for races by state</h2>
         <form>
           <input type='text'

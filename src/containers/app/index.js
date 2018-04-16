@@ -10,6 +10,7 @@ import StateMap from '../map';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import PropTypes from 'prop-types';
+import logout from '../../images/logout.svg';
 
 export class App extends Component {
   async componentDidMount () {
@@ -38,7 +39,8 @@ export class App extends Component {
             this.props.user && 
             <div className='introduction'>
               <p className='hi-user'>Hi {this.props.user.userName}!</p>
-              <NavLink className='logout' to='/' onClick={this.logOut}> Log Out</NavLink>
+
+              <NavLink className='logout' to='/' onClick={this.logOut}>Log Out</NavLink>
             </div>
           }
         </header>

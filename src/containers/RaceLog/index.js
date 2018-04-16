@@ -5,6 +5,7 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 // import * as api from '../../apiCalls';
 import PropTypes from 'prop-types';
+import './styles.css'
 
 export class RaceLog extends Component {
   makeRaceList = (raceArray) => {
@@ -19,38 +20,38 @@ export class RaceLog extends Component {
 
   render() {
     return (
-      <div>
+      <div className='race-log'>
         {
           (this.props.races.length > 0) ?
             <ReactTable 
               data={this.makeRaceList(this.props.races)}
               columns={[
                 {
-                  Header: 'Race',
+                  Header: 'RACE',
                   accessor: 'raceName'
                 },
                 {
-                  Header: 'Distance',
+                  Header: 'DISTANCE',
                   accessor: 'distance'
                 },
                 {
-                  Header: 'Time',
+                  Header: 'TIME',
                   accessor: 'time'
                 },
                 {
-                  Header: 'City',
+                  Header: 'CITY',
                   accessor: 'city'
                 },
                 {
-                  Header: 'State',
+                  Header: 'STATE',
                   accessor: 'state'
                 },
                 {
-                  Header: 'Date',
+                  Header: 'DATE',
                   accessor: 'date'
                 },
                 {
-                  Header: 'Completed?',
+                  Header: 'COMPLETED?',
                   accessor: 'completed'
                 },
                 {
