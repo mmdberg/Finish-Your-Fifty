@@ -97,6 +97,7 @@ ShallowWrapper {
 >
           Submit
 </button>,
+        <p />,
       ],
       "onSubmit": [Function],
     },
@@ -256,6 +257,17 @@ ShallowWrapper {
         "rendered": "Submit",
         "type": "button",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "",
+        },
+        "ref": null,
+        "rendered": "",
+        "type": "p",
+      },
     ],
     "type": "form",
   },
@@ -335,6 +347,7 @@ ShallowWrapper {
 >
             Submit
 </button>,
+          <p />,
         ],
         "onSubmit": [Function],
       },
@@ -493,6 +506,17 @@ ShallowWrapper {
           "ref": null,
           "rendered": "Submit",
           "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "",
+          },
+          "ref": null,
+          "rendered": "",
+          "type": "p",
         },
       ],
       "type": "form",

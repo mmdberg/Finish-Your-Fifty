@@ -4,7 +4,7 @@ export const raceCleaner = (races) => {
       city: race.city,
       state: race.state,
       date: dateCleaner(race.start_date_local),
-      event: race.name,
+      raceName: race.name,
       id: race.id
     };
   });

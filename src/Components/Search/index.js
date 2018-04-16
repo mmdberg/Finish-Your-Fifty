@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import * as api from '../../apiCalls';
 import './styles.css';
 import ReactTable from 'react-table';
+import { Redirect } from 'react-router-dom';
 import 'react-table/react-table.css';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
-class Search extends Component {
+export class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,10 +39,25 @@ class Search extends Component {
         error: 'No races match your search criteria. Try again.'
       });
     } else {
-      this.setState({
-        results: racesByState
-      });
+      this.makeRaceList(racesByState)
     }
+  }
+
+  addInterestedRace = (race) => {
+    console.log(race);
+    this.props.addSearchRace(race)
+  }
+
+  makeRaceList = (RaceArray) => {
+    const racesWithButton = RaceArray.map(race => {
+      return {
+        ...race, 
+        addRace: <p onClick={() => this.addInterestedRace(race)}>X</p>
+      }
+    })
+    this.setState({
+      results: racesWithButton
+    });
   }
 
   clearSearch = () => {
@@ -52,7 +70,9 @@ class Search extends Component {
   }
 
   render() {
-    return (
+    return this.props.searchRace.raceName ? 
+      <Redirect to='/add-race' /> :
+      (
       <div>
         <h2>Search for races by state</h2>
         <form>
@@ -78,8 +98,8 @@ class Search extends Component {
               data={this.state.results}
               columns={[
                 {
-                  Header: 'Event',
-                  accessor: 'event'
+                  Header: 'Race Name',
+                  accessor: 'raceName'
                 },
                 {
                   Header: 'City',
@@ -92,6 +112,10 @@ class Search extends Component {
                 {
                   Header: 'State',
                   accessor: 'state'
+                },
+                {
+                  Header: 'Add Race To Log',
+                  accessor: 'addRace'
                 }
               ]}
               pageSize={this.state.results.length}
@@ -104,4 +128,12 @@ class Search extends Component {
   }
 }
 
-export default Search;
+export const mapStateToProps = state => ({
+  searchRace: state.searchRace
+});
+
+export const mapDispatchToProps = dispatch => ({
+  addSearchRace: race => dispatch(actions.addSearchRace(race))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

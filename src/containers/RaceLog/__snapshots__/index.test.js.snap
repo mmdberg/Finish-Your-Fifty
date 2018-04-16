@@ -10,8 +10,8 @@ ShallowWrapper {
             Object {
               "city": "San Diego",
               "date": "04-05-2018",
-              "event": "Spooky 5k",
               "id": 1577,
+              "raceName": "Spooky 5k",
               "state": "CA",
             },
           ]
@@ -118,8 +118,8 @@ ShallowWrapper {
                         Object {
                           "city": "San Diego",
                           "date": "04-05-2018",
-                          "event": "Spooky 5k",
                           "id": 1577,
+                          "raceName": "Spooky 5k",
                           "remove": <p
                             onClick={[Function]}
                 >
@@ -304,8 +304,8 @@ ShallowWrapper {
           Object {
             "city": "San Diego",
             "date": "04-05-2018",
-            "event": "Spooky 5k",
             "id": 1577,
+            "raceName": "Spooky 5k",
             "remove": <p
               onClick={[Function]}
 >
@@ -496,8 +496,8 @@ ShallowWrapper {
                               Object {
                                 "city": "San Diego",
                                 "date": "04-05-2018",
-                                "event": "Spooky 5k",
                                 "id": 1577,
+                                "raceName": "Spooky 5k",
                                 "remove": <p
                                   onClick={[Function]}
                     >
@@ -682,8 +682,8 @@ ShallowWrapper {
             Object {
               "city": "San Diego",
               "date": "04-05-2018",
-              "event": "Spooky 5k",
               "id": 1577,
+              "raceName": "Spooky 5k",
               "remove": <p
                 onClick={[Function]}
 >

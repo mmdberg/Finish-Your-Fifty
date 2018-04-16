@@ -4,6 +4,8 @@ import * as actions from '../../actions';
 import './styles.css';
 import * as api from '../../apiCalls';
 import PropTypes from 'prop-types';
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 
 export class AddRace extends Component {
   constructor(props) {
@@ -14,45 +16,65 @@ export class AddRace extends Component {
       time: '',
       city: '',
       state: '',
-      completed: 'true'
+      date: '',
+      completed: 'true',
+      error: ''
     };
   }
 
   handleChange = (event) => {
+    console.log(event)
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
-    this.props.addRace(this.state);
-    api.addRace(this.state, this.props.user.id);
+    const raceId = await api.addRace(this.state, this.props.user.id)
+    if (raceId.id) {  
+      this.props.addRace(this.state);
+      console.log(this.state)
+      this.setState({
+          raceName: '',
+          distance: '',
+          time: '',
+          city: '',
+          state: '',
+          date: '',
+          completed: 'true',
+          error: 'Race Added!'
+        });    
+    } else {
+      this.setState({
+        error: `Unable to add race. ${raceId.error}`
+      })
+    }
+  }
+
+  handleDropdownChange = (event) => {
     this.setState({
-      raceName: '',
-      distance: '',
-      time: '',
-      city: '',
-      state: '',
-      completed: 'true'
-    });
+      distance: event.value
+    })
   }
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>Add a race to your log:</h2>
+        <p>(All fields required.)</p>
         <input type="text" 
           placeholder='Race Name'
           name='raceName'
-          value={this.state.raceName}
+          value={this.props.searchRace ? this.props.searchRace.raceName : this.state.raceName}
           onChange={this.handleChange}/>
-        <input type="text" 
-          placeholder='Distance'
+        <Dropdown options={['Marathon', 'Half Marathon', '10 Miler', '10K', '5K', 'Other']}
+          placeholder='Select a race distance'
           name='distance'
           value={this.state.distance}
-          onChange={this.handleChange}/>
+          onChange={this.handleDropdownChange}
+        />
         <input type="text" 
           placeholder='Time'
           name='time'
@@ -61,12 +83,17 @@ export class AddRace extends Component {
         <input type="text" 
           placeholder='City'
           name='city'
-          value={this.state.city}
+          value={this.props.searchRace ? this.props.searchRace.city : this.state.city}
           onChange={this.handleChange}/>
         <input type="text" 
           placeholder='State'
           name='state'
-          value={this.state.state}
+          value={this.props.searchRace ? this.props.searchRace.state : this.state.state}
+          onChange={this.handleChange}/>
+        <input type="text" 
+          placeholder='Date (DD-MM-YYYY)'
+          name='date'
+          value={this.props.searchRace ? this.props.searchRace.date : this.state.date}
           onChange={this.handleChange}/>
         <input type='radio'
           id='choiceTrue'
@@ -83,6 +110,7 @@ export class AddRace extends Component {
           checked={this.state.completed === 'false'}/>
         <label htmlFor='choiceFalse'>Interested</label>
         <button type='submit'>Submit</button>
+        <p>{this.state.error}</p>
       </form>
     );
   }
@@ -91,12 +119,14 @@ export class AddRace extends Component {
 AddRace.propTypes = {
   races: PropTypes.array,
   user: PropTypes.object,
+  searchRace: PropTypes.object,
   addRace: PropTypes.func
 };
 
 export const mapStateToProps = state => ({
   races: state.races,
-  user: state.user
+  user: state.user,
+  searchRace: state.searchRace
 });
 
 export const mapDispatchToProps = dispatch => ({
