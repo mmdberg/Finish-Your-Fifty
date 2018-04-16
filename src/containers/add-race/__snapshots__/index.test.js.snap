@@ -96,32 +96,36 @@ ShallowWrapper {
           type="text"
           value="04-05-2018"
 />,
-        <input
-          checked={true}
-          id="choiceTrue"
-          name="completed"
-          onChange={[Function]}
-          type="radio"
-          value="true"
-/>,
-        <label
-          htmlFor="choiceTrue"
+        <div
+          className="radio-buttons"
 >
-          Completed
-</label>,
-        <input
-          checked={false}
-          id="choiceFalse"
-          name="completed"
-          onChange={[Function]}
-          type="radio"
-          value="false"
-/>,
-        <label
-          htmlFor="choiceFalse"
->
-          Interested
-</label>,
+          <input
+                    checked={true}
+                    id="choiceTrue"
+                    name="completed"
+                    onChange={[Function]}
+                    type="radio"
+                    value="true"
+          />
+          <label
+                    htmlFor="choiceTrue"
+          >
+                    Completed
+          </label>
+          <input
+                    checked={false}
+                    id="choiceFalse"
+                    name="completed"
+                    onChange={[Function]}
+                    type="radio"
+                    value="false"
+          />
+          <label
+                    htmlFor="choiceFalse"
+          >
+                    Interested
+          </label>
+</div>,
         <button
           type="submit"
 >
@@ -258,56 +262,96 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "checked": true,
-          "id": "choiceTrue",
-          "name": "completed",
-          "onChange": [Function],
-          "type": "radio",
-          "value": "true",
+          "children": Array [
+            <input
+              checked={true}
+              id="choiceTrue"
+              name="completed"
+              onChange={[Function]}
+              type="radio"
+              value="true"
+/>,
+            <label
+              htmlFor="choiceTrue"
+>
+              Completed
+</label>,
+            <input
+              checked={false}
+              id="choiceFalse"
+              name="completed"
+              onChange={[Function]}
+              type="radio"
+              value="false"
+/>,
+            <label
+              htmlFor="choiceFalse"
+>
+              Interested
+</label>,
+          ],
+          "className": "radio-buttons",
         },
         "ref": null,
-        "rendered": null,
-        "type": "input",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Completed",
-          "htmlFor": "choiceTrue",
-        },
-        "ref": null,
-        "rendered": "Completed",
-        "type": "label",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "checked": false,
-          "id": "choiceFalse",
-          "name": "completed",
-          "onChange": [Function],
-          "type": "radio",
-          "value": "false",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "input",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Interested",
-          "htmlFor": "choiceFalse",
-        },
-        "ref": null,
-        "rendered": "Interested",
-        "type": "label",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "checked": true,
+              "id": "choiceTrue",
+              "name": "completed",
+              "onChange": [Function],
+              "type": "radio",
+              "value": "true",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Completed",
+              "htmlFor": "choiceTrue",
+            },
+            "ref": null,
+            "rendered": "Completed",
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "checked": false,
+              "id": "choiceFalse",
+              "name": "completed",
+              "onChange": [Function],
+              "type": "radio",
+              "value": "false",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Interested",
+              "htmlFor": "choiceFalse",
+            },
+            "ref": null,
+            "rendered": "Interested",
+            "type": "label",
+          },
+        ],
+        "type": "div",
       },
       Object {
         "instance": null,
@@ -400,32 +444,36 @@ ShallowWrapper {
             type="text"
             value="04-05-2018"
 />,
-          <input
-            checked={true}
-            id="choiceTrue"
-            name="completed"
-            onChange={[Function]}
-            type="radio"
-            value="true"
-/>,
-          <label
-            htmlFor="choiceTrue"
+          <div
+            className="radio-buttons"
 >
-            Completed
-</label>,
-          <input
-            checked={false}
-            id="choiceFalse"
-            name="completed"
-            onChange={[Function]}
-            type="radio"
-            value="false"
-/>,
-          <label
-            htmlFor="choiceFalse"
->
-            Interested
-</label>,
+            <input
+                        checked={true}
+                        id="choiceTrue"
+                        name="completed"
+                        onChange={[Function]}
+                        type="radio"
+                        value="true"
+            />
+            <label
+                        htmlFor="choiceTrue"
+            >
+                        Completed
+            </label>
+            <input
+                        checked={false}
+                        id="choiceFalse"
+                        name="completed"
+                        onChange={[Function]}
+                        type="radio"
+                        value="false"
+            />
+            <label
+                        htmlFor="choiceFalse"
+            >
+                        Interested
+            </label>
+</div>,
           <button
             type="submit"
 >
@@ -562,56 +610,96 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "checked": true,
-            "id": "choiceTrue",
-            "name": "completed",
-            "onChange": [Function],
-            "type": "radio",
-            "value": "true",
+            "children": Array [
+              <input
+                checked={true}
+                id="choiceTrue"
+                name="completed"
+                onChange={[Function]}
+                type="radio"
+                value="true"
+/>,
+              <label
+                htmlFor="choiceTrue"
+>
+                Completed
+</label>,
+              <input
+                checked={false}
+                id="choiceFalse"
+                name="completed"
+                onChange={[Function]}
+                type="radio"
+                value="false"
+/>,
+              <label
+                htmlFor="choiceFalse"
+>
+                Interested
+</label>,
+            ],
+            "className": "radio-buttons",
           },
           "ref": null,
-          "rendered": null,
-          "type": "input",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Completed",
-            "htmlFor": "choiceTrue",
-          },
-          "ref": null,
-          "rendered": "Completed",
-          "type": "label",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "checked": false,
-            "id": "choiceFalse",
-            "name": "completed",
-            "onChange": [Function],
-            "type": "radio",
-            "value": "false",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "input",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Interested",
-            "htmlFor": "choiceFalse",
-          },
-          "ref": null,
-          "rendered": "Interested",
-          "type": "label",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "checked": true,
+                "id": "choiceTrue",
+                "name": "completed",
+                "onChange": [Function],
+                "type": "radio",
+                "value": "true",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Completed",
+                "htmlFor": "choiceTrue",
+              },
+              "ref": null,
+              "rendered": "Completed",
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "checked": false,
+                "id": "choiceFalse",
+                "name": "completed",
+                "onChange": [Function],
+                "type": "radio",
+                "value": "false",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Interested",
+                "htmlFor": "choiceFalse",
+              },
+              "ref": null,
+              "rendered": "Interested",
+              "type": "label",
+            },
+          ],
+          "type": "div",
         },
         Object {
           "instance": null,
@@ -738,32 +826,36 @@ ShallowWrapper {
           type="text"
           value=""
 />,
-        <input
-          checked={true}
-          id="choiceTrue"
-          name="completed"
-          onChange={[Function]}
-          type="radio"
-          value="true"
-/>,
-        <label
-          htmlFor="choiceTrue"
+        <div
+          className="radio-buttons"
 >
-          Completed
-</label>,
-        <input
-          checked={false}
-          id="choiceFalse"
-          name="completed"
-          onChange={[Function]}
-          type="radio"
-          value="false"
-/>,
-        <label
-          htmlFor="choiceFalse"
->
-          Interested
-</label>,
+          <input
+                    checked={true}
+                    id="choiceTrue"
+                    name="completed"
+                    onChange={[Function]}
+                    type="radio"
+                    value="true"
+          />
+          <label
+                    htmlFor="choiceTrue"
+          >
+                    Completed
+          </label>
+          <input
+                    checked={false}
+                    id="choiceFalse"
+                    name="completed"
+                    onChange={[Function]}
+                    type="radio"
+                    value="false"
+          />
+          <label
+                    htmlFor="choiceFalse"
+          >
+                    Interested
+          </label>
+</div>,
         <button
           type="submit"
 >
@@ -900,56 +992,96 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "checked": true,
-          "id": "choiceTrue",
-          "name": "completed",
-          "onChange": [Function],
-          "type": "radio",
-          "value": "true",
+          "children": Array [
+            <input
+              checked={true}
+              id="choiceTrue"
+              name="completed"
+              onChange={[Function]}
+              type="radio"
+              value="true"
+/>,
+            <label
+              htmlFor="choiceTrue"
+>
+              Completed
+</label>,
+            <input
+              checked={false}
+              id="choiceFalse"
+              name="completed"
+              onChange={[Function]}
+              type="radio"
+              value="false"
+/>,
+            <label
+              htmlFor="choiceFalse"
+>
+              Interested
+</label>,
+          ],
+          "className": "radio-buttons",
         },
         "ref": null,
-        "rendered": null,
-        "type": "input",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Completed",
-          "htmlFor": "choiceTrue",
-        },
-        "ref": null,
-        "rendered": "Completed",
-        "type": "label",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "checked": false,
-          "id": "choiceFalse",
-          "name": "completed",
-          "onChange": [Function],
-          "type": "radio",
-          "value": "false",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "input",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Interested",
-          "htmlFor": "choiceFalse",
-        },
-        "ref": null,
-        "rendered": "Interested",
-        "type": "label",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "checked": true,
+              "id": "choiceTrue",
+              "name": "completed",
+              "onChange": [Function],
+              "type": "radio",
+              "value": "true",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Completed",
+              "htmlFor": "choiceTrue",
+            },
+            "ref": null,
+            "rendered": "Completed",
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "checked": false,
+              "id": "choiceFalse",
+              "name": "completed",
+              "onChange": [Function],
+              "type": "radio",
+              "value": "false",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Interested",
+              "htmlFor": "choiceFalse",
+            },
+            "ref": null,
+            "rendered": "Interested",
+            "type": "label",
+          },
+        ],
+        "type": "div",
       },
       Object {
         "instance": null,
@@ -1042,32 +1174,36 @@ ShallowWrapper {
             type="text"
             value=""
 />,
-          <input
-            checked={true}
-            id="choiceTrue"
-            name="completed"
-            onChange={[Function]}
-            type="radio"
-            value="true"
-/>,
-          <label
-            htmlFor="choiceTrue"
+          <div
+            className="radio-buttons"
 >
-            Completed
-</label>,
-          <input
-            checked={false}
-            id="choiceFalse"
-            name="completed"
-            onChange={[Function]}
-            type="radio"
-            value="false"
-/>,
-          <label
-            htmlFor="choiceFalse"
->
-            Interested
-</label>,
+            <input
+                        checked={true}
+                        id="choiceTrue"
+                        name="completed"
+                        onChange={[Function]}
+                        type="radio"
+                        value="true"
+            />
+            <label
+                        htmlFor="choiceTrue"
+            >
+                        Completed
+            </label>
+            <input
+                        checked={false}
+                        id="choiceFalse"
+                        name="completed"
+                        onChange={[Function]}
+                        type="radio"
+                        value="false"
+            />
+            <label
+                        htmlFor="choiceFalse"
+            >
+                        Interested
+            </label>
+</div>,
           <button
             type="submit"
 >
@@ -1204,56 +1340,96 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "checked": true,
-            "id": "choiceTrue",
-            "name": "completed",
-            "onChange": [Function],
-            "type": "radio",
-            "value": "true",
+            "children": Array [
+              <input
+                checked={true}
+                id="choiceTrue"
+                name="completed"
+                onChange={[Function]}
+                type="radio"
+                value="true"
+/>,
+              <label
+                htmlFor="choiceTrue"
+>
+                Completed
+</label>,
+              <input
+                checked={false}
+                id="choiceFalse"
+                name="completed"
+                onChange={[Function]}
+                type="radio"
+                value="false"
+/>,
+              <label
+                htmlFor="choiceFalse"
+>
+                Interested
+</label>,
+            ],
+            "className": "radio-buttons",
           },
           "ref": null,
-          "rendered": null,
-          "type": "input",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Completed",
-            "htmlFor": "choiceTrue",
-          },
-          "ref": null,
-          "rendered": "Completed",
-          "type": "label",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "checked": false,
-            "id": "choiceFalse",
-            "name": "completed",
-            "onChange": [Function],
-            "type": "radio",
-            "value": "false",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "input",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Interested",
-            "htmlFor": "choiceFalse",
-          },
-          "ref": null,
-          "rendered": "Interested",
-          "type": "label",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "checked": true,
+                "id": "choiceTrue",
+                "name": "completed",
+                "onChange": [Function],
+                "type": "radio",
+                "value": "true",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Completed",
+                "htmlFor": "choiceTrue",
+              },
+              "ref": null,
+              "rendered": "Completed",
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "checked": false,
+                "id": "choiceFalse",
+                "name": "completed",
+                "onChange": [Function],
+                "type": "radio",
+                "value": "false",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Interested",
+                "htmlFor": "choiceFalse",
+              },
+              "ref": null,
+              "rendered": "Interested",
+              "type": "label",
+            },
+          ],
+          "type": "div",
         },
         Object {
           "instance": null,

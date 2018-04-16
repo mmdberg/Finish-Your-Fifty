@@ -93,20 +93,22 @@ export class AddRace extends Component {
           name='date'
           value={this.props.searchRace.date ? this.props.searchRace.date : this.state.date}
           onChange={this.handleChange}/>
-        <input type='radio'
-          id='choiceTrue'
-          name='completed'
-          value='true'
-          onChange={this.handleChange}
-          checked={this.state.completed === 'true'}/>
-        <label htmlFor='choiceTrue'>Completed</label>
-        <input type='radio'
-          id='choiceFalse'
-          name='completed'
-          value='false'
-          onChange={this.handleChange}
-          checked={this.state.completed === 'false'}/>
-        <label htmlFor='choiceFalse'>Interested</label>
+        <div className='radio-buttons'>
+          <input type='radio'
+            id='choiceTrue'
+            name='completed'
+            value='true'
+            onChange={this.handleChange}
+            checked={this.state.completed === 'true'}/>
+          <label htmlFor='choiceTrue'>Completed</label>
+          <input type='radio'
+            id='choiceFalse'
+            name='completed'
+            value='false'
+            onChange={this.handleChange}
+            checked={this.state.completed === 'false'}/>
+          <label htmlFor='choiceFalse'>Interested</label>
+        </div>
         <button type='submit'>Submit</button>
         <p>{this.state.error}</p>
       </form>
