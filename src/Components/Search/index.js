@@ -44,7 +44,6 @@ export class Search extends Component {
   }
 
   addInterestedRace = (race) => {
-    console.log(race);
     this.props.addSearchRace(race)
   }
 

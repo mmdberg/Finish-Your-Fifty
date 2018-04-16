@@ -8,34 +8,68 @@ import * as api from '../../apiCalls';
 describe('AddRace', () => {
   let wrapper;
   let mockAddRace;
+  let mockClearSearchRace;
 
   beforeEach(() => {
     mockAddRace = jest.fn();
-    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-      ok: true,
-      json: () => Promise.resolve({id: 23})
-    }));
-    wrapper = shallow(<AddRace addRace={mockAddRace} user={mockUser}/>);
+    mockClearSearchRace = jest.fn()
+    wrapper = shallow(<AddRace 
+      addRace={mockAddRace} 
+      user={mockUser} 
+      searchRace={{}}
+      clearSearchRace={mockClearSearchRace}
+      />);
   });
 
-  it('should match snapshot', () => {
+  it('should match snapshot without searchRace', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should start with empty state', () => {
+  it('should match snapshot with searchRace', () => {
+    let wrapper = shallow(<AddRace 
+      addRace={mockAddRace} 
+      user={mockUser} 
+      searchRace={mockRace}
+      clearSearchRace={mockClearSearchRace}
+      />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should start with empty state if no searchRace', () => {
     const expected = {
       raceName: '',
       distance: '',
       time: '',
       city: '',
       state: '',
+      date: '',
       completed: 'true',
       error: ''
     };
     expect(wrapper.state()).toEqual(expected);
   });
 
-  it('should update state with user input', () => {
+  it('should start with searchRace info in state if it exists', () => {
+    let wrapper = shallow(<AddRace 
+      addRace={mockAddRace} 
+      user={mockUser} 
+      searchRace={mockRace}
+      clearSearchRace={mockClearSearchRace}
+      />);
+    const expected = {
+      raceName: 'Spooky 5k',
+      distance: '',
+      time: '',
+      city: 'San Diego',
+      state: 'CA',
+      date: '04-05-2018',
+      completed: 'true',
+      error: ''
+    };
+    expect(wrapper.state()).toEqual(expected);
+  });
+
+  it('should update state with user input on type', () => {
     const mockEvent =  {target: {name: 'time', value: '45'}};
     const expected = {
       raceName: '',
@@ -43,6 +77,7 @@ describe('AddRace', () => {
       time: '45',
       city: '',
       state: '',
+      date: '',
       completed: 'true',
       error: ''
     };
@@ -50,12 +85,12 @@ describe('AddRace', () => {
     expect(wrapper.state()).toEqual(expected);
   });
 
-  it.skip('should send race to db with right params on submit', () => {
+  it('should send race to db with right params on submit', async () => {
     const mockEvent = { preventDefault: jest.fn() };
     wrapper.setState(mockCompletedRace);
-    api.addRace = jest.fn()
+    api.addRace = jest.fn().mockImplementation(() => Promise.resolve({id: 23}));
 
-    wrapper.instance().handleSubmit(mockEvent);
+    await wrapper.instance().handleSubmit(mockEvent);
     expect(api.addRace).toHaveBeenCalledWith(mockCompletedRace, 23)
   });
 
@@ -66,7 +101,13 @@ describe('AddRace', () => {
     expect(mockAddRace).toHaveBeenCalledWith(mockCompletedRace);
   });
 
-  it('should reset state and update error after submit', () => {
+  it('should call clearSearchRace on submit', async () => {
+    const mockEvent = { preventDefault: jest.fn() };
+    await wrapper.instance().handleSubmit(mockEvent);
+    expect(mockClearSearchRace).toHaveBeenCalled();
+  })
+
+  it('should reset state and update success message after submit', async () => {
     const mockEvent = { preventDefault: jest.fn() };
     wrapper.setState(mockCompletedRace);
     const expected = {
@@ -75,11 +116,30 @@ describe('AddRace', () => {
       time: '',
       city: '',
       state: '',
+      date: '',
       completed: 'true',
       error: 'Race Added!'
     };
-    wrapper.instance().handleSubmit(mockEvent);
+    await wrapper.instance().handleSubmit(mockEvent);
     expect(wrapper.state()).toEqual(expected);
+  });
+
+  it('should send error message if unable to add race', async () => {
+    const mockEvent = { preventDefault: jest.fn() };
+
+    api.addRace = jest.fn().mockImplementation(() => Promise.resolve({error: 'You are missing a(n) raceName.'}));
+    const expected = 'Unable to add race. You are missing a(n) raceName.'
+    wrapper.setState({
+      distance: '',
+      time: '',
+      city: 'San Diego',
+      state: 'CA',
+      date: '04-05-2018',
+      completed: 'true',
+      error: ''
+    })
+    await wrapper.instance().handleSubmit(mockEvent);
+    expect(wrapper.state('error')).toEqual(expected)
   });
 
   describe('mapStateToProps', () => {

@@ -108,6 +108,14 @@ ShallowWrapper {
                           "accessor": "state",
                         },
                         Object {
+                          "Header": "Date",
+                          "accessor": "date",
+                        },
+                        Object {
+                          "Header": "Completed?",
+                          "accessor": "completed",
+                        },
+                        Object {
                           "Header": "Remove",
                           "accessor": "remove",
                         },
@@ -294,6 +302,14 @@ ShallowWrapper {
           Object {
             "Header": "State",
             "accessor": "state",
+          },
+          Object {
+            "Header": "Date",
+            "accessor": "date",
+          },
+          Object {
+            "Header": "Completed?",
+            "accessor": "completed",
           },
           Object {
             "Header": "Remove",
@@ -486,6 +502,14 @@ ShallowWrapper {
                                 "accessor": "state",
                               },
                               Object {
+                                "Header": "Date",
+                                "accessor": "date",
+                              },
+                              Object {
+                                "Header": "Completed?",
+                                "accessor": "completed",
+                              },
+                              Object {
                                 "Header": "Remove",
                                 "accessor": "remove",
                               },
@@ -672,6 +696,14 @@ ShallowWrapper {
             Object {
               "Header": "State",
               "accessor": "state",
+            },
+            Object {
+              "Header": "Date",
+              "accessor": "date",
+            },
+            Object {
+              "Header": "Completed?",
+              "accessor": "completed",
             },
             Object {
               "Header": "Remove",

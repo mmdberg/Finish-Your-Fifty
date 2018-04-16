@@ -32,16 +32,14 @@ export class StateMap extends Component {
       }
     })
     const colors = {
-      '': 'blue',
-      Marathon: 'magenta', 
-      'Half Marathon': 'yellow',
-      '10K': 'green', 
-      'See All Races': 'chartreuse', 
-      '5K': 'black', 
-      Other: 'gold', 
-      '10 Miler': 'red'}
-    console.log('filter', filter)
-    console.log(colors[filter])
+      '': '#167310',
+      Marathon: '#AB0D17', 
+      'Half Marathon': '#E4BD21',
+      '10K': '#082790', 
+      'See All Races': '#167310', 
+      '5K': '#30CBB1', 
+      Other: '#5F0E85', 
+      '10 Miler': '#D16A27'}
     const stateObject = stateArray.reduce((stateObj, state) => {
 
       stateObj[state] = {fill: colors[filter]}
