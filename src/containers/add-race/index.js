@@ -35,7 +35,6 @@ export class AddRace extends Component {
     const raceId = await api.addRace(this.state, this.props.user.id)
     if (raceId.id) {  
       this.props.addRace(this.state);
-      console.log(this.state)
       this.setState({
           raceName: '',
           distance: '',

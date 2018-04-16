@@ -32,16 +32,14 @@ export class StateMap extends Component {
       }
     })
     const colors = {
-      '': 'blue',
+      '': 'chartreuse',
       Marathon: 'magenta', 
       'Half Marathon': 'yellow',
       '10K': 'green', 
       'See All Races': 'chartreuse', 
-      '5K': 'black', 
+      '5K': 'blue', 
       Other: 'gold', 
       '10 Miler': 'red'}
-    console.log('filter', filter)
-    console.log(colors[filter])
     const stateObject = stateArray.reduce((stateObj, state) => {
 
       stateObj[state] = {fill: colors[filter]}

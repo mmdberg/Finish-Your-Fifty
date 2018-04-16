@@ -75,6 +75,7 @@ export const addRace = async (raceInfo, user_id) => {
         time: raceInfo.time,
         distance: raceInfo.distance,
         completed: raceInfo.completed,
+        date: raceInfo.date,
         user_id
       }),
       headers: {
