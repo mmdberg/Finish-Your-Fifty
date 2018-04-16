@@ -8,27 +8,56 @@ import * as api from '../../apiCalls';
 describe('AddRace', () => {
   let wrapper;
   let mockAddRace;
+  let mockClearSearchRace;
 
   beforeEach(() => {
     mockAddRace = jest.fn();
+    mockClearSearchRace = jest.fn()
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
       json: () => Promise.resolve({id: 23})
     }));
-    wrapper = shallow(<AddRace addRace={mockAddRace} user={mockUser}/>);
+    wrapper = shallow(<AddRace 
+      addRace={mockAddRace} 
+      user={mockUser} 
+      searchRace={{}}
+      clearSearchRace={mockClearSearchRace}
+      />);
   });
 
   it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should start with empty state', () => {
+  it('should start with empty state if no searchRace', () => {
+
     const expected = {
       raceName: '',
       distance: '',
       time: '',
       city: '',
       state: '',
+      date: '',
+      completed: 'true',
+      error: ''
+    };
+    expect(wrapper.state()).toEqual(expected);
+  });
+
+  it('should start with searchRace info if it exists', () => {
+    let wrapper = shallow(<AddRace 
+      addRace={mockAddRace} 
+      user={mockUser} 
+      searchRace={mockRace}
+      clearSearchRace={mockClearSearchRace}
+      />);
+    const expected = {
+      raceName: 'Spooky 5k',
+      distance: '',
+      time: '',
+      city: 'San Diego',
+      state: 'CA',
+      date: '04-05-2018',
       completed: 'true',
       error: ''
     };
@@ -43,6 +72,7 @@ describe('AddRace', () => {
       time: '45',
       city: '',
       state: '',
+      date: '',
       completed: 'true',
       error: ''
     };
@@ -66,7 +96,13 @@ describe('AddRace', () => {
     expect(mockAddRace).toHaveBeenCalledWith(mockCompletedRace);
   });
 
-  it('should reset state and update error after submit', () => {
+  it('should call clearSearchRace on submit', async () => {
+    const mockEvent = { preventDefault: jest.fn() };
+    await wrapper.instance().handleSubmit(mockEvent);
+    expect(mockClearSearchRace).toHaveBeenCalled();
+  })
+
+  it('should reset state and update error after submit', async () => {
     const mockEvent = { preventDefault: jest.fn() };
     wrapper.setState(mockCompletedRace);
     const expected = {
@@ -75,10 +111,11 @@ describe('AddRace', () => {
       time: '',
       city: '',
       state: '',
+      date: '',
       completed: 'true',
       error: 'Race Added!'
     };
-    wrapper.instance().handleSubmit(mockEvent);
+    await wrapper.instance().handleSubmit(mockEvent);
     expect(wrapper.state()).toEqual(expected);
   });
 

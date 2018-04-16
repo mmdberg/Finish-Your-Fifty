@@ -48,6 +48,7 @@ export const mockCompletedRace = {
   state: 'TN',
   error: '',
   time: '4:00:01',
+  date: '04-05-2018',
   distance: 'Marathon',
   completed: 'true'
 };

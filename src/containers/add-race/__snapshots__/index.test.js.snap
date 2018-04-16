@@ -6,6 +6,8 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <AddRace
     addRace={[Function]}
+    clearSearchRace={[Function]}
+    searchRace={Object {}}
     user={
         Object {
             "email": "pizza@pizza",
@@ -31,6 +33,9 @@ ShallowWrapper {
         <h2>
           Add a race to your log:
 </h2>,
+        <p>
+          (All fields required.)
+</p>,
         <input
           name="raceName"
           onChange={[Function]}
@@ -38,11 +43,21 @@ ShallowWrapper {
           type="text"
           value=""
 />,
-        <input
+        <Dropdown
+          baseClassName="Dropdown"
           name="distance"
           onChange={[Function]}
-          placeholder="Distance"
-          type="text"
+          options={
+                    Array [
+                              "Marathon",
+                              "Half Marathon",
+                              "10 Miler",
+                              "10K",
+                              "5K",
+                              "Other",
+                            ]
+          }
+          placeholder="Select a race distance"
           value=""
 />,
         <input
@@ -63,6 +78,13 @@ ShallowWrapper {
           name="state"
           onChange={[Function]}
           placeholder="State"
+          type="text"
+          value=""
+/>,
+        <input
+          name="date"
+          onChange={[Function]}
+          placeholder="Date (DD-MM-YYYY)"
           type="text"
           value=""
 />,
@@ -119,6 +141,17 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "children": "(All fields required.)",
+        },
+        "ref": null,
+        "rendered": "(All fields required.)",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
           "name": "raceName",
           "onChange": [Function],
           "placeholder": "Race Name",
@@ -132,17 +165,25 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "class",
         "props": Object {
+          "baseClassName": "Dropdown",
           "name": "distance",
           "onChange": [Function],
-          "placeholder": "Distance",
-          "type": "text",
+          "options": Array [
+            "Marathon",
+            "Half Marathon",
+            "10 Miler",
+            "10K",
+            "5K",
+            "Other",
+          ],
+          "placeholder": "Select a race distance",
           "value": "",
         },
         "ref": null,
         "rendered": null,
-        "type": "input",
+        "type": [Function],
       },
       Object {
         "instance": null,
@@ -182,6 +223,21 @@ ShallowWrapper {
           "name": "state",
           "onChange": [Function],
           "placeholder": "State",
+          "type": "text",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "name": "date",
+          "onChange": [Function],
+          "placeholder": "Date (DD-MM-YYYY)",
           "type": "text",
           "value": "",
         },
@@ -281,6 +337,9 @@ ShallowWrapper {
           <h2>
             Add a race to your log:
 </h2>,
+          <p>
+            (All fields required.)
+</p>,
           <input
             name="raceName"
             onChange={[Function]}
@@ -288,11 +347,21 @@ ShallowWrapper {
             type="text"
             value=""
 />,
-          <input
+          <Dropdown
+            baseClassName="Dropdown"
             name="distance"
             onChange={[Function]}
-            placeholder="Distance"
-            type="text"
+            options={
+                        Array [
+                                    "Marathon",
+                                    "Half Marathon",
+                                    "10 Miler",
+                                    "10K",
+                                    "5K",
+                                    "Other",
+                                  ]
+            }
+            placeholder="Select a race distance"
             value=""
 />,
           <input
@@ -313,6 +382,13 @@ ShallowWrapper {
             name="state"
             onChange={[Function]}
             placeholder="State"
+            type="text"
+            value=""
+/>,
+          <input
+            name="date"
+            onChange={[Function]}
+            placeholder="Date (DD-MM-YYYY)"
             type="text"
             value=""
 />,
@@ -369,6 +445,17 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "children": "(All fields required.)",
+          },
+          "ref": null,
+          "rendered": "(All fields required.)",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
             "name": "raceName",
             "onChange": [Function],
             "placeholder": "Race Name",
@@ -382,17 +469,25 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "class",
           "props": Object {
+            "baseClassName": "Dropdown",
             "name": "distance",
             "onChange": [Function],
-            "placeholder": "Distance",
-            "type": "text",
+            "options": Array [
+              "Marathon",
+              "Half Marathon",
+              "10 Miler",
+              "10K",
+              "5K",
+              "Other",
+            ],
+            "placeholder": "Select a race distance",
             "value": "",
           },
           "ref": null,
           "rendered": null,
-          "type": "input",
+          "type": [Function],
         },
         Object {
           "instance": null,
@@ -432,6 +527,21 @@ ShallowWrapper {
             "name": "state",
             "onChange": [Function],
             "placeholder": "State",
+            "type": "text",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "name": "date",
+            "onChange": [Function],
+            "placeholder": "Date (DD-MM-YYYY)",
             "type": "text",
             "value": "",
           },

@@ -31,10 +31,10 @@ export class AddRace extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    this.props.clearSearchRace();
     const raceId = await api.addRace(this.state, this.props.user.id)
     if (raceId.id) {  
       this.props.addRace(this.state);
+      this.props.clearSearchRace();
       this.setState({
           raceName: '',
           distance: '',
