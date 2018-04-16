@@ -21,9 +21,8 @@ export class StateMap extends Component {
 
   fillStates = (filter) => {
     const stateArray = this.props.races.map(race => {
-      if(filter && race.completed === 'true') {
-        if (race.distance === filter || race.completed === filter) {
-          console.log('race', race)
+      if(filter && filter !== 'See All Races' && race.completed === 'true') {
+        if (race.distance === filter) {
           return race.state
         } else {
           return ''
@@ -32,11 +31,20 @@ export class StateMap extends Component {
         return race.state
       }
     })
-    console.log(stateArray)
+    const colors = {
+      '': 'blue',
+      Marathon: 'magenta', 
+      'Half Marathon': 'yellow',
+      '10K': 'green', 
+      'See All Races': 'chartreuse', 
+      '5K': 'black', 
+      Other: 'gold', 
+      '10 Miler': 'red'}
+    console.log('filter', filter)
+    console.log(colors[filter])
     const stateObject = stateArray.reduce((stateObj, state) => {
-      stateObj[state] = {fill:'magenta'}
-      console.log('state', state)
-      console.log('filter', filter)
+
+      stateObj[state] = {fill: colors[filter]}
       return stateObj
     }, {})
     return stateObject
@@ -82,7 +90,7 @@ export class StateMap extends Component {
       <div className='map'>
         <div className="filter">
           <Dropdown 
-          options={['', 'Marathon', 'Half Marathon', '10 Miler', '10K', '5K', 'Other']}
+          options={['See All Races', 'Marathon', 'Half Marathon', '10 Miler', '10K', '5K', 'Other']}
           placeholder='Filter by distance'
           name='distance'
           value={this.state.filter}
