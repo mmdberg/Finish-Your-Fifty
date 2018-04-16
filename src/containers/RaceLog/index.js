@@ -50,6 +50,10 @@ export class RaceLog extends Component {
                   accessor: 'date'
                 },
                 {
+                  Header: 'Completed?',
+                  accessor: 'completed'
+                },
+                {
                   Header: 'Remove',
                   accessor: 'remove'
                 }

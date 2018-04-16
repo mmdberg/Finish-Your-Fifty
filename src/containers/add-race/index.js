@@ -5,7 +5,7 @@ import './styles.css';
 import * as api from '../../apiCalls';
 import PropTypes from 'prop-types';
 import Dropdown from 'react-dropdown';
-import 'react-dropdown/style.css'
+import 'react-dropdown/style.css';
 
 export class AddRace extends Component {
   constructor(props) {
@@ -35,12 +35,14 @@ export class AddRace extends Component {
     const raceId = await api.addRace(this.state, this.props.user.id)
     if (raceId.id) {  
       this.props.addRace(this.state);
+      console.log(this.state)
       this.setState({
           raceName: '',
           distance: '',
           time: '',
           city: '',
           state: '',
+          date: '',
           completed: 'true',
           error: 'Race Added!'
         });    
@@ -114,15 +116,10 @@ export class AddRace extends Component {
   }
 }
 
-        // <input type="text" 
-        //   placeholder='Distance'
-        //   name='distance'
-        //   value={this.state.distance}
-        //   onChange={this.handleChange}/>
-
 AddRace.propTypes = {
   races: PropTypes.array,
   user: PropTypes.object,
+  searchRace: PropTypes.object,
   addRace: PropTypes.func
 };
 
