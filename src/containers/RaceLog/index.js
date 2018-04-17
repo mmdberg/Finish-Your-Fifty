@@ -37,12 +37,12 @@ export class RaceLog extends Component {
                 {
                   Header: 'TIME',
                   accessor: 'time',
-                  width: 60
+                  width: 70
                 },
                 {
                   Header: 'CITY',
                   accessor: 'city',
-                  width: 85
+                  width: 90
                 },
                 {
                   Header: 'STATE',
@@ -52,12 +52,12 @@ export class RaceLog extends Component {
                 {
                   Header: 'DATE',
                   accessor: 'date',
-                  width: 72
+                  width: 85
                 },
                 {
                   Header: 'COMPLETED?',
                   accessor: 'completed',
-                  width: 85
+                  width: 90
                 },
                 {
                   Header: 'Remove',

@@ -55,27 +55,27 @@
   color: black;
 }
 
+@media screen and (max-width: 850px) {
+  .map-key {
+    width: 300px;
+    height: 128px;
+    bottom: 0;
+    top: initial;
+  }
+}
+
+
 @media screen and (max-width: 500px) {
 
   .map {
-    min-width: 300px
+    min-width: 300px;
+/*    height: 700px;*/
   }
 
   .map-key {
-    background-color: initial;
-    top: 520px;
-    width: 100%;
-    z-index: 1
+    width: 200px;
+    height: 128px;
+    bottom: -60px;
+    top: initial;
   }
-
-  .map-text {
-    top: 170px;
-    width: 100%;  
-  }
-
-  .map .Dropdown-control {
-    display: none;
-  }
-
 }
-
