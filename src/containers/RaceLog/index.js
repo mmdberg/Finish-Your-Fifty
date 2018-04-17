@@ -5,16 +5,22 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import PropTypes from 'prop-types';
 import './styles.css';
+import * as api from '../../apiCalls';
 
 export class RaceLog extends Component {
   makeRaceList = (raceArray) => {
     const raceList = raceArray.map(race => {
       return {
         ...race, 
-        remove: <button onClick={() => this.props.removeRace(race)}> X </button>
+        remove: <button onClick={() => this.handleRemove(race)}> X </button>
       };
     });
     return raceList;
+  }
+
+  handleRemove = (race) => {
+    api.deleteRace(race.id)
+    this.props.removeRace(race)
   }
 
   render() {

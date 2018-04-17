@@ -182,4 +182,20 @@ describe('apiCalls', () => {
       expect(api.getUserRaces(23)).rejects.toEqual(expected)
     });
   });
+
+  describe('deleteRace', () => {
+    it('should call fetch with the right params', () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve());
+      const expected = ['http://localhost:3000/api/v1/races/23', {
+        method: 'DELETE'}]
+      api.deleteRace(23)
+      expect(window.fetch).toHaveBeenCalledWith(...expected)
+    });
+
+    it('should throw error on error', () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.reject())
+      const expected = new Error('Unable to delete race')
+      expect(api.deleteRace(23)).rejects.toEqual(expected)
+    });
+  });
 });

@@ -100,3 +100,13 @@ export const getUserRaces = async (user_id) => {
   }
 };
 
+export const deleteRace = async (raceId) => {
+  try {
+    await fetch(`http://localhost:3000/api/v1/races/${raceId}`, {
+      method: 'DELETE'
+    });
+  } catch (error) {
+    throw new Error('Unable to delete race')
+  }
+}
+
