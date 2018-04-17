@@ -22,7 +22,7 @@ export class StateMap extends Component {
 
   fillStates = (filter) => {
     const stateArray = this.props.races.map(race => {
-      if(filter && filter !== 'See All Races' && race.completed === 'true') {
+      if(filter && filter !== 'All Races' && race.completed === 'true') {
         if (race.distance === filter) {
           return race.state
         } else {
@@ -92,7 +92,7 @@ export class StateMap extends Component {
       <div className='map'>
         <div className='map-key'>
           <p>You have run {this.props.races.length} races in {this.countStates(this.props.races)} states!</p>
-          <p>Click on states to see race info.</p>
+          <p>Click on states to see race highlights.</p>
           <p>Click below filter by distance:</p>
           <Dropdown 
           options={['All Races', 'Marathon', 'Half Marathon', '10 Miler', '10K', '5K', 'Other']}

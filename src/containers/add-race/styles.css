@@ -19,3 +19,9 @@ form .Dropdown-control {
 .radio-buttons {
   margin: 0 5%;
 }
+
+.half-input {
+  width: 42%;
+  margin-left: 5%;
+  display: inline;
+}

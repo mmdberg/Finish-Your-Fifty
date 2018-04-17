@@ -45,7 +45,7 @@ export class App extends Component {
           }
         </header>
         <nav>
-          <NavLink className='nav-section nav1' to='/'>Home</NavLink>
+          <NavLink exact className='nav-section nav1' to='/'>Home</NavLink>
           <NavLink className='nav-section nav2' to='/add-race'>Add Race</NavLink>
           <NavLink className='nav-section nav3' to='/race-log'>Race Log</NavLink>
           <NavLink className='nav-section nav4' to='/search'>Search</NavLink>

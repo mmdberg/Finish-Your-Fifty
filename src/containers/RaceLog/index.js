@@ -36,27 +36,33 @@ export class RaceLog extends Component {
                 },
                 {
                   Header: 'TIME',
-                  accessor: 'time'
+                  accessor: 'time',
+                  width: 60
                 },
                 {
                   Header: 'CITY',
-                  accessor: 'city'
+                  accessor: 'city',
+                  width: 85
                 },
                 {
                   Header: 'STATE',
-                  accessor: 'state'
+                  accessor: 'state',
+                  width: 50
                 },
                 {
                   Header: 'DATE',
-                  accessor: 'date'
+                  accessor: 'date',
+                  width: 72
                 },
                 {
                   Header: 'COMPLETED?',
-                  accessor: 'completed'
+                  accessor: 'completed',
+                  width: 85
                 },
                 {
                   Header: 'Remove',
-                  accessor: 'remove'
+                  accessor: 'remove',
+                  width: 55
                 }
       
               ]}

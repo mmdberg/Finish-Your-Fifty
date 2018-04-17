@@ -17,11 +17,15 @@ header {
 }
 
 h1 {
-  font-size: 14px;
+  font-size: 18px;
   text-align: left;
-  padding-bottom: 2px;
-  margin-right: 20px;
+  padding: 6px;
   font-family: 'Mina', sans-serif;
+}
+
+h2,
+form p {
+  margin-left: 5%;
 }
 
 .introduction {
@@ -36,13 +40,6 @@ h1 {
   display: inline;
   margin-right: 5px;
 }
-
-/*.introduction img {
-  height: 12px;
-  width: auto;
-  margin-left: 6px;
-  padding-top: 3px;
-}*/
 
 .logout {
   display: inline;
@@ -106,8 +103,15 @@ nav {
   background-repeat: no-repeat;
 }
 
+nav .active {
+  text-decoration: underline;
+  border-left: 7px solid black;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+}
+
 .app-body {
-  padding: 10px;
+  padding: 20px;
 }
 
 input {
