@@ -51,6 +51,7 @@ export class StateMap extends Component {
   }
 
   handleStateClick = (event) => {
+    console.log(event.target.dataset.name)
     if (event.target.dataset.name === this.state.state) {
       this.setState({
         raceInfo: '',
@@ -72,7 +73,7 @@ export class StateMap extends Component {
       this.setState({raceInfo: `You still need a race in ${event.target.dataset.name}.`})
       this.props.races.forEach(race => { 
         if (race.state === event.target.dataset.name) {
-          this.setState({raceInfo: <ul><li>{race.raceName} in {race.city}, {race.state}.</li> <li>Distance: {race.distance}</li><li>Time: {race.time}</li></ul>})
+          this.setState({raceInfo: <ul><li>{race.raceName} in {race.city}, {race.state}.</li><li>Distance: {race.distance}</li><li>Time: {race.time}</li></ul>})
         }
       })
     } 

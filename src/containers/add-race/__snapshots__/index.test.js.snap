@@ -45,6 +45,7 @@ ShallowWrapper {
           (All fields required.)
 </p>,
         <input
+          autoFocus={true}
           name="raceName"
           onChange={[Function]}
           placeholder="Race Name"
@@ -94,9 +95,10 @@ ShallowWrapper {
 />,
         <input
           className="half-input"
+          maxLength="2"
           name="state"
           onChange={[Function]}
-          placeholder="State"
+          placeholder="State (ex: CA)"
           type="text"
           value="CA"
 />,
@@ -106,10 +108,10 @@ ShallowWrapper {
           <input
                     checked={true}
                     id="choiceTrue"
-                    name="completed"
+                    name="Completed"
                     onChange={[Function]}
                     type="radio"
-                    value="Completed"
+                    value="true"
           />
           <label
                     htmlFor="choiceTrue"
@@ -119,10 +121,10 @@ ShallowWrapper {
           <input
                     checked={false}
                     id="choiceFalse"
-                    name="completed"
+                    name="Interested"
                     onChange={[Function]}
                     type="radio"
-                    value="Interested"
+                    value="false"
           />
           <label
                     htmlFor="choiceFalse"
@@ -131,13 +133,18 @@ ShallowWrapper {
           </label>
 </div>,
         <button
-          type="submit"
+          onClick={[Function]}
 >
           Submit
 </button>,
+        <button
+          onClick={[Function]}
+>
+          Clear
+</button>,
         <p />,
       ],
-      "onSubmit": [Function],
+      "className": "add-race-form",
     },
     "ref": null,
     "rendered": Array [
@@ -168,6 +175,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "autoFocus": true,
           "name": "raceName",
           "onChange": [Function],
           "placeholder": "Race Name",
@@ -255,9 +263,10 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "className": "half-input",
+          "maxLength": "2",
           "name": "state",
           "onChange": [Function],
-          "placeholder": "State",
+          "placeholder": "State (ex: CA)",
           "type": "text",
           "value": "CA",
         },
@@ -274,10 +283,10 @@ ShallowWrapper {
             <input
               checked={true}
               id="choiceTrue"
-              name="completed"
+              name="Completed"
               onChange={[Function]}
               type="radio"
-              value="Completed"
+              value="true"
 />,
             <label
               htmlFor="choiceTrue"
@@ -287,10 +296,10 @@ ShallowWrapper {
             <input
               checked={false}
               id="choiceFalse"
-              name="completed"
+              name="Interested"
               onChange={[Function]}
               type="radio"
-              value="Interested"
+              value="false"
 />,
             <label
               htmlFor="choiceFalse"
@@ -309,10 +318,10 @@ ShallowWrapper {
             "props": Object {
               "checked": true,
               "id": "choiceTrue",
-              "name": "completed",
+              "name": "Completed",
               "onChange": [Function],
               "type": "radio",
-              "value": "Completed",
+              "value": "true",
             },
             "ref": null,
             "rendered": null,
@@ -337,10 +346,10 @@ ShallowWrapper {
             "props": Object {
               "checked": false,
               "id": "choiceFalse",
-              "name": "completed",
+              "name": "Interested",
               "onChange": [Function],
               "type": "radio",
-              "value": "Interested",
+              "value": "false",
             },
             "ref": null,
             "rendered": null,
@@ -367,10 +376,22 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Submit",
-          "type": "submit",
+          "onClick": [Function],
         },
         "ref": null,
         "rendered": "Submit",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Clear",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Clear",
         "type": "button",
       },
       Object {
@@ -401,6 +422,7 @@ ShallowWrapper {
             (All fields required.)
 </p>,
           <input
+            autoFocus={true}
             name="raceName"
             onChange={[Function]}
             placeholder="Race Name"
@@ -450,9 +472,10 @@ ShallowWrapper {
 />,
           <input
             className="half-input"
+            maxLength="2"
             name="state"
             onChange={[Function]}
-            placeholder="State"
+            placeholder="State (ex: CA)"
             type="text"
             value="CA"
 />,
@@ -462,10 +485,10 @@ ShallowWrapper {
             <input
                         checked={true}
                         id="choiceTrue"
-                        name="completed"
+                        name="Completed"
                         onChange={[Function]}
                         type="radio"
-                        value="Completed"
+                        value="true"
             />
             <label
                         htmlFor="choiceTrue"
@@ -475,10 +498,10 @@ ShallowWrapper {
             <input
                         checked={false}
                         id="choiceFalse"
-                        name="completed"
+                        name="Interested"
                         onChange={[Function]}
                         type="radio"
-                        value="Interested"
+                        value="false"
             />
             <label
                         htmlFor="choiceFalse"
@@ -487,13 +510,18 @@ ShallowWrapper {
             </label>
 </div>,
           <button
-            type="submit"
+            onClick={[Function]}
 >
             Submit
 </button>,
+          <button
+            onClick={[Function]}
+>
+            Clear
+</button>,
           <p />,
         ],
-        "onSubmit": [Function],
+        "className": "add-race-form",
       },
       "ref": null,
       "rendered": Array [
@@ -524,6 +552,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "autoFocus": true,
             "name": "raceName",
             "onChange": [Function],
             "placeholder": "Race Name",
@@ -611,9 +640,10 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "className": "half-input",
+            "maxLength": "2",
             "name": "state",
             "onChange": [Function],
-            "placeholder": "State",
+            "placeholder": "State (ex: CA)",
             "type": "text",
             "value": "CA",
           },
@@ -630,10 +660,10 @@ ShallowWrapper {
               <input
                 checked={true}
                 id="choiceTrue"
-                name="completed"
+                name="Completed"
                 onChange={[Function]}
                 type="radio"
-                value="Completed"
+                value="true"
 />,
               <label
                 htmlFor="choiceTrue"
@@ -643,10 +673,10 @@ ShallowWrapper {
               <input
                 checked={false}
                 id="choiceFalse"
-                name="completed"
+                name="Interested"
                 onChange={[Function]}
                 type="radio"
-                value="Interested"
+                value="false"
 />,
               <label
                 htmlFor="choiceFalse"
@@ -665,10 +695,10 @@ ShallowWrapper {
               "props": Object {
                 "checked": true,
                 "id": "choiceTrue",
-                "name": "completed",
+                "name": "Completed",
                 "onChange": [Function],
                 "type": "radio",
-                "value": "Completed",
+                "value": "true",
               },
               "ref": null,
               "rendered": null,
@@ -693,10 +723,10 @@ ShallowWrapper {
               "props": Object {
                 "checked": false,
                 "id": "choiceFalse",
-                "name": "completed",
+                "name": "Interested",
                 "onChange": [Function],
                 "type": "radio",
-                "value": "Interested",
+                "value": "false",
               },
               "ref": null,
               "rendered": null,
@@ -723,10 +753,22 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Submit",
-            "type": "submit",
+            "onClick": [Function],
           },
           "ref": null,
           "rendered": "Submit",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Clear",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Clear",
           "type": "button",
         },
         Object {
@@ -791,6 +833,7 @@ ShallowWrapper {
           (All fields required.)
 </p>,
         <input
+          autoFocus={true}
           name="raceName"
           onChange={[Function]}
           placeholder="Race Name"
@@ -840,9 +883,10 @@ ShallowWrapper {
 />,
         <input
           className="half-input"
+          maxLength="2"
           name="state"
           onChange={[Function]}
-          placeholder="State"
+          placeholder="State (ex: CA)"
           type="text"
           value=""
 />,
@@ -852,10 +896,10 @@ ShallowWrapper {
           <input
                     checked={true}
                     id="choiceTrue"
-                    name="completed"
+                    name="Completed"
                     onChange={[Function]}
                     type="radio"
-                    value="Completed"
+                    value="true"
           />
           <label
                     htmlFor="choiceTrue"
@@ -865,10 +909,10 @@ ShallowWrapper {
           <input
                     checked={false}
                     id="choiceFalse"
-                    name="completed"
+                    name="Interested"
                     onChange={[Function]}
                     type="radio"
-                    value="Interested"
+                    value="false"
           />
           <label
                     htmlFor="choiceFalse"
@@ -877,13 +921,18 @@ ShallowWrapper {
           </label>
 </div>,
         <button
-          type="submit"
+          onClick={[Function]}
 >
           Submit
 </button>,
+        <button
+          onClick={[Function]}
+>
+          Clear
+</button>,
         <p />,
       ],
-      "onSubmit": [Function],
+      "className": "add-race-form",
     },
     "ref": null,
     "rendered": Array [
@@ -914,6 +963,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "autoFocus": true,
           "name": "raceName",
           "onChange": [Function],
           "placeholder": "Race Name",
@@ -1001,9 +1051,10 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "className": "half-input",
+          "maxLength": "2",
           "name": "state",
           "onChange": [Function],
-          "placeholder": "State",
+          "placeholder": "State (ex: CA)",
           "type": "text",
           "value": "",
         },
@@ -1020,10 +1071,10 @@ ShallowWrapper {
             <input
               checked={true}
               id="choiceTrue"
-              name="completed"
+              name="Completed"
               onChange={[Function]}
               type="radio"
-              value="Completed"
+              value="true"
 />,
             <label
               htmlFor="choiceTrue"
@@ -1033,10 +1084,10 @@ ShallowWrapper {
             <input
               checked={false}
               id="choiceFalse"
-              name="completed"
+              name="Interested"
               onChange={[Function]}
               type="radio"
-              value="Interested"
+              value="false"
 />,
             <label
               htmlFor="choiceFalse"
@@ -1055,10 +1106,10 @@ ShallowWrapper {
             "props": Object {
               "checked": true,
               "id": "choiceTrue",
-              "name": "completed",
+              "name": "Completed",
               "onChange": [Function],
               "type": "radio",
-              "value": "Completed",
+              "value": "true",
             },
             "ref": null,
             "rendered": null,
@@ -1083,10 +1134,10 @@ ShallowWrapper {
             "props": Object {
               "checked": false,
               "id": "choiceFalse",
-              "name": "completed",
+              "name": "Interested",
               "onChange": [Function],
               "type": "radio",
-              "value": "Interested",
+              "value": "false",
             },
             "ref": null,
             "rendered": null,
@@ -1113,10 +1164,22 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Submit",
-          "type": "submit",
+          "onClick": [Function],
         },
         "ref": null,
         "rendered": "Submit",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Clear",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Clear",
         "type": "button",
       },
       Object {
@@ -1147,6 +1210,7 @@ ShallowWrapper {
             (All fields required.)
 </p>,
           <input
+            autoFocus={true}
             name="raceName"
             onChange={[Function]}
             placeholder="Race Name"
@@ -1196,9 +1260,10 @@ ShallowWrapper {
 />,
           <input
             className="half-input"
+            maxLength="2"
             name="state"
             onChange={[Function]}
-            placeholder="State"
+            placeholder="State (ex: CA)"
             type="text"
             value=""
 />,
@@ -1208,10 +1273,10 @@ ShallowWrapper {
             <input
                         checked={true}
                         id="choiceTrue"
-                        name="completed"
+                        name="Completed"
                         onChange={[Function]}
                         type="radio"
-                        value="Completed"
+                        value="true"
             />
             <label
                         htmlFor="choiceTrue"
@@ -1221,10 +1286,10 @@ ShallowWrapper {
             <input
                         checked={false}
                         id="choiceFalse"
-                        name="completed"
+                        name="Interested"
                         onChange={[Function]}
                         type="radio"
-                        value="Interested"
+                        value="false"
             />
             <label
                         htmlFor="choiceFalse"
@@ -1233,13 +1298,18 @@ ShallowWrapper {
             </label>
 </div>,
           <button
-            type="submit"
+            onClick={[Function]}
 >
             Submit
 </button>,
+          <button
+            onClick={[Function]}
+>
+            Clear
+</button>,
           <p />,
         ],
-        "onSubmit": [Function],
+        "className": "add-race-form",
       },
       "ref": null,
       "rendered": Array [
@@ -1270,6 +1340,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "autoFocus": true,
             "name": "raceName",
             "onChange": [Function],
             "placeholder": "Race Name",
@@ -1357,9 +1428,10 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "className": "half-input",
+            "maxLength": "2",
             "name": "state",
             "onChange": [Function],
-            "placeholder": "State",
+            "placeholder": "State (ex: CA)",
             "type": "text",
             "value": "",
           },
@@ -1376,10 +1448,10 @@ ShallowWrapper {
               <input
                 checked={true}
                 id="choiceTrue"
-                name="completed"
+                name="Completed"
                 onChange={[Function]}
                 type="radio"
-                value="Completed"
+                value="true"
 />,
               <label
                 htmlFor="choiceTrue"
@@ -1389,10 +1461,10 @@ ShallowWrapper {
               <input
                 checked={false}
                 id="choiceFalse"
-                name="completed"
+                name="Interested"
                 onChange={[Function]}
                 type="radio"
-                value="Interested"
+                value="false"
 />,
               <label
                 htmlFor="choiceFalse"
@@ -1411,10 +1483,10 @@ ShallowWrapper {
               "props": Object {
                 "checked": true,
                 "id": "choiceTrue",
-                "name": "completed",
+                "name": "Completed",
                 "onChange": [Function],
                 "type": "radio",
-                "value": "Completed",
+                "value": "true",
               },
               "ref": null,
               "rendered": null,
@@ -1439,10 +1511,10 @@ ShallowWrapper {
               "props": Object {
                 "checked": false,
                 "id": "choiceFalse",
-                "name": "completed",
+                "name": "Interested",
                 "onChange": [Function],
                 "type": "radio",
-                "value": "Interested",
+                "value": "false",
               },
               "ref": null,
               "rendered": null,
@@ -1469,10 +1541,22 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Submit",
-            "type": "submit",
+            "onClick": [Function],
           },
           "ref": null,
           "rendered": "Submit",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Clear",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Clear",
           "type": "button",
         },
         Object {
