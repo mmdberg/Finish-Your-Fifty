@@ -4,34 +4,35 @@ import './styles.css';
 import { connect } from 'react-redux';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+import PropTypes from 'prop-types';
 
 export class StateMap extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       raceInfo: '',
       textStyle: { left: 0,
-      top: 0,
-      display: 'none'
+        top: 0,
+        display: 'none'
       },
       state: '',
       filter: '',
       stateNumber: ''
-    }
+    };
   }
 
   fillStates = (filter) => {
     const stateArray = this.props.races.map(race => {
-      if(filter && filter !== 'All Races' && race.completed === 'true') {
+      if (filter && filter !== 'All Races' && race.completed === 'Completed') {
         if (race.distance === filter) {
-          return race.state
+          return race.state;
         } else {
-          return ''
+          return '';
         }
-      } else if (race.completed === 'true') {
-        return race.state
+      } else if (race.completed === 'Completed') {
+        return race.state;
       }
-    })
+    });
     const colors = {
       '': 'rgba(144, 63, 63, 0.75)',
       Marathon: 'rgba(88, 120, 169, 0.95)', 
@@ -40,24 +41,26 @@ export class StateMap extends Component {
       'All Races': 'rgba(144, 63, 63, 0.75)', 
       '5K': 'rgba(88, 120, 169, 0.95)', 
       Other: 'rgba(88, 120, 169, 0.95)', 
-      '10 Miler': 'rgba(138, 135, 61, 0.95)'}
+      '10 Miler': 'rgba(138, 135, 61, 0.95)'
+    };
     const stateObject = stateArray.reduce((stateObj, state) => {
-      stateObj[state] = {fill: colors[filter]}
-      return stateObj
-    }, {})
-    return stateObject
+      stateObj[state] = {fill: colors[filter]};
+      return stateObj;
+    }, {});
+    return stateObject;
   }
 
   handleStateClick = (event) => {
-    if(event.target.dataset.name === this.state.state) {
+    console.log(event.target.dataset.name)
+    if (event.target.dataset.name === this.state.state) {
       this.setState({
         raceInfo: '',
         textStyle: { left: 0,
-        top: 0,
-        display: 'none'
+          top: 0,
+          display: 'none'
         },
         state: ''
-      })
+      });
     } else {
       this.setState({
         textStyle: { 
@@ -70,7 +73,7 @@ export class StateMap extends Component {
       this.setState({raceInfo: `You still need a race in ${event.target.dataset.name}.`})
       this.props.races.forEach(race => { 
         if (race.state === event.target.dataset.name) {
-          this.setState({raceInfo: <ul><li>{race.raceName} in {race.city}, {race.state}.</li> <li>Distance: {race.distance}</li><li>Time: {race.time}</li></ul>})
+          this.setState({raceInfo: <ul><li>{race.raceName} in {race.city}, {race.state}.</li><li>Distance: {race.distance}</li><li>Time: {race.time}</li></ul>})
         }
       })
     } 
@@ -83,7 +86,7 @@ export class StateMap extends Component {
   }
 
   countStates(raceArray) {
-    const stateArray = raceArray.filter(race => race.completed === 'true')
+    const stateArray = raceArray.filter(race => race.completed === 'Completed')
     return stateArray.length
   }
 
@@ -111,6 +114,10 @@ export class StateMap extends Component {
       </div>
     );
   }
+}
+
+StateMap.propTypes = {
+  races: PropTypes.array
 }
 
 export const mapStateToProps = state => ({

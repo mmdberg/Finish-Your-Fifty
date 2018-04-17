@@ -58,16 +58,31 @@ export class AddRace extends Component {
     })
   }
 
+  clearFields = () => {
+    this.props.clearSearchRace();
+    this.setState({
+      raceName: '',
+      distance: '',
+      time: '',
+      city: '',
+      state: '',
+      date: '',
+      completed: 'Completed',
+      error: ''
+    })  
+  }
+
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className='add-race-form'>
         <h2>Add a race to your log:</h2>
         <p>(All fields required.)</p>
         <input type="text" 
           placeholder='Race Name'
           name='raceName'
           value={this.props.searchRace.raceName ? this.props.searchRace.raceName : this.state.raceName}
-          onChange={this.handleChange}/>
+          onChange={this.handleChange}
+          autoFocus/>
         <Dropdown options={['Marathon', 'Half Marathon', '10 Miler', '10K', '5K', 'Other']}
           placeholder='Select a race distance'
           name='distance'
@@ -92,9 +107,10 @@ export class AddRace extends Component {
           value={this.props.searchRace.city ? this.props.searchRace.city : this.state.city}
           onChange={this.handleChange}/>
         <input type="text" 
-          placeholder='State'
+          placeholder='State (ex: CA)'
           className='half-input'
           name='state'
+          maxLength='2'
           value={this.props.searchRace.state ? this.props.searchRace.state : this.state.state}
           onChange={this.handleChange}/>
         <div className='radio-buttons'>
@@ -113,7 +129,8 @@ export class AddRace extends Component {
             checked={this.state.completed === 'Interested'}/>
           <label htmlFor='choiceFalse'>Interested</label>
         </div>
-        <button type='submit'>Submit</button>
+        <button onClick={this.handleSubmit}>Submit</button>
+        <button onClick={this.clearFields}>Clear</button>
         <p>{this.state.error}</p>
       </form>
     );

@@ -8,7 +8,7 @@
 }
 
 .state-map {
-  width: 88%;
+  width: 86%;
 }
 
 .raceText {
@@ -69,7 +69,6 @@
 
   .map {
     min-width: 300px;
-/*    height: 700px;*/
   }
 
   .map-key {

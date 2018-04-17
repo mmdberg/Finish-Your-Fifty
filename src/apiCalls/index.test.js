@@ -129,7 +129,7 @@ describe('apiCalls', () => {
         state: 'TN',
         time: '4:00:01',
         distance: 'Marathon',
-        completed: 'true',
+        completed: 'Completed',
         date: '04-05-2018'
       }
       const expected = ['http://localhost:3000/api/v1/races', 
@@ -156,7 +156,7 @@ describe('apiCalls', () => {
         state: 'TN',
         time: '4:00:01',
         distance: 'Marathon',
-        completed: 'true',
+        completed: 'Completed',
         date: '04-05-2018'
       }
       const expected = {error: 'You\'re missing a(n) raceName.'}
@@ -180,6 +180,22 @@ describe('apiCalls', () => {
       window.fetch = jest.fn().mockImplementation(() => Promise.reject())
       const expected = new Error('Unable to get user\'s races')
       expect(api.getUserRaces(23)).rejects.toEqual(expected)
+    });
+  });
+
+  describe('deleteRace', () => {
+    it('should call fetch with the right params', () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve());
+      const expected = ['http://localhost:3000/api/v1/races/23', {
+        method: 'DELETE'}]
+      api.deleteRace(23)
+      expect(window.fetch).toHaveBeenCalledWith(...expected)
+    });
+
+    it('should throw error on error', () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.reject())
+      const expected = new Error('Unable to delete race')
+      expect(api.deleteRace(23)).rejects.toEqual(expected)
     });
   });
 });

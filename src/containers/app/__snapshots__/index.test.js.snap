@@ -37,6 +37,7 @@ ShallowWrapper {
                     activeClassName="active"
                     ariaCurrent="true"
                     className="nav-section nav1"
+                    exact={true}
                     to="/"
           >
                     Home
@@ -150,6 +151,7 @@ ShallowWrapper {
               activeClassName="active"
               ariaCurrent="true"
               className="nav-section nav1"
+              exact={true}
               to="/"
 >
               Home
@@ -191,6 +193,7 @@ ShallowWrapper {
               "ariaCurrent": "true",
               "children": "Home",
               "className": "nav-section nav1",
+              "exact": true,
               "to": "/",
             },
             "ref": null,
@@ -432,6 +435,7 @@ ShallowWrapper {
                         activeClassName="active"
                         ariaCurrent="true"
                         className="nav-section nav1"
+                        exact={true}
                         to="/"
             >
                         Home
@@ -545,6 +549,7 @@ ShallowWrapper {
                 activeClassName="active"
                 ariaCurrent="true"
                 className="nav-section nav1"
+                exact={true}
                 to="/"
 >
                 Home
@@ -586,6 +591,7 @@ ShallowWrapper {
                 "ariaCurrent": "true",
                 "children": "Home",
                 "className": "nav-section nav1",
+                "exact": true,
                 "to": "/",
               },
               "ref": null,

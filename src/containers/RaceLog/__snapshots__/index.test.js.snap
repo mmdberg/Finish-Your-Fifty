@@ -88,36 +88,42 @@ ShallowWrapper {
         columns={
                 Array [
                         Object {
-                          "Header": "Race",
+                          "Header": "RACE",
                           "accessor": "raceName",
                         },
                         Object {
-                          "Header": "Distance",
+                          "Header": "DISTANCE",
                           "accessor": "distance",
                         },
                         Object {
-                          "Header": "Time",
+                          "Header": "TIME",
                           "accessor": "time",
+                          "width": 70,
                         },
                         Object {
-                          "Header": "City",
+                          "Header": "CITY",
                           "accessor": "city",
+                          "width": 90,
                         },
                         Object {
-                          "Header": "State",
+                          "Header": "STATE",
                           "accessor": "state",
+                          "width": 50,
                         },
                         Object {
-                          "Header": "Date",
+                          "Header": "DATE",
                           "accessor": "date",
+                          "width": 85,
                         },
                         Object {
-                          "Header": "Completed?",
+                          "Header": "COMPLETED?",
                           "accessor": "completed",
+                          "width": 90,
                         },
                         Object {
                           "Header": "Remove",
                           "accessor": "remove",
+                          "width": 55,
                         },
                       ]
         }
@@ -128,11 +134,11 @@ ShallowWrapper {
                           "date": "04-05-2018",
                           "id": 1577,
                           "raceName": "Spooky 5k",
-                          "remove": <p
+                          "remove": <button
                             onClick={[Function]}
                 >
                              X 
-                </p>,
+                </button>,
                           "state": "CA",
                         },
                       ]
@@ -222,6 +228,7 @@ ShallowWrapper {
         style={Object {}}
         subRowsKey="_subRows"
 />,
+      "className": "race-log",
     },
     "ref": null,
     "rendered": Object {
@@ -284,36 +291,42 @@ ShallowWrapper {
         },
         "columns": Array [
           Object {
-            "Header": "Race",
+            "Header": "RACE",
             "accessor": "raceName",
           },
           Object {
-            "Header": "Distance",
+            "Header": "DISTANCE",
             "accessor": "distance",
           },
           Object {
-            "Header": "Time",
+            "Header": "TIME",
             "accessor": "time",
+            "width": 70,
           },
           Object {
-            "Header": "City",
+            "Header": "CITY",
             "accessor": "city",
+            "width": 90,
           },
           Object {
-            "Header": "State",
+            "Header": "STATE",
             "accessor": "state",
+            "width": 50,
           },
           Object {
-            "Header": "Date",
+            "Header": "DATE",
             "accessor": "date",
+            "width": 85,
           },
           Object {
-            "Header": "Completed?",
+            "Header": "COMPLETED?",
             "accessor": "completed",
+            "width": 90,
           },
           Object {
             "Header": "Remove",
             "accessor": "remove",
+            "width": 55,
           },
         ],
         "data": Array [
@@ -322,11 +335,11 @@ ShallowWrapper {
             "date": "04-05-2018",
             "id": 1577,
             "raceName": "Spooky 5k",
-            "remove": <p
+            "remove": <button
               onClick={[Function]}
 >
                X 
-</p>,
+</button>,
             "state": "CA",
           },
         ],
@@ -482,36 +495,42 @@ ShallowWrapper {
           columns={
                     Array [
                               Object {
-                                "Header": "Race",
+                                "Header": "RACE",
                                 "accessor": "raceName",
                               },
                               Object {
-                                "Header": "Distance",
+                                "Header": "DISTANCE",
                                 "accessor": "distance",
                               },
                               Object {
-                                "Header": "Time",
+                                "Header": "TIME",
                                 "accessor": "time",
+                                "width": 70,
                               },
                               Object {
-                                "Header": "City",
+                                "Header": "CITY",
                                 "accessor": "city",
+                                "width": 90,
                               },
                               Object {
-                                "Header": "State",
+                                "Header": "STATE",
                                 "accessor": "state",
+                                "width": 50,
                               },
                               Object {
-                                "Header": "Date",
+                                "Header": "DATE",
                                 "accessor": "date",
+                                "width": 85,
                               },
                               Object {
-                                "Header": "Completed?",
+                                "Header": "COMPLETED?",
                                 "accessor": "completed",
+                                "width": 90,
                               },
                               Object {
                                 "Header": "Remove",
                                 "accessor": "remove",
+                                "width": 55,
                               },
                             ]
           }
@@ -522,11 +541,11 @@ ShallowWrapper {
                                 "date": "04-05-2018",
                                 "id": 1577,
                                 "raceName": "Spooky 5k",
-                                "remove": <p
+                                "remove": <button
                                   onClick={[Function]}
                     >
                                    X 
-                    </p>,
+                    </button>,
                                 "state": "CA",
                               },
                             ]
@@ -616,6 +635,7 @@ ShallowWrapper {
           style={Object {}}
           subRowsKey="_subRows"
 />,
+        "className": "race-log",
       },
       "ref": null,
       "rendered": Object {
@@ -678,36 +698,42 @@ ShallowWrapper {
           },
           "columns": Array [
             Object {
-              "Header": "Race",
+              "Header": "RACE",
               "accessor": "raceName",
             },
             Object {
-              "Header": "Distance",
+              "Header": "DISTANCE",
               "accessor": "distance",
             },
             Object {
-              "Header": "Time",
+              "Header": "TIME",
               "accessor": "time",
+              "width": 70,
             },
             Object {
-              "Header": "City",
+              "Header": "CITY",
               "accessor": "city",
+              "width": 90,
             },
             Object {
-              "Header": "State",
+              "Header": "STATE",
               "accessor": "state",
+              "width": 50,
             },
             Object {
-              "Header": "Date",
+              "Header": "DATE",
               "accessor": "date",
+              "width": 85,
             },
             Object {
-              "Header": "Completed?",
+              "Header": "COMPLETED?",
               "accessor": "completed",
+              "width": 90,
             },
             Object {
               "Header": "Remove",
               "accessor": "remove",
+              "width": 55,
             },
           ],
           "data": Array [
@@ -716,11 +742,11 @@ ShallowWrapper {
               "date": "04-05-2018",
               "id": 1577,
               "raceName": "Spooky 5k",
-              "remove": <p
+              "remove": <button
                 onClick={[Function]}
 >
                  X 
-</p>,
+</button>,
               "state": "CA",
             },
           ],

@@ -30,11 +30,14 @@ ShallowWrapper {
         <h2>
                 Please sign up to start tracking races
         </h2>
-        <p>
+        <p
+                className="welcome-text"
+        >
                 Have an account?
                 <NavLink
                         activeClassName="active"
                         ariaCurrent="true"
+                        className="welcome-link"
                         to="/welcome/login"
                 >
                         Log In
@@ -79,11 +82,14 @@ ShallowWrapper {
           <h2>
             Please sign up to start tracking races
 </h2>,
-          <p>
+          <p
+            className="welcome-text"
+>
             Have an account?
             <NavLink
                         activeClassName="active"
                         ariaCurrent="true"
+                        className="welcome-link"
                         to="/welcome/login"
             >
                         Log In
@@ -142,11 +148,13 @@ ShallowWrapper {
               <NavLink
                 activeClassName="active"
                 ariaCurrent="true"
+                className="welcome-link"
                 to="/welcome/login"
 >
                 Log In
 </NavLink>,
             ],
+            "className": "welcome-text",
           },
           "ref": null,
           "rendered": Array [
@@ -159,6 +167,7 @@ ShallowWrapper {
                 "activeClassName": "active",
                 "ariaCurrent": "true",
                 "children": "Log In",
+                "className": "welcome-link",
                 "to": "/welcome/login",
               },
               "ref": null,
@@ -253,11 +262,14 @@ ShallowWrapper {
           <h2>
                     Please sign up to start tracking races
           </h2>
-          <p>
+          <p
+                    className="welcome-text"
+          >
                     Have an account?
                     <NavLink
                               activeClassName="active"
                               ariaCurrent="true"
+                              className="welcome-link"
                               to="/welcome/login"
                     >
                               Log In
@@ -302,11 +314,14 @@ ShallowWrapper {
             <h2>
               Please sign up to start tracking races
 </h2>,
-            <p>
+            <p
+              className="welcome-text"
+>
               Have an account?
               <NavLink
                             activeClassName="active"
                             ariaCurrent="true"
+                            className="welcome-link"
                             to="/welcome/login"
               >
                             Log In
@@ -365,11 +380,13 @@ ShallowWrapper {
                 <NavLink
                   activeClassName="active"
                   ariaCurrent="true"
+                  className="welcome-link"
                   to="/welcome/login"
 >
                   Log In
 </NavLink>,
               ],
+              "className": "welcome-text",
             },
             "ref": null,
             "rendered": Array [
@@ -382,6 +399,7 @@ ShallowWrapper {
                   "activeClassName": "active",
                   "ariaCurrent": "true",
                   "children": "Log In",
+                  "className": "welcome-link",
                   "to": "/welcome/login",
                 },
                 "ref": null,

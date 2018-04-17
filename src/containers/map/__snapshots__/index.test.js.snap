@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Map should match snapshot 1`] = `
+exports[`Map should match snapshot with races 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -9,7 +9,7 @@ ShallowWrapper {
         Array [
             Object {
               "city": "Nashville",
-              "completed": "true",
+              "completed": "Completed",
               "date": "04-05-2018",
               "distance": "Marathon",
               "error": "",
@@ -34,15 +34,28 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <div
-          className="filter"
+          className="map-key"
 >
+          <p>
+                    You have run 
+                    1
+                     races in 
+                    1
+                     states!
+          </p>
+          <p>
+                    Click on states to see race highlights.
+          </p>
+          <p>
+                    Click below filter by distance:
+          </p>
           <Dropdown
                     baseClassName="Dropdown"
                     name="distance"
                     onChange={[Function]}
                     options={
                               Array [
-                                        "See All Races",
+                                        "All Races",
                                         "Marathon",
                                         "Half Marathon",
                                         "10 Miler",
@@ -51,38 +64,42 @@ ShallowWrapper {
                                         "Other",
                                       ]
                     }
-                    placeholder="Filter by distance"
+                    placeholder="All Races"
                     value=""
           />
 </div>,
         <div
-          className="raceInfo"
+          className="state-map"
 >
-          <p
-                    className="raceText"
-                    style={
+          <div
+                    className="raceInfo"
+          >
+                    <p
+                              className="raceText"
+                              style={
+                                        Object {
+                                                  "display": "none",
+                                                  "left": 0,
+                                                  "top": 0,
+                                                }
+                              }
+                    />
+          </div>
+          <USAMap
+                    customize={
                               Object {
-                                        "display": "none",
-                                        "left": 0,
-                                        "top": 0,
+                                        "TN": Object {
+                                          "fill": "rgba(144, 63, 63, 0.75)",
+                                        },
                                       }
                     }
+                    defaultFill="#D3D3D3"
+                    height={593}
+                    onClick={[Function]}
+                    title="Blank US states map"
+                    width={959}
           />
 </div>,
-        <USAMap
-          customize={
-                    Object {
-                              "TN": Object {
-                                "fill": "chartreuse",
-                              },
-                            }
-          }
-          defaultFill="#D3D3D3"
-          height={593}
-          onClick={[Function]}
-          title="Blank US states map"
-          width={959}
-/>,
       ],
       "className": "map",
     },
@@ -93,51 +110,113 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <Dropdown
-            baseClassName="Dropdown"
-            name="distance"
-            onChange={[Function]}
-            options={
-                        Array [
-                                    "See All Races",
-                                    "Marathon",
-                                    "Half Marathon",
-                                    "10 Miler",
-                                    "10K",
-                                    "5K",
-                                    "Other",
-                                  ]
-            }
-            placeholder="Filter by distance"
-            value=""
+          "children": Array [
+            <p>
+              You have run 
+              1
+               races in 
+              1
+               states!
+</p>,
+            <p>
+              Click on states to see race highlights.
+</p>,
+            <p>
+              Click below filter by distance:
+</p>,
+            <Dropdown
+              baseClassName="Dropdown"
+              name="distance"
+              onChange={[Function]}
+              options={
+                            Array [
+                                          "All Races",
+                                          "Marathon",
+                                          "Half Marathon",
+                                          "10 Miler",
+                                          "10K",
+                                          "5K",
+                                          "Other",
+                                        ]
+              }
+              placeholder="All Races"
+              value=""
 />,
-          "className": "filter",
+          ],
+          "className": "map-key",
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "baseClassName": "Dropdown",
-            "name": "distance",
-            "onChange": [Function],
-            "options": Array [
-              "See All Races",
-              "Marathon",
-              "Half Marathon",
-              "10 Miler",
-              "10K",
-              "5K",
-              "Other",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "You have run ",
+                1,
+                " races in ",
+                1,
+                " states!",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "You have run ",
+              1,
+              " races in ",
+              1,
+              " states!",
             ],
-            "placeholder": "Filter by distance",
-            "value": "",
+            "type": "p",
           },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Click on states to see race highlights.",
+            },
+            "ref": null,
+            "rendered": "Click on states to see race highlights.",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Click below filter by distance:",
+            },
+            "ref": null,
+            "rendered": "Click below filter by distance:",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "baseClassName": "Dropdown",
+              "name": "distance",
+              "onChange": [Function],
+              "options": Array [
+                "All Races",
+                "Marathon",
+                "Half Marathon",
+                "10 Miler",
+                "10K",
+                "5K",
+                "Other",
+              ],
+              "placeholder": "All Races",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
         "type": "div",
       },
       Object {
@@ -145,57 +224,99 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <p
-            className="raceText"
-            style={
-                        Object {
-                                    "display": "none",
-                                    "left": 0,
-                                    "top": 0,
-                                  }
-            }
+          "children": Array [
+            <div
+              className="raceInfo"
+>
+              <p
+                            className="raceText"
+                            style={
+                                          Object {
+                                                        "display": "none",
+                                                        "left": 0,
+                                                        "top": 0,
+                                                      }
+                            }
+              />
+</div>,
+            <USAMap
+              customize={
+                            Object {
+                                          "TN": Object {
+                                            "fill": "rgba(144, 63, 63, 0.75)",
+                                          },
+                                        }
+              }
+              defaultFill="#D3D3D3"
+              height={593}
+              onClick={[Function]}
+              title="Blank US states map"
+              width={959}
 />,
-          "className": "raceInfo",
+          ],
+          "className": "state-map",
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "",
-            "className": "raceText",
-            "style": Object {
-              "display": "none",
-              "left": 0,
-              "top": 0,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <p
+                className="raceText"
+                style={
+                                Object {
+                                                "display": "none",
+                                                "left": 0,
+                                                "top": 0,
+                                              }
+                }
+/>,
+              "className": "raceInfo",
             },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "",
+                "className": "raceText",
+                "style": Object {
+                  "display": "none",
+                  "left": 0,
+                  "top": 0,
+                },
+              },
+              "ref": null,
+              "rendered": "",
+              "type": "p",
+            },
+            "type": "div",
           },
-          "ref": null,
-          "rendered": "",
-          "type": "p",
-        },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "customize": Object {
+                "TN": Object {
+                  "fill": "rgba(144, 63, 63, 0.75)",
+                },
+              },
+              "defaultFill": "#D3D3D3",
+              "height": 593,
+              "onClick": [Function],
+              "title": "Blank US states map",
+              "width": 959,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
         "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "customize": Object {
-            "TN": Object {
-              "fill": "chartreuse",
-            },
-          },
-          "defaultFill": "#D3D3D3",
-          "height": 593,
-          "onClick": [Function],
-          "title": "Blank US states map",
-          "width": 959,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
       },
     ],
     "type": "div",
@@ -208,15 +329,28 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <div
-            className="filter"
+            className="map-key"
 >
+            <p>
+                        You have run 
+                        1
+                         races in 
+                        1
+                         states!
+            </p>
+            <p>
+                        Click on states to see race highlights.
+            </p>
+            <p>
+                        Click below filter by distance:
+            </p>
             <Dropdown
                         baseClassName="Dropdown"
                         name="distance"
                         onChange={[Function]}
                         options={
                                     Array [
-                                                "See All Races",
+                                                "All Races",
                                                 "Marathon",
                                                 "Half Marathon",
                                                 "10 Miler",
@@ -225,38 +359,42 @@ ShallowWrapper {
                                                 "Other",
                                               ]
                         }
-                        placeholder="Filter by distance"
+                        placeholder="All Races"
                         value=""
             />
 </div>,
           <div
-            className="raceInfo"
+            className="state-map"
 >
-            <p
-                        className="raceText"
-                        style={
+            <div
+                        className="raceInfo"
+            >
+                        <p
+                                    className="raceText"
+                                    style={
+                                                Object {
+                                                            "display": "none",
+                                                            "left": 0,
+                                                            "top": 0,
+                                                          }
+                                    }
+                        />
+            </div>
+            <USAMap
+                        customize={
                                     Object {
-                                                "display": "none",
-                                                "left": 0,
-                                                "top": 0,
+                                                "TN": Object {
+                                                  "fill": "rgba(144, 63, 63, 0.75)",
+                                                },
                                               }
                         }
+                        defaultFill="#D3D3D3"
+                        height={593}
+                        onClick={[Function]}
+                        title="Blank US states map"
+                        width={959}
             />
 </div>,
-          <USAMap
-            customize={
-                        Object {
-                                    "TN": Object {
-                                      "fill": "chartreuse",
-                                    },
-                                  }
-            }
-            defaultFill="#D3D3D3"
-            height={593}
-            onClick={[Function]}
-            title="Blank US states map"
-            width={959}
-/>,
         ],
         "className": "map",
       },
@@ -267,13 +405,340 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <Dropdown
+            "children": Array [
+              <p>
+                You have run 
+                1
+                 races in 
+                1
+                 states!
+</p>,
+              <p>
+                Click on states to see race highlights.
+</p>,
+              <p>
+                Click below filter by distance:
+</p>,
+              <Dropdown
+                baseClassName="Dropdown"
+                name="distance"
+                onChange={[Function]}
+                options={
+                                Array [
+                                                "All Races",
+                                                "Marathon",
+                                                "Half Marathon",
+                                                "10 Miler",
+                                                "10K",
+                                                "5K",
+                                                "Other",
+                                              ]
+                }
+                placeholder="All Races"
+                value=""
+/>,
+            ],
+            "className": "map-key",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "You have run ",
+                  1,
+                  " races in ",
+                  1,
+                  " states!",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "You have run ",
+                1,
+                " races in ",
+                1,
+                " states!",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Click on states to see race highlights.",
+              },
+              "ref": null,
+              "rendered": "Click on states to see race highlights.",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Click below filter by distance:",
+              },
+              "ref": null,
+              "rendered": "Click below filter by distance:",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "baseClassName": "Dropdown",
+                "name": "distance",
+                "onChange": [Function],
+                "options": Array [
+                  "All Races",
+                  "Marathon",
+                  "Half Marathon",
+                  "10 Miler",
+                  "10K",
+                  "5K",
+                  "Other",
+                ],
+                "placeholder": "All Races",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="raceInfo"
+>
+                <p
+                                className="raceText"
+                                style={
+                                                Object {
+                                                                "display": "none",
+                                                                "left": 0,
+                                                                "top": 0,
+                                                              }
+                                }
+                />
+</div>,
+              <USAMap
+                customize={
+                                Object {
+                                                "TN": Object {
+                                                  "fill": "rgba(144, 63, 63, 0.75)",
+                                                },
+                                              }
+                }
+                defaultFill="#D3D3D3"
+                height={593}
+                onClick={[Function]}
+                title="Blank US states map"
+                width={959}
+/>,
+            ],
+            "className": "state-map",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <p
+                  className="raceText"
+                  style={
+                                    Object {
+                                                      "display": "none",
+                                                      "left": 0,
+                                                      "top": 0,
+                                                    }
+                  }
+/>,
+                "className": "raceInfo",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "",
+                  "className": "raceText",
+                  "style": Object {
+                    "display": "none",
+                    "left": 0,
+                    "top": 0,
+                  },
+                },
+                "ref": null,
+                "rendered": "",
+                "type": "p",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "customize": Object {
+                  "TN": Object {
+                    "fill": "rgba(144, 63, 63, 0.75)",
+                  },
+                },
+                "defaultFill": "#D3D3D3",
+                "height": 593,
+                "onClick": [Function],
+                "title": "Blank US states map",
+                "width": 959,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Map should match snapshot without races 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <StateMap
+    races={Array []}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="map-key"
+>
+          <p>
+                    You have run 
+                    0
+                     races in 
+                    0
+                     states!
+          </p>
+          <p>
+                    Click on states to see race highlights.
+          </p>
+          <p>
+                    Click below filter by distance:
+          </p>
+          <Dropdown
+                    baseClassName="Dropdown"
+                    name="distance"
+                    onChange={[Function]}
+                    options={
+                              Array [
+                                        "All Races",
+                                        "Marathon",
+                                        "Half Marathon",
+                                        "10 Miler",
+                                        "10K",
+                                        "5K",
+                                        "Other",
+                                      ]
+                    }
+                    placeholder="All Races"
+                    value=""
+          />
+</div>,
+        <div
+          className="state-map"
+>
+          <div
+                    className="raceInfo"
+          >
+                    <p
+                              className="raceText"
+                              style={
+                                        Object {
+                                                  "display": "none",
+                                                  "left": 0,
+                                                  "top": 0,
+                                                }
+                              }
+                    />
+          </div>
+          <USAMap
+                    customize={Object {}}
+                    defaultFill="#D3D3D3"
+                    height={593}
+                    onClick={[Function]}
+                    title="Blank US states map"
+                    width={959}
+          />
+</div>,
+      ],
+      "className": "map",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <p>
+              You have run 
+              0
+               races in 
+              0
+               states!
+</p>,
+            <p>
+              Click on states to see race highlights.
+</p>,
+            <p>
+              Click below filter by distance:
+</p>,
+            <Dropdown
               baseClassName="Dropdown"
               name="distance"
               onChange={[Function]}
               options={
                             Array [
-                                          "See All Races",
+                                          "All Races",
                                           "Marathon",
                                           "Half Marathon",
                                           "10 Miler",
@@ -282,13 +747,60 @@ ShallowWrapper {
                                           "Other",
                                         ]
               }
-              placeholder="Filter by distance"
+              placeholder="All Races"
               value=""
 />,
-            "className": "filter",
+          ],
+          "className": "map-key",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "You have run ",
+                0,
+                " races in ",
+                0,
+                " states!",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "You have run ",
+              0,
+              " races in ",
+              0,
+              " states!",
+            ],
+            "type": "p",
           },
-          "ref": null,
-          "rendered": Object {
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Click on states to see race highlights.",
+            },
+            "ref": null,
+            "rendered": "Click on states to see race highlights.",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Click below filter by distance:",
+            },
+            "ref": null,
+            "rendered": "Click below filter by distance:",
+            "type": "p",
+          },
+          Object {
             "instance": null,
             "key": undefined,
             "nodeType": "class",
@@ -297,7 +809,7 @@ ShallowWrapper {
               "name": "distance",
               "onChange": [Function],
               "options": Array [
-                "See All Races",
+                "All Races",
                 "Marathon",
                 "Half Marathon",
                 "10 Miler",
@@ -305,13 +817,293 @@ ShallowWrapper {
                 "5K",
                 "Other",
               ],
-              "placeholder": "Filter by distance",
+              "placeholder": "All Races",
               "value": "",
             },
             "ref": null,
             "rendered": null,
             "type": [Function],
           },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="raceInfo"
+>
+              <p
+                            className="raceText"
+                            style={
+                                          Object {
+                                                        "display": "none",
+                                                        "left": 0,
+                                                        "top": 0,
+                                                      }
+                            }
+              />
+</div>,
+            <USAMap
+              customize={Object {}}
+              defaultFill="#D3D3D3"
+              height={593}
+              onClick={[Function]}
+              title="Blank US states map"
+              width={959}
+/>,
+          ],
+          "className": "state-map",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <p
+                className="raceText"
+                style={
+                                Object {
+                                                "display": "none",
+                                                "left": 0,
+                                                "top": 0,
+                                              }
+                }
+/>,
+              "className": "raceInfo",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "",
+                "className": "raceText",
+                "style": Object {
+                  "display": "none",
+                  "left": 0,
+                  "top": 0,
+                },
+              },
+              "ref": null,
+              "rendered": "",
+              "type": "p",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "customize": Object {},
+              "defaultFill": "#D3D3D3",
+              "height": 593,
+              "onClick": [Function],
+              "title": "Blank US states map",
+              "width": 959,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="map-key"
+>
+            <p>
+                        You have run 
+                        0
+                         races in 
+                        0
+                         states!
+            </p>
+            <p>
+                        Click on states to see race highlights.
+            </p>
+            <p>
+                        Click below filter by distance:
+            </p>
+            <Dropdown
+                        baseClassName="Dropdown"
+                        name="distance"
+                        onChange={[Function]}
+                        options={
+                                    Array [
+                                                "All Races",
+                                                "Marathon",
+                                                "Half Marathon",
+                                                "10 Miler",
+                                                "10K",
+                                                "5K",
+                                                "Other",
+                                              ]
+                        }
+                        placeholder="All Races"
+                        value=""
+            />
+</div>,
+          <div
+            className="state-map"
+>
+            <div
+                        className="raceInfo"
+            >
+                        <p
+                                    className="raceText"
+                                    style={
+                                                Object {
+                                                            "display": "none",
+                                                            "left": 0,
+                                                            "top": 0,
+                                                          }
+                                    }
+                        />
+            </div>
+            <USAMap
+                        customize={Object {}}
+                        defaultFill="#D3D3D3"
+                        height={593}
+                        onClick={[Function]}
+                        title="Blank US states map"
+                        width={959}
+            />
+</div>,
+        ],
+        "className": "map",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p>
+                You have run 
+                0
+                 races in 
+                0
+                 states!
+</p>,
+              <p>
+                Click on states to see race highlights.
+</p>,
+              <p>
+                Click below filter by distance:
+</p>,
+              <Dropdown
+                baseClassName="Dropdown"
+                name="distance"
+                onChange={[Function]}
+                options={
+                                Array [
+                                                "All Races",
+                                                "Marathon",
+                                                "Half Marathon",
+                                                "10 Miler",
+                                                "10K",
+                                                "5K",
+                                                "Other",
+                                              ]
+                }
+                placeholder="All Races"
+                value=""
+/>,
+            ],
+            "className": "map-key",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "You have run ",
+                  0,
+                  " races in ",
+                  0,
+                  " states!",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "You have run ",
+                0,
+                " races in ",
+                0,
+                " states!",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Click on states to see race highlights.",
+              },
+              "ref": null,
+              "rendered": "Click on states to see race highlights.",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Click below filter by distance:",
+              },
+              "ref": null,
+              "rendered": "Click below filter by distance:",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "baseClassName": "Dropdown",
+                "name": "distance",
+                "onChange": [Function],
+                "options": Array [
+                  "All Races",
+                  "Marathon",
+                  "Half Marathon",
+                  "10 Miler",
+                  "10K",
+                  "5K",
+                  "Other",
+                ],
+                "placeholder": "All Races",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
           "type": "div",
         },
         Object {
@@ -319,57 +1111,89 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <p
-              className="raceText"
-              style={
-                            Object {
-                                          "display": "none",
-                                          "left": 0,
-                                          "top": 0,
-                                        }
-              }
+            "children": Array [
+              <div
+                className="raceInfo"
+>
+                <p
+                                className="raceText"
+                                style={
+                                                Object {
+                                                                "display": "none",
+                                                                "left": 0,
+                                                                "top": 0,
+                                                              }
+                                }
+                />
+</div>,
+              <USAMap
+                customize={Object {}}
+                defaultFill="#D3D3D3"
+                height={593}
+                onClick={[Function]}
+                title="Blank US states map"
+                width={959}
 />,
-            "className": "raceInfo",
+            ],
+            "className": "state-map",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "",
-              "className": "raceText",
-              "style": Object {
-                "display": "none",
-                "left": 0,
-                "top": 0,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <p
+                  className="raceText"
+                  style={
+                                    Object {
+                                                      "display": "none",
+                                                      "left": 0,
+                                                      "top": 0,
+                                                    }
+                  }
+/>,
+                "className": "raceInfo",
               },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "",
+                  "className": "raceText",
+                  "style": Object {
+                    "display": "none",
+                    "left": 0,
+                    "top": 0,
+                  },
+                },
+                "ref": null,
+                "rendered": "",
+                "type": "p",
+              },
+              "type": "div",
             },
-            "ref": null,
-            "rendered": "",
-            "type": "p",
-          },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "customize": Object {},
+                "defaultFill": "#D3D3D3",
+                "height": 593,
+                "onClick": [Function],
+                "title": "Blank US states map",
+                "width": 959,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
           "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "customize": Object {
-              "TN": Object {
-                "fill": "chartreuse",
-              },
-            },
-            "defaultFill": "#D3D3D3",
-            "height": 593,
-            "onClick": [Function],
-            "title": "Blank US states map",
-            "width": 959,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
         },
       ],
       "type": "div",

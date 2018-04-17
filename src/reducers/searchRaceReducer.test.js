@@ -4,14 +4,15 @@ import {mockRace} from '../mocks';
 
 describe('searchRaceReducer', () => {
   it('should return the default value', () => {
-    expect(searchRaceReducer(undefined, {})).toEqual({})
+    expect(searchRaceReducer(undefined, {})).toEqual({});
   });
 
   it('should return a race to state', () => {
-    expect(searchRaceReducer(undefined, actions.addSearchRace(mockRace))).toEqual(mockRace)
+    expect(searchRaceReducer(undefined, actions.addSearchRace(mockRace)))
+      .toEqual(mockRace);
   });
 
   it('should clear race from state', () => {
-    expect(searchRaceReducer(mockRace, actions.clearSearchRace())).toEqual({})
-  })
+    expect(searchRaceReducer(mockRace, actions.clearSearchRace())).toEqual({});
+  });
 });
