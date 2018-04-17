@@ -4,6 +4,7 @@ import { NavLink, Redirect, withRouter } from 'react-router-dom';
 import * as actions from '../../actions';
 import * as api from '../../apiCalls';
 import PropTypes from 'prop-types';
+import './styles.css';
 
 export class Welcome extends Component {
   constructor(props) {
@@ -97,11 +98,15 @@ export class Welcome extends Component {
           }
           {
             (this.props.match.path === '/welcome/login') ? 
-              (<p>Don't have an account? 
-                <NavLink to='/welcome/signup'>Sign Up</NavLink>
+              (<p className='welcome-subtext'>Don't have an account? 
+                <NavLink className='welcome-link' to='/welcome/signup'>
+                  Sign Up
+                </NavLink>
               </p>) :
-              (<p>Have an account? 
-                <NavLink to='/welcome/login'>Log In</NavLink>
+              (<p className='welcome-text'>Have an account? 
+                <NavLink className='welcome-link' to='/welcome/login'>
+                  Log In
+                </NavLink>
               </p>)
           }
           {

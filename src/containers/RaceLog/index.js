@@ -3,16 +3,15 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
-// import * as api from '../../apiCalls';
 import PropTypes from 'prop-types';
-import './styles.css'
+import './styles.css';
 
 export class RaceLog extends Component {
   makeRaceList = (raceArray) => {
     const raceList = raceArray.map(race => {
       return {
         ...race, 
-        remove: <p onClick={() => this.props.removeRace(race)}> X </p>
+        remove: <button onClick={() => this.props.removeRace(race)}> X </button>
       };
     });
     return raceList;

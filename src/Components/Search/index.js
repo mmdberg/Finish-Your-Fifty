@@ -51,7 +51,7 @@ export class Search extends Component {
     const racesWithButton = RaceArray.map(race => {
       return {
         ...race, 
-        addRace: <p onClick={() => this.addInterestedRace(race)}>X</p>
+        addRace: <button onClick={() => this.addInterestedRace(race)}>+</button>
       }
     })
     this.setState({
@@ -81,6 +81,7 @@ export class Search extends Component {
             value={this.state.state}
             onChange={this.handleChange}
             maxLength='2'
+            autoFocus
           />
           <input type='text'
             name='year'

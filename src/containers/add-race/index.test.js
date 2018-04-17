@@ -43,7 +43,7 @@ describe('AddRace', () => {
       city: '',
       state: '',
       date: '',
-      completed: 'true',
+      completed: 'Completed',
       error: ''
     };
     expect(wrapper.state()).toEqual(expected);
@@ -63,7 +63,7 @@ describe('AddRace', () => {
       city: 'San Diego',
       state: 'CA',
       date: '04-05-2018',
-      completed: 'true',
+      completed: 'Completed',
       error: ''
     };
     expect(wrapper.state()).toEqual(expected);
@@ -78,7 +78,7 @@ describe('AddRace', () => {
       city: '',
       state: '',
       date: '',
-      completed: 'true',
+      completed: 'Completed',
       error: ''
     };
     wrapper.instance().handleChange(mockEvent);
@@ -117,7 +117,7 @@ describe('AddRace', () => {
       city: '',
       state: '',
       date: '',
-      completed: 'true',
+      completed: 'Completed',
       error: 'Race Added!'
     };
     await wrapper.instance().handleSubmit(mockEvent);
@@ -135,7 +135,7 @@ describe('AddRace', () => {
       city: 'San Diego',
       state: 'CA',
       date: '04-05-2018',
-      completed: 'true',
+      completed: 'Completed',
       error: ''
     })
     await wrapper.instance().handleSubmit(mockEvent);

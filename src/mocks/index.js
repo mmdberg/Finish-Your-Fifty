@@ -7,19 +7,19 @@ export const mockRace = {
 };
 
 export const mockRaceFromDB = {
-city:"San Antonio",
-completed:"true",
-created_at:"2018-04-14T02:18:45.401Z",
-distance:"26.2",
-id: 16,
-raceName:"SA Marathon",
-reflections:null,
-shoes:null,
-state:"TX",
-time:"4:37",
-updated_at:"2018-04-14T02:18:45.401Z",
-user_id:25
-}
+  city:"San Antonio",
+  completed:"true",
+  created_at:"2018-04-14T02:18:45.401Z",
+  distance:"26.2",
+  id: 16,
+  raceName:"SA Marathon",
+  reflections:null,
+  shoes:null,
+  state:"TX",
+  time:"4:37",
+  updated_at:"2018-04-14T02:18:45.401Z",
+  user_id:25
+};
 
 export const mockApiResult = {
   "id": 1577,

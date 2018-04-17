@@ -58,9 +58,23 @@ export class AddRace extends Component {
     })
   }
 
+  clearFields = () => {
+    this.props.clearSearchRace();
+    this.setState({
+      raceName: '',
+      distance: '',
+      time: '',
+      city: '',
+      state: '',
+      date: '',
+      completed: 'Completed',
+      error: ''
+    })  
+  }
+
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className='add-race-form'>
         <h2>Add a race to your log:</h2>
         <p>(All fields required.)</p>
         <input type="text" 
@@ -113,7 +127,8 @@ export class AddRace extends Component {
             checked={this.state.completed === 'Interested'}/>
           <label htmlFor='choiceFalse'>Interested</label>
         </div>
-        <button type='submit'>Submit</button>
+        <button onClick={this.handleSubmit}>Submit</button>
+        <button onClick={this.clearFields}>Clear</button>
         <p>{this.state.error}</p>
       </form>
     );

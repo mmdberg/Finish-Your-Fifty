@@ -129,7 +129,7 @@ describe('apiCalls', () => {
         state: 'TN',
         time: '4:00:01',
         distance: 'Marathon',
-        completed: 'true',
+        completed: 'Completed',
         date: '04-05-2018'
       }
       const expected = ['http://localhost:3000/api/v1/races', 
@@ -156,7 +156,7 @@ describe('apiCalls', () => {
         state: 'TN',
         time: '4:00:01',
         distance: 'Marathon',
-        completed: 'true',
+        completed: 'Completed',
         date: '04-05-2018'
       }
       const expected = {error: 'You\'re missing a(n) raceName.'}

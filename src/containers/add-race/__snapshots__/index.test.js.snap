@@ -69,6 +69,7 @@ ShallowWrapper {
           value=""
 />,
         <input
+          className="half-input"
           name="time"
           onChange={[Function]}
           placeholder="Time"
@@ -76,6 +77,15 @@ ShallowWrapper {
           value=""
 />,
         <input
+          className="half-input"
+          name="date"
+          onChange={[Function]}
+          placeholder="Date (DD-MM-YYYY)"
+          type="text"
+          value="04-05-2018"
+/>,
+        <input
+          className="half-input"
           name="city"
           onChange={[Function]}
           placeholder="City"
@@ -83,18 +93,12 @@ ShallowWrapper {
           value="San Diego"
 />,
         <input
+          className="half-input"
           name="state"
           onChange={[Function]}
           placeholder="State"
           type="text"
           value="CA"
-/>,
-        <input
-          name="date"
-          onChange={[Function]}
-          placeholder="Date (DD-MM-YYYY)"
-          type="text"
-          value="04-05-2018"
 />,
         <div
           className="radio-buttons"
@@ -105,7 +109,7 @@ ShallowWrapper {
                     name="completed"
                     onChange={[Function]}
                     type="radio"
-                    value="true"
+                    value="Completed"
           />
           <label
                     htmlFor="choiceTrue"
@@ -118,7 +122,7 @@ ShallowWrapper {
                     name="completed"
                     onChange={[Function]}
                     type="radio"
-                    value="false"
+                    value="Interested"
           />
           <label
                     htmlFor="choiceFalse"
@@ -202,6 +206,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "className": "half-input",
           "name": "time",
           "onChange": [Function],
           "placeholder": "Time",
@@ -217,6 +222,23 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "className": "half-input",
+          "name": "date",
+          "onChange": [Function],
+          "placeholder": "Date (DD-MM-YYYY)",
+          "type": "text",
+          "value": "04-05-2018",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "half-input",
           "name": "city",
           "onChange": [Function],
           "placeholder": "City",
@@ -232,26 +254,12 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "className": "half-input",
           "name": "state",
           "onChange": [Function],
           "placeholder": "State",
           "type": "text",
           "value": "CA",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "input",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "name": "date",
-          "onChange": [Function],
-          "placeholder": "Date (DD-MM-YYYY)",
-          "type": "text",
-          "value": "04-05-2018",
         },
         "ref": null,
         "rendered": null,
@@ -269,7 +277,7 @@ ShallowWrapper {
               name="completed"
               onChange={[Function]}
               type="radio"
-              value="true"
+              value="Completed"
 />,
             <label
               htmlFor="choiceTrue"
@@ -282,7 +290,7 @@ ShallowWrapper {
               name="completed"
               onChange={[Function]}
               type="radio"
-              value="false"
+              value="Interested"
 />,
             <label
               htmlFor="choiceFalse"
@@ -304,7 +312,7 @@ ShallowWrapper {
               "name": "completed",
               "onChange": [Function],
               "type": "radio",
-              "value": "true",
+              "value": "Completed",
             },
             "ref": null,
             "rendered": null,
@@ -332,7 +340,7 @@ ShallowWrapper {
               "name": "completed",
               "onChange": [Function],
               "type": "radio",
-              "value": "false",
+              "value": "Interested",
             },
             "ref": null,
             "rendered": null,
@@ -417,6 +425,7 @@ ShallowWrapper {
             value=""
 />,
           <input
+            className="half-input"
             name="time"
             onChange={[Function]}
             placeholder="Time"
@@ -424,6 +433,15 @@ ShallowWrapper {
             value=""
 />,
           <input
+            className="half-input"
+            name="date"
+            onChange={[Function]}
+            placeholder="Date (DD-MM-YYYY)"
+            type="text"
+            value="04-05-2018"
+/>,
+          <input
+            className="half-input"
             name="city"
             onChange={[Function]}
             placeholder="City"
@@ -431,18 +449,12 @@ ShallowWrapper {
             value="San Diego"
 />,
           <input
+            className="half-input"
             name="state"
             onChange={[Function]}
             placeholder="State"
             type="text"
             value="CA"
-/>,
-          <input
-            name="date"
-            onChange={[Function]}
-            placeholder="Date (DD-MM-YYYY)"
-            type="text"
-            value="04-05-2018"
 />,
           <div
             className="radio-buttons"
@@ -453,7 +465,7 @@ ShallowWrapper {
                         name="completed"
                         onChange={[Function]}
                         type="radio"
-                        value="true"
+                        value="Completed"
             />
             <label
                         htmlFor="choiceTrue"
@@ -466,7 +478,7 @@ ShallowWrapper {
                         name="completed"
                         onChange={[Function]}
                         type="radio"
-                        value="false"
+                        value="Interested"
             />
             <label
                         htmlFor="choiceFalse"
@@ -550,6 +562,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "className": "half-input",
             "name": "time",
             "onChange": [Function],
             "placeholder": "Time",
@@ -565,6 +578,23 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "className": "half-input",
+            "name": "date",
+            "onChange": [Function],
+            "placeholder": "Date (DD-MM-YYYY)",
+            "type": "text",
+            "value": "04-05-2018",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "half-input",
             "name": "city",
             "onChange": [Function],
             "placeholder": "City",
@@ -580,26 +610,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "className": "half-input",
             "name": "state",
             "onChange": [Function],
             "placeholder": "State",
             "type": "text",
             "value": "CA",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "input",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "name": "date",
-            "onChange": [Function],
-            "placeholder": "Date (DD-MM-YYYY)",
-            "type": "text",
-            "value": "04-05-2018",
           },
           "ref": null,
           "rendered": null,
@@ -617,7 +633,7 @@ ShallowWrapper {
                 name="completed"
                 onChange={[Function]}
                 type="radio"
-                value="true"
+                value="Completed"
 />,
               <label
                 htmlFor="choiceTrue"
@@ -630,7 +646,7 @@ ShallowWrapper {
                 name="completed"
                 onChange={[Function]}
                 type="radio"
-                value="false"
+                value="Interested"
 />,
               <label
                 htmlFor="choiceFalse"
@@ -652,7 +668,7 @@ ShallowWrapper {
                 "name": "completed",
                 "onChange": [Function],
                 "type": "radio",
-                "value": "true",
+                "value": "Completed",
               },
               "ref": null,
               "rendered": null,
@@ -680,7 +696,7 @@ ShallowWrapper {
                 "name": "completed",
                 "onChange": [Function],
                 "type": "radio",
-                "value": "false",
+                "value": "Interested",
               },
               "ref": null,
               "rendered": null,
@@ -799,6 +815,7 @@ ShallowWrapper {
           value=""
 />,
         <input
+          className="half-input"
           name="time"
           onChange={[Function]}
           placeholder="Time"
@@ -806,6 +823,15 @@ ShallowWrapper {
           value=""
 />,
         <input
+          className="half-input"
+          name="date"
+          onChange={[Function]}
+          placeholder="Date (DD-MM-YYYY)"
+          type="text"
+          value=""
+/>,
+        <input
+          className="half-input"
           name="city"
           onChange={[Function]}
           placeholder="City"
@@ -813,16 +839,10 @@ ShallowWrapper {
           value=""
 />,
         <input
+          className="half-input"
           name="state"
           onChange={[Function]}
           placeholder="State"
-          type="text"
-          value=""
-/>,
-        <input
-          name="date"
-          onChange={[Function]}
-          placeholder="Date (DD-MM-YYYY)"
           type="text"
           value=""
 />,
@@ -835,7 +855,7 @@ ShallowWrapper {
                     name="completed"
                     onChange={[Function]}
                     type="radio"
-                    value="true"
+                    value="Completed"
           />
           <label
                     htmlFor="choiceTrue"
@@ -848,7 +868,7 @@ ShallowWrapper {
                     name="completed"
                     onChange={[Function]}
                     type="radio"
-                    value="false"
+                    value="Interested"
           />
           <label
                     htmlFor="choiceFalse"
@@ -932,6 +952,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "className": "half-input",
           "name": "time",
           "onChange": [Function],
           "placeholder": "Time",
@@ -947,6 +968,23 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "className": "half-input",
+          "name": "date",
+          "onChange": [Function],
+          "placeholder": "Date (DD-MM-YYYY)",
+          "type": "text",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "half-input",
           "name": "city",
           "onChange": [Function],
           "placeholder": "City",
@@ -962,24 +1000,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "className": "half-input",
           "name": "state",
           "onChange": [Function],
           "placeholder": "State",
-          "type": "text",
-          "value": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "input",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "name": "date",
-          "onChange": [Function],
-          "placeholder": "Date (DD-MM-YYYY)",
           "type": "text",
           "value": "",
         },
@@ -999,7 +1023,7 @@ ShallowWrapper {
               name="completed"
               onChange={[Function]}
               type="radio"
-              value="true"
+              value="Completed"
 />,
             <label
               htmlFor="choiceTrue"
@@ -1012,7 +1036,7 @@ ShallowWrapper {
               name="completed"
               onChange={[Function]}
               type="radio"
-              value="false"
+              value="Interested"
 />,
             <label
               htmlFor="choiceFalse"
@@ -1034,7 +1058,7 @@ ShallowWrapper {
               "name": "completed",
               "onChange": [Function],
               "type": "radio",
-              "value": "true",
+              "value": "Completed",
             },
             "ref": null,
             "rendered": null,
@@ -1062,7 +1086,7 @@ ShallowWrapper {
               "name": "completed",
               "onChange": [Function],
               "type": "radio",
-              "value": "false",
+              "value": "Interested",
             },
             "ref": null,
             "rendered": null,
@@ -1147,6 +1171,7 @@ ShallowWrapper {
             value=""
 />,
           <input
+            className="half-input"
             name="time"
             onChange={[Function]}
             placeholder="Time"
@@ -1154,6 +1179,15 @@ ShallowWrapper {
             value=""
 />,
           <input
+            className="half-input"
+            name="date"
+            onChange={[Function]}
+            placeholder="Date (DD-MM-YYYY)"
+            type="text"
+            value=""
+/>,
+          <input
+            className="half-input"
             name="city"
             onChange={[Function]}
             placeholder="City"
@@ -1161,16 +1195,10 @@ ShallowWrapper {
             value=""
 />,
           <input
+            className="half-input"
             name="state"
             onChange={[Function]}
             placeholder="State"
-            type="text"
-            value=""
-/>,
-          <input
-            name="date"
-            onChange={[Function]}
-            placeholder="Date (DD-MM-YYYY)"
             type="text"
             value=""
 />,
@@ -1183,7 +1211,7 @@ ShallowWrapper {
                         name="completed"
                         onChange={[Function]}
                         type="radio"
-                        value="true"
+                        value="Completed"
             />
             <label
                         htmlFor="choiceTrue"
@@ -1196,7 +1224,7 @@ ShallowWrapper {
                         name="completed"
                         onChange={[Function]}
                         type="radio"
-                        value="false"
+                        value="Interested"
             />
             <label
                         htmlFor="choiceFalse"
@@ -1280,6 +1308,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "className": "half-input",
             "name": "time",
             "onChange": [Function],
             "placeholder": "Time",
@@ -1295,6 +1324,23 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "className": "half-input",
+            "name": "date",
+            "onChange": [Function],
+            "placeholder": "Date (DD-MM-YYYY)",
+            "type": "text",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "half-input",
             "name": "city",
             "onChange": [Function],
             "placeholder": "City",
@@ -1310,24 +1356,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "className": "half-input",
             "name": "state",
             "onChange": [Function],
             "placeholder": "State",
-            "type": "text",
-            "value": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "input",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "name": "date",
-            "onChange": [Function],
-            "placeholder": "Date (DD-MM-YYYY)",
             "type": "text",
             "value": "",
           },
@@ -1347,7 +1379,7 @@ ShallowWrapper {
                 name="completed"
                 onChange={[Function]}
                 type="radio"
-                value="true"
+                value="Completed"
 />,
               <label
                 htmlFor="choiceTrue"
@@ -1360,7 +1392,7 @@ ShallowWrapper {
                 name="completed"
                 onChange={[Function]}
                 type="radio"
-                value="false"
+                value="Interested"
 />,
               <label
                 htmlFor="choiceFalse"
@@ -1382,7 +1414,7 @@ ShallowWrapper {
                 "name": "completed",
                 "onChange": [Function],
                 "type": "radio",
-                "value": "true",
+                "value": "Completed",
               },
               "ref": null,
               "rendered": null,
@@ -1410,7 +1442,7 @@ ShallowWrapper {
                 "name": "completed",
                 "onChange": [Function],
                 "type": "radio",
-                "value": "false",
+                "value": "Interested",
               },
               "ref": null,
               "rendered": null,
