@@ -1,6 +1,14 @@
 .us-state-map { 
-  height: 400px; 
-  width: 500px;
+  height: auto; 
+  width: 100%;
+}
+
+.map {
+
+}
+
+.state-map {
+  width: 88%;
 }
 
 .raceText {
@@ -9,8 +17,65 @@
   font-size: 10px;
   border: 1px black solid;
   padding: 5px;
-  background: linear-gradient(rgba(144, 120, 169, 0.4),     
-    rgba(144, 96, 138, 0.4));
+  background: linear-gradient(
+    rgba(62, 62, 62, 0.4), 
+    rgba(103, 99, 102, 0.4));
   transition: all 200ms ease;
 }
 
+.raceText ul {
+  padding-left: 20px;
+}
+
+.map-key {
+  grid-column: 2 / 3;
+  margin-top: 39px;
+  font-size: 10px;
+  width: 10%;
+  font-size: 10px;
+  position: absolute;
+  right: 5px;
+  top: 0%;
+  height: 100%;
+  background-color: #80808026;
+  padding: 5px 10px;
+}
+
+.map-text {
+  text-align: right;
+  margin-bottom: 5px;
+  position: absolute;
+}
+
+.map-key p {
+  margin: 10px 5px;
+}
+
+.map .Dropdown-placeholder {
+  color: black;
+}
+
+@media screen and (max-width: 850px) {
+  .map-key {
+    width: 300px;
+    height: 128px;
+    bottom: 0;
+    top: initial;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+
+  .map {
+    min-width: 300px;
+/*    height: 700px;*/
+  }
+
+  .map-key {
+    width: 200px;
+    height: 128px;
+    bottom: -60px;
+    top: initial;
+  }
+}

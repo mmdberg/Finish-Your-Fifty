@@ -4,7 +4,7 @@
   width: 30px;
 }
 
-.Dropdown-control {
+form .Dropdown-control {
   width: 90%;
   margin: auto;
   font-size: 12px;
@@ -20,7 +20,8 @@
   margin: 0 5%;
 }
 
-/*.radio-buttons input {
+.half-input {
+  width: 42%;
+  margin-left: 5%;
   display: inline;
 }
-*/

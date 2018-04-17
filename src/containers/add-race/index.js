@@ -17,7 +17,7 @@ export class AddRace extends Component {
       city: this.props.searchRace.city ? this.props.searchRace.city : '',
       state: this.props.searchRace.state ? this.props.searchRace.state : '',
       date: this.props.searchRace.date ? this.props.searchRace.date : '',
-      completed: 'true',
+      completed: 'Completed',
       error: ''
     };
   }
@@ -42,7 +42,7 @@ export class AddRace extends Component {
         city: '',
         state: '',
         date: '',
-        completed: 'true',
+        completed: 'Completed',
         error: 'Race Added!'
       })  
     } else {
@@ -75,38 +75,42 @@ export class AddRace extends Component {
           onChange={this.handleDropdownChange}/>
         <input type="text" 
           placeholder='Time'
+          className='half-input'
           name='time'
           value={this.state.time}
           onChange={this.handleChange}/>
         <input type="text" 
+          placeholder='Date (DD-MM-YYYY)'
+          className='half-input'
+          name='date'
+          value={this.props.searchRace.date ? this.props.searchRace.date : this.state.date}
+          onChange={this.handleChange}/>
+        <input type="text" 
           placeholder='City'
+          className='half-input'
           name='city'
           value={this.props.searchRace.city ? this.props.searchRace.city : this.state.city}
           onChange={this.handleChange}/>
         <input type="text" 
           placeholder='State'
+          className='half-input'
           name='state'
           value={this.props.searchRace.state ? this.props.searchRace.state : this.state.state}
-          onChange={this.handleChange}/>
-        <input type="text" 
-          placeholder='Date (DD-MM-YYYY)'
-          name='date'
-          value={this.props.searchRace.date ? this.props.searchRace.date : this.state.date}
           onChange={this.handleChange}/>
         <div className='radio-buttons'>
           <input type='radio'
             id='choiceTrue'
-            name='completed'
+            name='Completed'
             value='true'
             onChange={this.handleChange}
-            checked={this.state.completed === 'true'}/>
+            checked={this.state.completed === 'Completed'}/>
           <label htmlFor='choiceTrue'>Completed</label>
           <input type='radio'
             id='choiceFalse'
-            name='completed'
+            name='Interested'
             value='false'
             onChange={this.handleChange}
-            checked={this.state.completed === 'false'}/>
+            checked={this.state.completed === 'Interested'}/>
           <label htmlFor='choiceFalse'>Interested</label>
         </div>
         <button type='submit'>Submit</button>

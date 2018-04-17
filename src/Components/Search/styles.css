@@ -1,4 +1,9 @@
-table, tr, th, td {
+/*table, tr, th, td {
   border: 1px black solid;
   border-collapse: collapse;
+}*/
+
+.search {
+  overflow: scroll;
+  height: 90vh;
 }

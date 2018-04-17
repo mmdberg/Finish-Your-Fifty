@@ -5,6 +5,7 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 // import * as api from '../../apiCalls';
 import PropTypes from 'prop-types';
+import './styles.css'
 
 export class RaceLog extends Component {
   makeRaceList = (raceArray) => {
@@ -19,43 +20,49 @@ export class RaceLog extends Component {
 
   render() {
     return (
-      <div>
+      <div className='race-log'>
         {
           (this.props.races.length > 0) ?
             <ReactTable 
               data={this.makeRaceList(this.props.races)}
               columns={[
                 {
-                  Header: 'Race',
+                  Header: 'RACE',
                   accessor: 'raceName'
                 },
                 {
-                  Header: 'Distance',
+                  Header: 'DISTANCE',
                   accessor: 'distance'
                 },
                 {
-                  Header: 'Time',
-                  accessor: 'time'
+                  Header: 'TIME',
+                  accessor: 'time',
+                  width: 70
                 },
                 {
-                  Header: 'City',
-                  accessor: 'city'
+                  Header: 'CITY',
+                  accessor: 'city',
+                  width: 90
                 },
                 {
-                  Header: 'State',
-                  accessor: 'state'
+                  Header: 'STATE',
+                  accessor: 'state',
+                  width: 50
                 },
                 {
-                  Header: 'Date',
-                  accessor: 'date'
+                  Header: 'DATE',
+                  accessor: 'date',
+                  width: 85
                 },
                 {
-                  Header: 'Completed?',
-                  accessor: 'completed'
+                  Header: 'COMPLETED?',
+                  accessor: 'completed',
+                  width: 90
                 },
                 {
                   Header: 'Remove',
-                  accessor: 'remove'
+                  accessor: 'remove',
+                  width: 55
                 }
       
               ]}
