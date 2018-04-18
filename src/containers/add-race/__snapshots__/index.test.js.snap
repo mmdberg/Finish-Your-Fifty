@@ -108,10 +108,10 @@ ShallowWrapper {
           <input
                     checked={true}
                     id="choiceTrue"
-                    name="Completed"
+                    name="completed"
                     onChange={[Function]}
                     type="radio"
-                    value="true"
+                    value="Completed"
           />
           <label
                     htmlFor="choiceTrue"
@@ -121,10 +121,10 @@ ShallowWrapper {
           <input
                     checked={false}
                     id="choiceFalse"
-                    name="Interested"
+                    name="completed"
                     onChange={[Function]}
                     type="radio"
-                    value="false"
+                    value="Interested"
           />
           <label
                     htmlFor="choiceFalse"
@@ -283,10 +283,10 @@ ShallowWrapper {
             <input
               checked={true}
               id="choiceTrue"
-              name="Completed"
+              name="completed"
               onChange={[Function]}
               type="radio"
-              value="true"
+              value="Completed"
 />,
             <label
               htmlFor="choiceTrue"
@@ -296,10 +296,10 @@ ShallowWrapper {
             <input
               checked={false}
               id="choiceFalse"
-              name="Interested"
+              name="completed"
               onChange={[Function]}
               type="radio"
-              value="false"
+              value="Interested"
 />,
             <label
               htmlFor="choiceFalse"
@@ -318,10 +318,10 @@ ShallowWrapper {
             "props": Object {
               "checked": true,
               "id": "choiceTrue",
-              "name": "Completed",
+              "name": "completed",
               "onChange": [Function],
               "type": "radio",
-              "value": "true",
+              "value": "Completed",
             },
             "ref": null,
             "rendered": null,
@@ -346,10 +346,10 @@ ShallowWrapper {
             "props": Object {
               "checked": false,
               "id": "choiceFalse",
-              "name": "Interested",
+              "name": "completed",
               "onChange": [Function],
               "type": "radio",
-              "value": "false",
+              "value": "Interested",
             },
             "ref": null,
             "rendered": null,
@@ -485,10 +485,10 @@ ShallowWrapper {
             <input
                         checked={true}
                         id="choiceTrue"
-                        name="Completed"
+                        name="completed"
                         onChange={[Function]}
                         type="radio"
-                        value="true"
+                        value="Completed"
             />
             <label
                         htmlFor="choiceTrue"
@@ -498,10 +498,10 @@ ShallowWrapper {
             <input
                         checked={false}
                         id="choiceFalse"
-                        name="Interested"
+                        name="completed"
                         onChange={[Function]}
                         type="radio"
-                        value="false"
+                        value="Interested"
             />
             <label
                         htmlFor="choiceFalse"
@@ -660,10 +660,10 @@ ShallowWrapper {
               <input
                 checked={true}
                 id="choiceTrue"
-                name="Completed"
+                name="completed"
                 onChange={[Function]}
                 type="radio"
-                value="true"
+                value="Completed"
 />,
               <label
                 htmlFor="choiceTrue"
@@ -673,10 +673,10 @@ ShallowWrapper {
               <input
                 checked={false}
                 id="choiceFalse"
-                name="Interested"
+                name="completed"
                 onChange={[Function]}
                 type="radio"
-                value="false"
+                value="Interested"
 />,
               <label
                 htmlFor="choiceFalse"
@@ -695,10 +695,10 @@ ShallowWrapper {
               "props": Object {
                 "checked": true,
                 "id": "choiceTrue",
-                "name": "Completed",
+                "name": "completed",
                 "onChange": [Function],
                 "type": "radio",
-                "value": "true",
+                "value": "Completed",
               },
               "ref": null,
               "rendered": null,
@@ -723,10 +723,10 @@ ShallowWrapper {
               "props": Object {
                 "checked": false,
                 "id": "choiceFalse",
-                "name": "Interested",
+                "name": "completed",
                 "onChange": [Function],
                 "type": "radio",
-                "value": "false",
+                "value": "Interested",
               },
               "ref": null,
               "rendered": null,
@@ -896,10 +896,10 @@ ShallowWrapper {
           <input
                     checked={true}
                     id="choiceTrue"
-                    name="Completed"
+                    name="completed"
                     onChange={[Function]}
                     type="radio"
-                    value="true"
+                    value="Completed"
           />
           <label
                     htmlFor="choiceTrue"
@@ -909,10 +909,10 @@ ShallowWrapper {
           <input
                     checked={false}
                     id="choiceFalse"
-                    name="Interested"
+                    name="completed"
                     onChange={[Function]}
                     type="radio"
-                    value="false"
+                    value="Interested"
           />
           <label
                     htmlFor="choiceFalse"
@@ -1071,10 +1071,10 @@ ShallowWrapper {
             <input
               checked={true}
               id="choiceTrue"
-              name="Completed"
+              name="completed"
               onChange={[Function]}
               type="radio"
-              value="true"
+              value="Completed"
 />,
             <label
               htmlFor="choiceTrue"
@@ -1084,10 +1084,10 @@ ShallowWrapper {
             <input
               checked={false}
               id="choiceFalse"
-              name="Interested"
+              name="completed"
               onChange={[Function]}
               type="radio"
-              value="false"
+              value="Interested"
 />,
             <label
               htmlFor="choiceFalse"
@@ -1106,10 +1106,10 @@ ShallowWrapper {
             "props": Object {
               "checked": true,
               "id": "choiceTrue",
-              "name": "Completed",
+              "name": "completed",
               "onChange": [Function],
               "type": "radio",
-              "value": "true",
+              "value": "Completed",
             },
             "ref": null,
             "rendered": null,
@@ -1134,10 +1134,10 @@ ShallowWrapper {
             "props": Object {
               "checked": false,
               "id": "choiceFalse",
-              "name": "Interested",
+              "name": "completed",
               "onChange": [Function],
               "type": "radio",
-              "value": "false",
+              "value": "Interested",
             },
             "ref": null,
             "rendered": null,
@@ -1273,10 +1273,10 @@ ShallowWrapper {
             <input
                         checked={true}
                         id="choiceTrue"
-                        name="Completed"
+                        name="completed"
                         onChange={[Function]}
                         type="radio"
-                        value="true"
+                        value="Completed"
             />
             <label
                         htmlFor="choiceTrue"
@@ -1286,10 +1286,10 @@ ShallowWrapper {
             <input
                         checked={false}
                         id="choiceFalse"
-                        name="Interested"
+                        name="completed"
                         onChange={[Function]}
                         type="radio"
-                        value="false"
+                        value="Interested"
             />
             <label
                         htmlFor="choiceFalse"
@@ -1448,10 +1448,10 @@ ShallowWrapper {
               <input
                 checked={true}
                 id="choiceTrue"
-                name="Completed"
+                name="completed"
                 onChange={[Function]}
                 type="radio"
-                value="true"
+                value="Completed"
 />,
               <label
                 htmlFor="choiceTrue"
@@ -1461,10 +1461,10 @@ ShallowWrapper {
               <input
                 checked={false}
                 id="choiceFalse"
-                name="Interested"
+                name="completed"
                 onChange={[Function]}
                 type="radio"
-                value="false"
+                value="Interested"
 />,
               <label
                 htmlFor="choiceFalse"
@@ -1483,10 +1483,10 @@ ShallowWrapper {
               "props": Object {
                 "checked": true,
                 "id": "choiceTrue",
-                "name": "Completed",
+                "name": "completed",
                 "onChange": [Function],
                 "type": "radio",
-                "value": "true",
+                "value": "Completed",
               },
               "ref": null,
               "rendered": null,
@@ -1511,10 +1511,10 @@ ShallowWrapper {
               "props": Object {
                 "checked": false,
                 "id": "choiceFalse",
-                "name": "Interested",
+                "name": "completed",
                 "onChange": [Function],
                 "type": "radio",
-                "value": "false",
+                "value": "Interested",
               },
               "ref": null,
               "rendered": null,

@@ -52,7 +52,7 @@ describe('App', () => {
         .toHaveBeenCalledWith('http://localhost:3000/api/v1/races/23');
     });
 
-    it('should call addRace for user\'s races', () => {
+    it.skip('should call addRace for user\'s races', () => {
       wrapper.instance().componentDidMount();
       expect(mockAddRace).toHaveBeenCalledWith(mockRaceFromDB);
     });

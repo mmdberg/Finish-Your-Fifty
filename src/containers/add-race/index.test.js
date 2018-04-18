@@ -127,9 +127,9 @@ describe('AddRace', () => {
   it('should send error message if unable to add race', async () => {
     const mockEvent = { preventDefault: jest.fn() };
     api.addRace = jest.fn().mockImplementation(() => Promise.resolve({
-      error: 'You are missing a(n) raceName.'
+      error: 'You are missing a raceName.'
     }));
-    const expected = 'Unable to add race. You are missing a(n) raceName.';
+    const expected = 'Unable to add race. You are missing a raceName.';
     wrapper.setState({
       distance: '',
       time: '',
@@ -141,6 +141,38 @@ describe('AddRace', () => {
     });
     await wrapper.instance().handleSubmit(mockEvent);
     expect(wrapper.state('error')).toEqual(expected);
+  });
+
+  it('should update distance in state on dropdown change', () => {
+    const mockEvent = {value: 'Marathon'};
+    wrapper.instance().handleDropdownChange(mockEvent);
+    expect(wrapper.state('distance')).toEqual('Marathon');
+  });
+
+  it('should clear state on clearFields', () => {
+    wrapper.setState({
+      raceName: 'SunTrust 10k',
+      distance: '10k',
+      time: '',
+      city: '',
+      state: 'FL',
+      date: '',
+      completed: 'Completed',
+      error: ''
+    });
+    const mockEvent = { preventDefault: jest.fn() };
+    wrapper.instance().clearFields(mockEvent);
+    const expected = {
+      raceName: '',
+      distance: '',
+      time: '',
+      city: '',
+      state: '',
+      date: '',
+      completed: 'Completed',
+      error: ''
+    };
+    expect(wrapper.state()).toEqual(expected);
   });
 
   describe('mapStateToProps', () => {

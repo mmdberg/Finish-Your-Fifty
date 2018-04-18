@@ -98,7 +98,7 @@ export class Welcome extends Component {
           }
           {
             (this.props.match.path === '/welcome/login') ? 
-              (<p className='welcome-subtext'>Don't have an account? 
+              (<p className='welcome-subtext'>Don&apos;t have an account? 
                 <NavLink className='welcome-link' to='/welcome/signup'>
                   Sign Up
                 </NavLink>

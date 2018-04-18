@@ -7,6 +7,7 @@ import 'react-table/react-table.css';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import PropTypes from 'prop-types';
+import strava from '../../images/logo_strava.png';
 
 export class Search extends Component {
   constructor(props) {
@@ -74,7 +75,11 @@ export class Search extends Component {
       <Redirect to='/add-race' /> :
       (
         <div className='search'>
-          <h2>Search for races by state</h2>
+          <h2>Search for races by state/year</h2>
+          <p className='powered'>
+            Powered by 
+            <img className='strava-img' src={strava} alt='strava-log'/>
+          </p>
           <form>
             <input type='text'
               name='state'

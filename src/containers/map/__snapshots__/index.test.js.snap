@@ -33,6 +33,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        false,
         <div
           className="map-key"
 >
@@ -105,6 +106,7 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
+      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -328,6 +330,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          false,
           <div
             className="map-key"
 >
@@ -400,6 +403,7 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
+        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -647,6 +651,11 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        <p
+          className="intro"
+>
+          Add a race to get started!
+</p>,
         <div
           className="map-key"
 >
@@ -713,6 +722,18 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Add a race to get started!",
+          "className": "intro",
+        },
+        "ref": null,
+        "rendered": "Add a race to get started!",
+        "type": "p",
+      },
       Object {
         "instance": null,
         "key": undefined,
@@ -926,6 +947,11 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          <p
+            className="intro"
+>
+            Add a race to get started!
+</p>,
           <div
             className="map-key"
 >
@@ -992,6 +1018,18 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Add a race to get started!",
+            "className": "intro",
+          },
+          "ref": null,
+          "rendered": "Add a race to get started!",
+          "type": "p",
+        },
         Object {
           "instance": null,
           "key": undefined,

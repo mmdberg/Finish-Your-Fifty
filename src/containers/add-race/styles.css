@@ -28,4 +28,8 @@ form .Dropdown-control {
   top: 8px;
 }
 
-
+.half-input {
+  width: 41.8%;
+  display: inline;
+  margin-left: 5%;
+}

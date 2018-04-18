@@ -98,6 +98,10 @@ export class StateMap extends Component {
   render() {
     return (
       <div className='map'>
+        {
+          this.props.races.length === 0 && 
+        <p className='intro'>Add a race to get started!</p>
+        }
         <div className='map-key'>
           <p>
             You have run {this.props.races.length} races in {
