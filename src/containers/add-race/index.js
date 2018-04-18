@@ -25,6 +25,7 @@ export class AddRace extends Component {
 
   handleChange = (event) => {
     const { name, value } = event.target;
+    this.props.clearSearchRace();
     this.setState({
       [name]: value
     });
@@ -59,7 +60,8 @@ export class AddRace extends Component {
     });
   }
 
-  clearFields = () => {
+  clearFields = (event) => {
+    event.preventDefault();
     this.props.clearSearchRace();
     this.setState({
       raceName: '',
@@ -131,15 +133,15 @@ export class AddRace extends Component {
         <div className='radio-buttons'>
           <input type='radio'
             id='choiceTrue'
-            name='Completed'
-            value='true'
+            name='completed'
+            value='Completed'
             onChange={this.handleChange}
             checked={this.state.completed === 'Completed'}/>
           <label htmlFor='choiceTrue'>Completed</label>
           <input type='radio'
             id='choiceFalse'
-            name='Interested'
-            value='false'
+            name='completed'
+            value='Interested'
             onChange={this.handleChange}
             checked={this.state.completed === 'Interested'}/>
           <label htmlFor='choiceFalse'>Interested</label>

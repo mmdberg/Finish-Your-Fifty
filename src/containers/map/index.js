@@ -100,11 +100,12 @@ export class StateMap extends Component {
       <div className='map'>
         <div className='map-key'>
           <p>
-            You have run {this.props.races.length} races in 
-            {this.countStates(this.props.races)} states!
+            You have run {this.props.races.length} races in {
+              this.countStates(this.props.races)
+            } states!
           </p>
           <p>Click on states to see race highlights.</p>
-          <p>Click below filter by distance:</p>
+          <p>Click below to filter by distance:</p>
           <Dropdown 
             options={[
               'All Races', 

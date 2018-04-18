@@ -47,7 +47,7 @@ ShallowWrapper {
                     Click on states to see race highlights.
           </p>
           <p>
-                    Click below filter by distance:
+                    Click below to filter by distance:
           </p>
           <Dropdown
                     baseClassName="Dropdown"
@@ -122,7 +122,7 @@ ShallowWrapper {
               Click on states to see race highlights.
 </p>,
             <p>
-              Click below filter by distance:
+              Click below to filter by distance:
 </p>,
             <Dropdown
               baseClassName="Dropdown"
@@ -186,10 +186,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Click below filter by distance:",
+              "children": "Click below to filter by distance:",
             },
             "ref": null,
-            "rendered": "Click below filter by distance:",
+            "rendered": "Click below to filter by distance:",
             "type": "p",
           },
           Object {
@@ -342,7 +342,7 @@ ShallowWrapper {
                         Click on states to see race highlights.
             </p>
             <p>
-                        Click below filter by distance:
+                        Click below to filter by distance:
             </p>
             <Dropdown
                         baseClassName="Dropdown"
@@ -417,7 +417,7 @@ ShallowWrapper {
                 Click on states to see race highlights.
 </p>,
               <p>
-                Click below filter by distance:
+                Click below to filter by distance:
 </p>,
               <Dropdown
                 baseClassName="Dropdown"
@@ -481,10 +481,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Click below filter by distance:",
+                "children": "Click below to filter by distance:",
               },
               "ref": null,
-              "rendered": "Click below filter by distance:",
+              "rendered": "Click below to filter by distance:",
               "type": "p",
             },
             Object {
@@ -661,7 +661,7 @@ ShallowWrapper {
                     Click on states to see race highlights.
           </p>
           <p>
-                    Click below filter by distance:
+                    Click below to filter by distance:
           </p>
           <Dropdown
                     baseClassName="Dropdown"
@@ -730,7 +730,7 @@ ShallowWrapper {
               Click on states to see race highlights.
 </p>,
             <p>
-              Click below filter by distance:
+              Click below to filter by distance:
 </p>,
             <Dropdown
               baseClassName="Dropdown"
@@ -794,10 +794,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Click below filter by distance:",
+              "children": "Click below to filter by distance:",
             },
             "ref": null,
-            "rendered": "Click below filter by distance:",
+            "rendered": "Click below to filter by distance:",
             "type": "p",
           },
           Object {
@@ -940,7 +940,7 @@ ShallowWrapper {
                         Click on states to see race highlights.
             </p>
             <p>
-                        Click below filter by distance:
+                        Click below to filter by distance:
             </p>
             <Dropdown
                         baseClassName="Dropdown"
@@ -1009,7 +1009,7 @@ ShallowWrapper {
                 Click on states to see race highlights.
 </p>,
               <p>
-                Click below filter by distance:
+                Click below to filter by distance:
 </p>,
               <Dropdown
                 baseClassName="Dropdown"
@@ -1073,10 +1073,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Click below filter by distance:",
+                "children": "Click below to filter by distance:",
               },
               "ref": null,
-              "rendered": "Click below filter by distance:",
+              "rendered": "Click below to filter by distance:",
               "type": "p",
             },
             Object {
