@@ -7,7 +7,7 @@ describe('Map', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(<StateMap races={[mockCompletedRace]}/>);
-  })
+  });
 
   it('should match snapshot without races', () => {
     let wrapper = shallow(<StateMap races={[]}/>);
@@ -16,7 +16,7 @@ describe('Map', () => {
 
   it('should match snapshot with races', () => {
     expect(wrapper).toMatchSnapshot();
-  })
+  });
 
   it('should start with an empty state', () => {
     const expected = {
@@ -46,9 +46,10 @@ describe('Map', () => {
     wrapper.setState({
       state: 'FL'
     });
-    let mockEvent = {target: {dataset: {name: 'CA'}}, clientX: 225, clientY: 145}
-    wrapper.instance().handleStateClick(mockEvent)
-    expect(wrapper.state()).toEqual(expected)
+    let mockEvent = 
+      {target: {dataset: {name: 'CA'}}, clientX: 225, clientY: 145};
+    wrapper.instance().handleStateClick(mockEvent);
+    expect(wrapper.state()).toEqual(expected);
   });
 
   it('should reset state on click if already clicked', () => {
@@ -65,36 +66,40 @@ describe('Map', () => {
     wrapper.setState({
       state: 'CA'
     });
-    let mockEvent = {target: {dataset: {name: 'CA'}}, clientX: 225, clientY: 145}
-    wrapper.instance().handleStateClick(mockEvent)
-    expect(wrapper.state()).toEqual(expected)
+    let mockEvent = 
+      {target: {dataset: {name: 'CA'}}, clientX: 225, clientY: 145};
+    wrapper.instance().handleStateClick(mockEvent);
+    expect(wrapper.state()).toEqual(expected);
   });
 
   it('should set state with race still needed if no match', () => {
-    let mockEvent = {target: {dataset: {name: 'CA'}}, clientX: 225, clientY: 145}
-    wrapper.instance().handleStateClick(mockEvent)
-    expect(wrapper.state('raceInfo')).toEqual('You still need a race in CA.')
+    let mockEvent = 
+      {target: {dataset: {name: 'CA'}}, clientX: 225, clientY: 145};
+    wrapper.instance().handleStateClick(mockEvent);
+    expect(wrapper.state('raceInfo')).toEqual('You still need a race in CA.');
   });
 
   it('should set state with race info if match', () => {
-    let mockEvent = {target: {dataset: {name: 'TN'}}, clientX: 225, clientY: 145}
-    wrapper.instance().handleStateClick(mockEvent)
-    expect(wrapper.state('raceInfo')).not.toEqual('You still need a race in TN.')
+    let mockEvent = 
+      {target: {dataset: {name: 'TN'}}, clientX: 225, clientY: 145};
+    wrapper.instance().handleStateClick(mockEvent);
+    expect(wrapper.state('raceInfo'))
+      .not.toEqual('You still need a race in TN.');
   });
 
   it('should set state with filter', () => {
-    const mockEvent = { value: 'Marathon'}
-    wrapper.instance().handleDropdownChange(mockEvent)
-    expect(wrapper.state('filter')).toEqual('Marathon')
+    const mockEvent = { value: 'Marathon'};
+    wrapper.instance().handleDropdownChange(mockEvent);
+    expect(wrapper.state('filter')).toEqual('Marathon');
   });
 
   describe('mapStateToProps', () => {
     it('should correctly map races to props', () => {
       const mockState = {
         races: mockCompletedRace
-      }
-      const mapped = mapStateToProps(mockState)
-      expect(mapped.races).toEqual(mockCompletedRace)
+      };
+      const mapped = mapStateToProps(mockState);
+      expect(mapped.races).toEqual(mockCompletedRace);
     });
   });
 });

@@ -11,7 +11,8 @@ export class AddRace extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      raceName: this.props.searchRace.raceName ? this.props.searchRace.raceName : '',
+      raceName: this.props.searchRace.raceName ? 
+        this.props.searchRace.raceName : '',
       distance: '',
       time: '',
       city: this.props.searchRace.city ? this.props.searchRace.city : '',
@@ -24,6 +25,7 @@ export class AddRace extends Component {
 
   handleChange = (event) => {
     const { name, value } = event.target;
+    this.props.clearSearchRace();
     this.setState({
       [name]: value
     });
@@ -31,8 +33,8 @@ export class AddRace extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    let raceId = await api.addRace(this.state, this.props.user.id)
-    if(!raceId.error) {
+    let raceId = await api.addRace(this.state, this.props.user.id);
+    if (!raceId.error) {
       this.props.addRace(this.state);
       this.props.clearSearchRace();
       this.setState({
@@ -44,21 +46,22 @@ export class AddRace extends Component {
         date: '',
         completed: 'Completed',
         error: 'Race Added!'
-      })  
+      });
     } else {
       this.setState({
         error: `Unable to add race. ${raceId.error}`
-      })
+      });
     }
   }
 
   handleDropdownChange = (event) => {
     this.setState({
       distance: event.value
-    })
+    });
   }
 
-  clearFields = () => {
+  clearFields = (event) => {
+    event.preventDefault();
     this.props.clearSearchRace();
     this.setState({
       raceName: '',
@@ -69,7 +72,7 @@ export class AddRace extends Component {
       date: '',
       completed: 'Completed',
       error: ''
-    })  
+    });  
   }
 
   render() {
@@ -80,10 +83,18 @@ export class AddRace extends Component {
         <input type="text" 
           placeholder='Race Name'
           name='raceName'
-          value={this.props.searchRace.raceName ? this.props.searchRace.raceName : this.state.raceName}
+          value={this.props.searchRace.raceName ? 
+            this.props.searchRace.raceName : 
+            this.state.raceName}
           onChange={this.handleChange}
           autoFocus/>
-        <Dropdown options={['Marathon', 'Half Marathon', '10 Miler', '10K', '5K', 'Other']}
+        <Dropdown 
+          options={['Marathon', 
+            'Half Marathon', 
+            '10 Miler', 
+            '10K', 
+            '5K', 
+            'Other']}
           placeholder='Select a race distance'
           name='distance'
           value={this.state.distance}
@@ -98,33 +109,39 @@ export class AddRace extends Component {
           placeholder='Date (DD-MM-YYYY)'
           className='half-input'
           name='date'
-          value={this.props.searchRace.date ? this.props.searchRace.date : this.state.date}
+          value={this.props.searchRace.date ? 
+            this.props.searchRace.date : 
+            this.state.date}
           onChange={this.handleChange}/>
         <input type="text" 
           placeholder='City'
           className='half-input'
           name='city'
-          value={this.props.searchRace.city ? this.props.searchRace.city : this.state.city}
+          value={this.props.searchRace.city ? 
+            this.props.searchRace.city : 
+            this.state.city}
           onChange={this.handleChange}/>
         <input type="text" 
           placeholder='State (ex: CA)'
           className='half-input'
           name='state'
           maxLength='2'
-          value={this.props.searchRace.state ? this.props.searchRace.state : this.state.state}
+          value={this.props.searchRace.state ? 
+            this.props.searchRace.state : 
+            this.state.state}
           onChange={this.handleChange}/>
         <div className='radio-buttons'>
           <input type='radio'
             id='choiceTrue'
-            name='Completed'
-            value='true'
+            name='completed'
+            value='Completed'
             onChange={this.handleChange}
             checked={this.state.completed === 'Completed'}/>
           <label htmlFor='choiceTrue'>Completed</label>
           <input type='radio'
             id='choiceFalse'
-            name='Interested'
-            value='false'
+            name='completed'
+            value='Interested'
             onChange={this.handleChange}
             checked={this.state.completed === 'Interested'}/>
           <label htmlFor='choiceFalse'>Interested</label>
@@ -141,7 +158,8 @@ AddRace.propTypes = {
   races: PropTypes.array,
   user: PropTypes.object,
   searchRace: PropTypes.object,
-  addRace: PropTypes.func
+  addRace: PropTypes.func,
+  clearSearchRace: PropTypes.func
 };
 
 export const mapStateToProps = state => ({

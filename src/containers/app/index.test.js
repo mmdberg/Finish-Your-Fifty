@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { App, mapStateToProps, mapDispatchToProps } from './index';
-import { mockUser, mockApiResult, mockRace, mockRaceFromDB, mockCompletedRace } from '../../mocks';
+import { mockUser, mockRaceFromDB, mockCompletedRace } from '../../mocks';
 import * as actions from '../../actions';
 import { LocalStorage } from '../../__test-helper__/storageMock';
 
@@ -24,7 +24,7 @@ describe('App', () => {
       captureUser={mockCaptureUser} 
       addRace={mockAddRace}
       clearRaces={mockClearRaces} />,
-      { disableLifecycleMethods: true });
+    { disableLifecycleMethods: true });
 
   });
 
@@ -42,20 +42,19 @@ describe('App', () => {
     });
     
     it('should call capture user if user is in local storage', () => {
-      wrapper.instance().componentDidMount()
-      expect(mockCaptureUser).toHaveBeenCalledWith(mockUser)
+      wrapper.instance().componentDidMount();
+      expect(mockCaptureUser).toHaveBeenCalledWith(mockUser);
     });
 
     it('should make fetch with the right params', () => {
       wrapper.instance().componentDidMount();
-      expect(window.fetch).toHaveBeenCalledWith('http://localhost:3000/api/v1/races/23');
+      expect(window.fetch)
+        .toHaveBeenCalledWith('http://localhost:3000/api/v1/races/23');
     });
-
-  //SKIPPED TEST
 
     it.skip('should call addRace for user\'s races', () => {
       wrapper.instance().componentDidMount();
-      expect(mockAddRace).toHaveBeenCalledWith(mockRaceFromDB)
+      expect(mockAddRace).toHaveBeenCalledWith(mockRaceFromDB);
     });
   });
 
@@ -74,7 +73,6 @@ describe('App', () => {
     wrapper.instance().logOut();
     const lastUser = localStorage.getItem('Last User');
     expect(lastUser).not.toBeDefined();    
-
   });
 
   describe('mapStateToProps', () => {

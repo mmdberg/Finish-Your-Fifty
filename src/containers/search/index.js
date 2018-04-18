@@ -6,6 +6,8 @@ import { Redirect } from 'react-router-dom';
 import 'react-table/react-table.css';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import PropTypes from 'prop-types';
+import strava from '../../images/logo_strava.png';
 
 export class Search extends Component {
   constructor(props) {
@@ -39,12 +41,12 @@ export class Search extends Component {
         error: 'No races match your search criteria. Try again.'
       });
     } else {
-      this.makeRaceList(racesByState)
+      this.makeRaceList(racesByState);
     }
   }
 
   addInterestedRace = (race) => {
-    this.props.addSearchRace(race)
+    this.props.addSearchRace(race);
   }
 
   makeRaceList = (RaceArray) => {
@@ -52,8 +54,8 @@ export class Search extends Component {
       return {
         ...race, 
         addRace: <button onClick={() => this.addInterestedRace(race)}>+</button>
-      }
-    })
+      };
+    });
     this.setState({
       results: racesWithButton
     });
@@ -72,61 +74,69 @@ export class Search extends Component {
     return this.props.searchRace.raceName ? 
       <Redirect to='/add-race' /> :
       (
-      <div className='search'>
-        <h2>Search for races by state</h2>
-        <form>
-          <input type='text'
-            name='state'
-            placeholder='State (ex. CA)'
-            value={this.state.state}
-            onChange={this.handleChange}
-            maxLength='2'
-            autoFocus
-          />
-          <input type='text'
-            name='year'
-            placeholder='Year'
-            value={this.state.year}
-            onChange={this.handleChange}
-            maxLength='4'/>
-          <button onClick={this.handleSubmit}>Search</button>
-          <button onClick={this.clearSearch}>Clear</button>
-        </form>
-        {
-          this.state.results.length ?
-            <ReactTable
-              data={this.state.results}
-              columns={[
-                {
-                  Header: 'Race Name',
-                  accessor: 'raceName'
-                },
-                {
-                  Header: 'City',
-                  accessor: 'city'
-                },
-                {
-                  Header: 'Date',
-                  accessor: 'date'
-                },
-                {
-                  Header: 'State',
-                  accessor: 'state'
-                },
-                {
-                  Header: 'Add Race To Log',
-                  accessor: 'addRace'
-                }
-              ]}
-              pageSize={this.state.results.length}
+        <div className='search'>
+          <h2>Search for races by state/year</h2>
+          <p className='powered'>
+            Powered by 
+            <img className='strava-img' src={strava} alt='strava-log'/>
+          </p>
+          <form>
+            <input type='text'
+              name='state'
+              placeholder='State (ex. CA)'
+              value={this.state.state}
+              onChange={this.handleChange}
+              maxLength='2'
+              autoFocus
             />
-            : this.state.error
-        }
-
-      </div>
-    );
+            <input type='text'
+              name='year'
+              placeholder='Year'
+              value={this.state.year}
+              onChange={this.handleChange}
+              maxLength='4'/>
+            <button onClick={this.handleSubmit}>Search</button>
+            <button onClick={this.clearSearch}>Clear</button>
+          </form>
+          {
+            this.state.results.length ?
+              <ReactTable
+                data={this.state.results}
+                columns={[
+                  {
+                    Header: 'Race Name',
+                    accessor: 'raceName'
+                  },
+                  {
+                    Header: 'City',
+                    accessor: 'city'
+                  },
+                  {
+                    Header: 'Date',
+                    accessor: 'date'
+                  },
+                  {
+                    Header: 'State',
+                    accessor: 'state'
+                  },
+                  {
+                    Header: 'Add Race To Log',
+                    accessor: 'addRace'
+                  }
+                ]}
+                pageSize={this.state.results.length}
+              />
+              : this.state.error
+          }
+        </div>
+      );
   }
 }
+
+Search.propTypes = {
+  searchRace: PropTypes.object,
+  addSearchRace: PropTypes.func
+};
 
 export const mapStateToProps = state => ({
   searchRace: state.searchRace

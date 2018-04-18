@@ -19,8 +19,8 @@ export class RaceLog extends Component {
   }
 
   handleRemove = (race) => {
-    api.deleteRace(race.id)
-    this.props.removeRace(race)
+    api.deleteRace(race.id);
+    this.props.removeRace(race);
   }
 
   render() {

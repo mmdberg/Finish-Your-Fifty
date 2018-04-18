@@ -10,8 +10,10 @@ describe('Search', () => {
   let mockAddSearchRace;
 
   beforeEach(() => {
-    mockAddSearchRace = jest.fn()
-    wrapper = shallow(<Search searchRace={mockRace} addSearchRace={mockAddSearchRace}/>);
+    mockAddSearchRace = jest.fn();
+    wrapper = shallow(<Search 
+      searchRace={mockRace} 
+      addSearchRace={mockAddSearchRace}/>);
   });
 
   it('should match the snapshot', () => {
@@ -93,7 +95,7 @@ describe('Search', () => {
   it('should update state with results', () => {
     wrapper.instance().makeRaceList([mockRace]);
 
-    expect(wrapper.state('results')).not.toEqual([])
+    expect(wrapper.state('results')).not.toEqual([]);
   });
 
   it('should reset the state on clearSearch', () => {
@@ -115,19 +117,19 @@ describe('Search', () => {
     it('should correctly map searchRace to props', () => {
       const mockState = {
         searchRace: mockRace
-      }
-      const mapped = mapStateToProps(mockState)
-      expect(mapped.searchRace).toEqual(mockRace)
+      };
+      const mapped = mapStateToProps(mockState);
+      expect(mapped.searchRace).toEqual(mockRace);
     });
   });
 
   describe('mapDispatchToProps', () => {
     it('should call dispatch with the correct params for addSearchRace', () => {
-      const expected = actions.addSearchRace(mockRace)
-      const mockDispatch = jest.fn()
-      const mapped = mapDispatchToProps(mockDispatch)
-      mapped.addSearchRace(mockRace)
-      expect(mockDispatch).toHaveBeenCalledWith(expected)
+      const expected = actions.addSearchRace(mockRace);
+      const mockDispatch = jest.fn();
+      const mapped = mapDispatchToProps(mockDispatch);
+      mapped.addSearchRace(mockRace);
+      expect(mockDispatch).toHaveBeenCalledWith(expected);
     });
   });
 

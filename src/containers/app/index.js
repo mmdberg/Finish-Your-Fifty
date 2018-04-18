@@ -38,15 +38,26 @@ export class App extends Component {
             this.props.user && 
             <div className='introduction'>
               <p className='hi-user'>Hi {this.props.user.userName}!</p>
-              <NavLink className='logout' to='/' onClick={this.logOut}>Log Out</NavLink>
+              <NavLink 
+                className='logout' to='/' 
+                onClick={this.logOut}>Log Out
+              </NavLink>
             </div>
           }
         </header>
         <nav>
-          <NavLink exact className='nav-section nav1' to='/'>Home</NavLink>
-          <NavLink className='nav-section nav2' to='/add-race'>Add Race</NavLink>
-          <NavLink className='nav-section nav3' to='/race-log'>Race Log</NavLink>
-          <NavLink className='nav-section nav4' to='/search'>Search</NavLink>
+          <NavLink exact className='nav-section nav1' to='/'>
+            Home
+          </NavLink>
+          <NavLink className='nav-section nav2' to='/add-race'>
+            Add Race
+          </NavLink>
+          <NavLink className='nav-section nav3' to='/race-log'>
+            Race Log
+          </NavLink>
+          <NavLink className='nav-section nav4' to='/search'>
+            Search
+          </NavLink>
         </nav>
         <div className='app-body'>
           <Switch>
@@ -74,7 +85,7 @@ App.propTypes = {
   addRace: PropTypes.func,
   logOut: PropTypes.func,
   clearRaces: PropTypes.func
-}
+};
 
 export const mapStateToProps = state => ({
   user: state.user
