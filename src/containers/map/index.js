@@ -51,7 +51,6 @@ export class StateMap extends Component {
   }
 
   handleStateClick = (event) => {
-    console.log(event.target.dataset.name)
     if (event.target.dataset.name === this.state.state) {
       this.setState({
         raceInfo: '',
@@ -69,47 +68,67 @@ export class StateMap extends Component {
           display: 'inline'
         },
         state: event.target.dataset.name
-      })
-      this.setState({raceInfo: `You still need a race in ${event.target.dataset.name}.`})
+      });
+      this.setState({
+        raceInfo: `You still need a race in ${event.target.dataset.name}.`
+      });
       this.props.races.forEach(race => { 
         if (race.state === event.target.dataset.name) {
-          this.setState({raceInfo: <ul><li>{race.raceName} in {race.city}, {race.state}.</li><li>Distance: {race.distance}</li><li>Time: {race.time}</li></ul>})
+          this.setState({
+            raceInfo: <ul><li>{race.raceName} in {race.city}, {race.state}.</li>
+              <li>Distance: {race.distance}</li>
+              <li>Time: {race.time}</li></ul>
+          });
         }
-      })
+      });
     } 
   }
 
   handleDropdownChange = (event) => {
     this.setState({
       filter: event.value
-    })
+    });
   }
 
   countStates(raceArray) {
-    const stateArray = raceArray.filter(race => race.completed === 'Completed')
-    return stateArray.length
+    const stateArray = raceArray.filter(race => race.completed === 'Completed');
+    return stateArray.length;
   }
 
   render() {
     return (
       <div className='map'>
         <div className='map-key'>
-          <p>You have run {this.props.races.length} races in {this.countStates(this.props.races)} states!</p>
+          <p>
+            You have run {this.props.races.length} races in 
+            {this.countStates(this.props.races)} states!
+          </p>
           <p>Click on states to see race highlights.</p>
           <p>Click below filter by distance:</p>
           <Dropdown 
-          options={['All Races', 'Marathon', 'Half Marathon', '10 Miler', '10K', '5K', 'Other']}
-          placeholder='All Races'
-          name='distance'
-          value={this.state.filter}
-          onChange={this.handleDropdownChange}
+            options={[
+              'All Races', 
+              'Marathon', 
+              'Half Marathon', 
+              '10 Miler', 
+              '10K', 
+              '5K', 
+              'Other'
+            ]}
+            placeholder='All Races'
+            name='distance'
+            value={this.state.filter}
+            onChange={this.handleDropdownChange}
           />
         </div>
         <div className='state-map'>
           <div className='raceInfo'>
-            <p style={this.state.textStyle} className='raceText' >{this.state.raceInfo}</p>
+            <p style={this.state.textStyle} 
+              className='raceText' >{this.state.raceInfo}</p>
           </div>
-          <USAMap customize={this.props.races.length > 0 ? this.fillStates(this.state.filter) : {}} onClick={this.handleStateClick}/>
+          <USAMap customize={this.props.races.length > 0 ? 
+            this.fillStates(this.state.filter) : {}} 
+          onClick={this.handleStateClick}/>
         </div>
       </div>
     );
@@ -118,7 +137,7 @@ export class StateMap extends Component {
 
 StateMap.propTypes = {
   races: PropTypes.array
-}
+};
 
 export const mapStateToProps = state => ({
   races: state.races

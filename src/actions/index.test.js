@@ -39,8 +39,8 @@ describe('actions', () => {
   it('should return action type of CLEAR_RACES', () => {
     const expected = {
       type: 'CLEAR_RACES'
-    }
-    expect(actions.clearRaces()).toEqual(expected)
+    };
+    expect(actions.clearRaces()).toEqual(expected);
   });
 
   it('should return action type of ADD_SEARCH_RACE', () => {
@@ -55,7 +55,7 @@ describe('actions', () => {
   it('should return action type of CLEAR_SEARCH_RACE', () => {
     const expected = {
       type: 'CLEAR_SEARCH_RACE'
-    }
-    expect(actions.clearSearchRace()).toEqual(expected)
+    };
+    expect(actions.clearSearchRace()).toEqual(expected);
   });
 });

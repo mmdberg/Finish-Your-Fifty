@@ -1,3 +1,4 @@
+/*eslint-disable camelcase*/
 export const mockRace = {
   state: 'CA',
   city: 'San Diego',
@@ -52,3 +53,4 @@ export const mockCompletedRace = {
   distance: 'Marathon',
   completed: 'Completed'
 };
+  /*eslint-enable camelcase*/

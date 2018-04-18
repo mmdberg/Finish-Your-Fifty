@@ -1,14 +1,16 @@
+/*eslint-disable camelcase*/
 import { apiKey } from '../private/apiKey';
 import { raceCleaner } from './cleaner';
 
-export const fetchRaces = async (year) => { 
+export const fetchRaces = async (year) => {
+  const apiRoot = 'https://www.strava.com/api';
   try {
-    const response 
-      = await fetch(`https://www.strava.com/api/v3/running_races?year=${year}&access_token=${apiKey}`,
-        {
-          type: 'GET',
-          credentials: 'omit'
-        });
+    const response = await fetch(
+      `${apiRoot}/v3/running_races?year=${year}&access_token=${apiKey}`,
+      {
+        type: 'GET',
+        credentials: 'omit'
+      });
     const raceInfo = await response.json();
     return raceCleaner(raceInfo);
   } catch (error) {
@@ -85,7 +87,7 @@ export const addRace = async (raceInfo, user_id) => {
     const raceId = await response.json();
     return raceId;
   } catch (error) {
-    return error
+    return error;
   }
 };
 
@@ -96,7 +98,7 @@ export const getUserRaces = async (user_id) => {
     const userRaces = await response.json();
     return userRaces;
   } catch (error) {
-    throw new Error('Unable to get user\'s races')
+    throw new Error('Unable to get user\'s races');
   }
 };
 
@@ -106,7 +108,8 @@ export const deleteRace = async (raceId) => {
       method: 'DELETE'
     });
   } catch (error) {
-    throw new Error('Unable to delete race')
+    throw new Error('Unable to delete race');
   }
-}
+};
+/*eslint-enable camelcase*/
 
