@@ -90,9 +90,16 @@ export class StateMap extends Component {
     });
   }
 
-  countStates(raceArray) {
-    const stateArray = raceArray.filter(race => race.completed === 'Completed');
-    return stateArray.length;
+  countRaces = (raceArray) => {
+    const racesArray = raceArray.filter(race => race.completed === 'Completed');
+    return racesArray.length;
+  }
+
+  countStates = (raceArray) => {
+    const completedRacesArray = raceArray.filter(race => race.completed === 'Completed')
+    const completedStates = completedRacesArray.map(race => race.state)
+    const removeDuplicates = new Set(completedStates)
+    return removeDuplicates.size
   }
 
   render() {
@@ -104,7 +111,9 @@ export class StateMap extends Component {
         }
         <div className='map-key'>
           <p>
-            You have run {this.props.races.length} races in {
+            You have run {
+              this.countRaces(this.props.races)
+            } races in {
               this.countStates(this.props.races)
             } states!
           </p>

@@ -100,7 +100,7 @@ export class AddRace extends Component {
           value={this.state.distance}
           onChange={this.handleDropdownChange}/>
         <input type="text" 
-          placeholder='Time'
+          placeholder='Time/Goal Time'
           className='half-input'
           name='time'
           value={this.state.time}
