@@ -6,9 +6,9 @@ The frontend was built with React, Redux and React Router and the backend was bu
 
 Backend: https://github.com/mmdberg/Finish-Your-Fifty-Database
 
-![Home Page](FYF-home.png)
-![Map-Display-Example](FYF-map-display.png)
-![Add Race Page](FYF-add-race.png)
-![Race Log Page](FYF-race-log.png)
-![Search Page](FYF-search.png)
+![Home Page](screenshots/FYF-home.png)
+![Map-Display-Example](screenshots/FYF-map-display.png)
+![Add Race Page](screenshots/FYF-add-race.png)
+![Race Log Page](screenshots/FYF-race-log.png)
+![Search Page](screenshots/FYF-search.png)
 
