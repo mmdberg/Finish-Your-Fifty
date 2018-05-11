@@ -20,7 +20,7 @@ export const fetchRaces = async (year) => {
 
 export const fetchUsers = async () => {
   try {
-    const response = await fetch('http://localhost:3000/api/v1/users/');
+    const response = await fetch('https://finish-your-fifty.herokuapp.com/api/v1/users/');
     const users = await response.json();
     return users;
   } catch (error) {
@@ -30,7 +30,7 @@ export const fetchUsers = async () => {
 
 export const fetchOneUser = async (credentials) => {
   try {
-    const response = await fetch(`http://localhost:3000/api/v1/users/`,
+    const response = await fetch(`https://finish-your-fifty.herokuapp.com/api/v1/users/`,
       {
         method: 'POST',
         body: JSON.stringify(credentials),
@@ -47,7 +47,7 @@ export const fetchOneUser = async (credentials) => {
 
 export const addUser = async (user) => {
   try {
-    const response = await fetch('http://localhost:3000/api/v1/users/new', 
+    const response = await fetch('https://finish-your-fifty.herokuapp.com/api/v1/users/new', 
       {
         method: 'POST',
         body: JSON.stringify({
@@ -68,7 +68,7 @@ export const addUser = async (user) => {
 
 export const addRace = async (raceInfo, user_id) => {
   try {
-    const response = await fetch('http://localhost:3000/api/v1/races', {
+    const response = await fetch('https://finish-your-fifty.herokuapp.com/api/v1/races', {
       method: 'POST',
       body: JSON.stringify({
         raceName: raceInfo.raceName,
@@ -94,7 +94,7 @@ export const addRace = async (raceInfo, user_id) => {
 export const getUserRaces = async (user_id) => {
   try {
     const response = 
-      await fetch(`http://localhost:3000/api/v1/races/${user_id}`);
+      await fetch(`https://finish-your-fifty.herokuapp.com/api/v1/races/${user_id}`);
     const userRaces = await response.json();
     return userRaces;
   } catch (error) {
@@ -104,7 +104,7 @@ export const getUserRaces = async (user_id) => {
 
 export const deleteRace = async (raceId) => {
   try {
-    await fetch(`http://localhost:3000/api/v1/races/${raceId}`, {
+    await fetch(`https://finish-your-fifty.herokuapp.com/api/v1/races/${raceId}`, {
       method: 'DELETE'
     });
   } catch (error) {
